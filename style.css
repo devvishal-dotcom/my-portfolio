@@ -59,6 +59,16 @@ body {
     cursor: pointer;
     margin-top: 30px;
   }
+  .project-link {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #ff9800;
+    text-decoration: none;
+  }
+  
+  .project-link:hover {
+    text-decoration: underline;
+  }
   
   button:hover {
     background-color: #0056b3;
