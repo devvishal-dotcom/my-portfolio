@@ -103,16 +103,14 @@ body {
   button:hover {
     background-color: #0056b3;
   }
-  body {
     body {
-      background-image: url('https://images.unsplash.com/photo-1603145733143-5233f276a493?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+      background-image: url('https://wallpapercave.com/wp/wp4923981.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
       background-attachment: fixed;
       color: #000; /* Black text is better on a light background */
     }
-    
-  }
+  
 
   
