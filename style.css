@@ -1,6 +1,6 @@
 body {
     font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(to right, #8fbdc9, #f5f5fbff);;
+    background: linear-gradient(to right, #4a6d76, rgb(208, 208, 239));;
     margin: 0;
     padding: 0;
     text-align: center;
@@ -21,17 +21,17 @@ body {
     height: 140px;
     border-radius: 50%;
     object-fit: cover;
-    border: 4px solid #007bff;
+    border: 4px solid #16181a;
   }
   
   h1 {
     margin-top: 15px;
     font-size: 2em;
-    color: #333;
+    color: #423c3c;
   }
   
   p {
-    color: #555;
+    color: #9a8a8a;
   }
   
   .skills {
@@ -62,7 +62,7 @@ body {
   .project-link {
     margin-left: 10px;
     font-size: 14px;
-    color: #ff9800;
+    color: #657d94;
     text-decoration: none;
   }
   
@@ -74,39 +74,26 @@ body {
     padding: 6px 14px;
     font-size: 14px;
     background-color: #ff9800;
-    color: #fff;
+    color: #ae8e8e;
     border-radius: 6px;
     text-decoration: none;
     transition: all 0.3s ease;
   }
   
   .skill-btn:hover {
-    background-color: #e67e22;
+    background-color: #d3b8a0;
     color: #000;
     transform: scale(1.05);
   }
-  .skill-btn {
-    padding: 10px 20px;
-    background: linear-gradient(135deg, #ff9800, #f44336);
-    color: #fff;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: 0.3s ease;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.1);
-  }
+
   
   .skill-btn:hover {
-    background: linear-gradient(135deg, #f44336, #ff9800);
+    background: linear-gradient(135deg, #a36f6b, #ff9800);
     transform: translateY(-2px);
   }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #222;
-  }
+
   .section-card {
-    background: #fff;
+    background: #d2a6a6;
     padding: 30px;
     border-radius: 16px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
