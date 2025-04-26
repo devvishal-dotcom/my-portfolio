@@ -104,14 +104,12 @@ body {
     background-color: #0056b3;
   }
   body {
-    background-image: url('background.jpg');
+    background-image: url('./background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #000;
 }
-
-  
 
   
