@@ -67,3 +67,11 @@
     background: #3a7bd5;
     color: white;
   }
+  body {
+    background-image: url('background.jpg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
+}
