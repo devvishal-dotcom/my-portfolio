@@ -104,13 +104,14 @@ body {
     background-color: #0056b3;
   }
   body {
-    background-image: url("C:\Users\VISHAL\my-portfolio\landing-page\jp-valery-WDA2VnXHV3w-unsplash.jpg");
+    background-image: url('jp-valery-WDA2VnXHV3w-unsplash.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     color: #000;
-  }
+}
+
   
 
   
