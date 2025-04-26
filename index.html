@@ -1,42 +1,80 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Vishal Kumar Gupta | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <img src="C:\Users\VISHAL\my-portfolio\WhatsApp Image 2025-04-22 at 12.29.19 AM.jpeg" alt="Vishal's photo" class="profile-pic" />
-      <h1>Vishal Kumar Gupta</h1>
-      <p>Aspiring Web Developer passionate about building responsive websites.</p>
-    </header>
+  <!-- Sidebar / Navbar -->
+  <nav class="navbar">
+    <h1>Vishal</h1>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-    <section>
-      <div class="section-card">
-        <h2>Skills</h2>
-        <ul class="skills-list">
-          <li><a href="landing-page/index.html" target="_blank" class="skill-btn">HTML</a></li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>Laravel</li>
-        <li>MySql</li>
-        </ul>
+  <!-- Main Section -->
+  <section class="hero">
+    <h2>Hello, I'm Vishal Kumar Gupta</h2>
+    <p>Aspiring Web Developer passionate about building beautiful and functional websites.</p>
+    <a href="#contact" class="btn">Hire Me</a>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <h2>About Me</h2>
+    <p>I am a BCA student with a strong interest in web development and future technologies. I love creating clean, responsive websites and learning new skills.</p>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <h2>Skills</h2>
+    <div class="skills-container">
+      <div class="skill-card">
+        <img src="html-icon.png" alt="HTML">
+        <p>HTML5</p>
       </div>
-      
-    </section>
+      <div class="skill-card">
+        <img src="css-icon.png" alt="CSS">
+        <p>CSS3</p>
+      </div>
+      <div class="skill-card">
+        <img src="javascript-icon.png" alt="JavaScript">
+        <p>JavaScript</p>
+      </div>
+      <div class="skill-card">
+        <img src="laravel-icon.png" alt="Laravel">
+        <p>Laravel</p>
+      </div>
+      <div class="skill-card">
+        <img src="mysql-icon.png" alt="MySQL">
+        <p>MySQL</p>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <button id="contactBtn">Contact Me</button>
-    </footer>
-  </div>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <p>Coming Soon...</p>
+  </section>
 
-  <script src="script.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  
-  
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <p>Let's create something amazing together!</p>
+    <a href="mailto:vishalkumar4604@gmail.com" class="btn">Email Me</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Vishal Kumar Gupta | Built with Passion</p>
+  </footer>
+
 </body>
 </html>
