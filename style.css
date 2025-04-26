@@ -103,14 +103,14 @@ body {
   button:hover {
     background-color: #0056b3;
   }
-    body {
-      background-image: url('https://wallpapercave.com/wp/wp4923981.png');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
-      color: #000; /* Black text is better on a light background */
-    }
+  body {
+    background-image: url('https://wallpapercave.com/wp/wp4923981.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #000;
+  }
   
 
   
