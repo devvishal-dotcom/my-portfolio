@@ -22,7 +22,7 @@ body {
   padding: 25px 30px;
   position: fixed;
   top: 5;
-  left: 25;
+  left: 15;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,16 +32,16 @@ body {
 .navbar h1 {
   color: #fff;
   font-size: 28px;
-  padding: 10px 10px;
+  padding: 10px 20px;
   position: fixed;
-  top: 10;
+  top: 20;
   left: 5;
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
-  margin: 0;
+  margin: 10;
   padding: 0;
 }
 
