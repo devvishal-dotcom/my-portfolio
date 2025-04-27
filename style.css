@@ -21,7 +21,7 @@ body {
   background: rgba(0, 0, 0, 0.7);
   padding: 25px 30px;
   position: fixed;
-  top: 5;
+  top: 0;
   left: 15;
   display: flex;
   justify-content: space-between;
@@ -41,12 +41,12 @@ body {
 .navbar ul {
   list-style: none;
   display: flex;
-  margin: 10;
+  margin: 0;
   padding: 0;
 }
 
 .navbar ul li {
-  margin-left: 5px;
+  margin-left: 3px;
 }
 
 .navbar ul li a {
