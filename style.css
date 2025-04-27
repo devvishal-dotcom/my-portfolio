@@ -22,7 +22,7 @@ body {
   padding: 15px 30px;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 5;
   display: flex;
   justify-content: space-between;
   align-items: center;
