@@ -1,83 +1,125 @@
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
-  }
-  
-  body {
-    background-color: #f8f9fa;
-    color: #333;
-    line-height: 1.6;
-  }
-  
-  .hero {
-    background: linear-gradient(to right, #3a7bd5, #00d2ff);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
-  }
-  
-  .hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-  }
-  
-  .hero p {
-    font-size: 20px;
-    margin-bottom: 30px;
-  }
-  
-  .btn {
-    background-color: white;
-    color: #3a7bd5;
-    padding: 12px 25px;
-    font-size: 16px;
-    border-radius: 25px;
-    text-decoration: none;
-    transition: all 0.3s ease-in-out;
-  }
-  
-  .btn:hover {
-    background-color: #f1f1f1;
-  }
-  
-  .features {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    padding: 60px 20px;
-    background-color: #fff;
-  }
-  
-  .feature-box {
-    flex: 1 1 250px;
-    max-width: 300px;
-    margin: 20px;
-    background: #f0f0f0;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .footer {
-    text-align: center;
-    padding: 20px;
-    background: #3a7bd5;
-    color: white;
-  }
-  body {
-    background-image: url('#');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    color: #000;
-    .plans-section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, #27ae60, #2ecc71);
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+}
+
+.btn {
+  background-color: #fff;
+  color: #27ae60;
+  padding: 10px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #27ae60;
+  color: #fff;
+}
+
+/* Features Section */
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 40px 20px;
+  gap: 20px;
+  background-color: #fff;
+}
+
+/* Feature Card Link */
+.feature-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 280px;
+  padding: 20px;
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #27ae60;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #e9f7ef;
+}
+
+.feature-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #27ae60;
+}
+
+.feature-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Feature Boxes */
+.feature-box {
+  width: 280px;
+  background-color: #fdfdfd;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.feature-box h2 {
+  color: #27ae60;
+  margin-bottom: 10px;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer p {
+  font-size: 0.9rem;
+}
     /* General reset for margins, padding, and box-sizing */
 * {
   margin: 0;
@@ -205,4 +247,3 @@ footer {
 footer p {
   font-size: 1rem;
 }
-  }
