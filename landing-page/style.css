@@ -136,5 +136,38 @@
       border: 2px solid #007bff;
       background-color: #f0f8ff;
     }
+    .feature {
+      display: block;
+      background-color: #fff;
+      padding: 20px;
+      margin: 10px;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    }
+    
+    .feature i {
+      font-size: 2rem;
+      color: #f04e31;
+      margin-bottom: 10px;
+    }
+    
+    .feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .feature p {
+      font-size: 0.95rem;
+      color: #666;
+    }
     
   }
