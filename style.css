@@ -62,6 +62,12 @@ body {
   color: #ff9800;
 }
 
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Optional: to center items horizontally */
+  gap: 20px; /* Optional: spacing between items */
+}
 
 /* Hero Section */
 .hero {
@@ -149,4 +155,5 @@ footer {
   padding: 20px;
   font-size: 14px;
   color: #666;
+  
 }
