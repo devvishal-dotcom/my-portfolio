@@ -1,11 +1,37 @@
-body {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    background-color: #ffe0e0;
-  }
-  
-  p {
-    color: #333;
-    font-size: 18px;
-  }
-  
+    body {
+      background-color: #f0f8ff;
+    }
+    h1, h3 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+    .testimonial {
+      background: #fff;
+      border-left: 4px solid #4CAF50;
+      padding: 15px;
+      margin: 20px 0;
+      font-style: italic;
+    }
+    .cta-center {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .btn {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #ddd;
+    }
