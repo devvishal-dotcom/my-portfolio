@@ -1,32 +1,44 @@
-/* Reset */
+/* ==== Global Reset and Base Styles ==== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body */
 body {
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
+  line-height: 1.6;
 }
 
-/* Hero Section */
+/* ==== Navbar ==== */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+}
+
+.navbar h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* ==== Hero Section ==== */
 .hero {
   background: url('your-image.jpg') center/cover no-repeat;
   position: relative;
   padding: 100px 20px;
-  color: #fff;
   text-align: center;
+  color: #fff;
 }
 
 .hero::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for text readability */
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
@@ -34,8 +46,6 @@ body {
   position: relative;
   z-index: 2;
 }
-
-
 
 .hero-content h1 {
   font-size: 3rem;
@@ -62,7 +72,7 @@ body {
   color: #fff;
 }
 
-/* Features Section */
+/* ==== Features Section (Landing Page) ==== */
 .features {
   display: flex;
   flex-wrap: wrap;
@@ -72,7 +82,6 @@ body {
   background-color: #fff;
 }
 
-/* Feature Card Link */
 .feature-card {
   display: flex;
   flex-direction: column;
@@ -84,8 +93,8 @@ body {
   color: #333;
   border: 2px solid #27ae60;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
   background-color: #e9f7ef;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card i {
@@ -104,7 +113,7 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Feature Boxes */
+/* ==== Additional Feature Box (Optional Use) ==== */
 .feature-box {
   width: 280px;
   background-color: #fdfdfd;
@@ -124,47 +133,7 @@ body {
   transform: translateY(-5px);
 }
 
-/* Footer */
-.footer {
-  background-color: #333;
-  color: #fff;
-  padding: 20px;
-  text-align: center;
-  margin-top: 40px;
-}
-
-.footer p {
-  font-size: 0.9rem;
-}
-    /* General reset for margins, padding, and box-sizing */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* Body styling */
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* Header styling */
-.navbar {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 20px 0;
-}
-
-.navbar h1 {
-  font-size: 2.5rem;
-  letter-spacing: 1px;
-}
-
-/* Main container for the plans */
+/* ==== Plans Page ==== */
 .plans-container {
   display: flex;
   justify-content: center;
@@ -173,14 +142,13 @@ body {
   gap: 20px;
 }
 
-/* Plan card styling */
 .plan-card {
   background-color: #fff;
   width: 300px;
   padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -204,8 +172,8 @@ body {
 
 .plan-card ul {
   list-style-type: none;
-  margin: 15px 0;
   padding: 0;
+  margin: 15px 0;
 }
 
 .plan-card ul li {
@@ -241,7 +209,6 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Featured plan styling */
 .plan-card.featured {
   border: 2px solid #27ae60;
   background-color: #e9f7e8;
@@ -251,18 +218,7 @@ body {
   color: #071b0f;
 }
 
-/* Footer styling */
-footer {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 15px;
-  margin-top: 40px;
-}
-
-footer p {
-  font-size: 1rem;
-}
+/* ==== Why FitLife Section (Plans Page) ==== */
 #why-fitlife {
   background-color: #f9f9f9;
   padding: 60px 20px;
@@ -293,6 +249,21 @@ footer p {
 .custom-features li {
   margin-bottom: 20px;
   font-size: 17px;
-  color: #000000;
+  color: #000;
   line-height: 1.6;
+}
+
+/* ==== Footer ==== */
+footer,
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p,
+.footer p {
+  font-size: 0.9rem;
 }
