@@ -5,6 +5,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Segoe UI', sans-serif;
   background-color: #f4f4f4;
@@ -27,11 +31,15 @@ body {
 
 /* ==== Hero Section ==== */
 .hero {
-  background: url('your-image.jpg') center/cover no-repeat;
+  background: url('images/your-image.jpg') center/cover no-repeat;
   position: relative;
   padding: 100px 20px;
   text-align: center;
   color: #fff;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero::before {
@@ -45,6 +53,7 @@ body {
 .hero-content {
   position: relative;
   z-index: 2;
+  max-width: 800px;
 }
 
 .hero-content h1 {
@@ -77,8 +86,10 @@ body {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 40px;
+  padding: 40px 20px;
   flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
 }
 
 .feature-card {
@@ -112,8 +123,10 @@ body {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  margin: 20px;
+  margin: 20px auto;
   gap: 20px;
+  max-width: 1200px;
+  padding: 0 20px;
 }
 
 .plan-card {
@@ -192,7 +205,7 @@ body {
   color: #071b0f;
 }
 
-/* ==== Why FitLife Section (Plans Page) ==== */
+/* ==== Why FitLife Section ==== */
 #why-fitlife {
   background-color: #f9f9f9;
   padding: 60px 20px;
