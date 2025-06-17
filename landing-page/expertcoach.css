@@ -189,3 +189,38 @@ body {
   margin-top: 60px;
   font-size: 0.95rem;
 }
+.coach-cta {
+  padding: 60px 20px;
+  text-align: center;
+  background-color: #e9f8ef;
+}
+
+.coach-cta h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: #222;
+}
+
+.coach-cta p {
+  font-size: 1.1rem;
+  color: #444;
+  margin-bottom: 25px;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 14px 30px;
+  font-size: 1rem;
+  background-color: #6a8777;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #cedbd4;
+  transform: translateY(-2px);
+}
