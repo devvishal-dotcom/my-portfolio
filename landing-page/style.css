@@ -31,7 +31,7 @@ body {
 
 /* ==== Hero Section ==== */
 .hero {
-  background: url('images/your-image.jpg') center/cover no-repeat;
+  background: url('bg.jpg.png') center/cover no-repeat;
   position: relative;
   padding: 100px 20px;
   text-align: center;
