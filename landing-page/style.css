@@ -11,7 +11,8 @@ html {
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
+  background: url('bg.jpg.png') no-repeat center center fixed;
+  background-size: cover;
   color: #333;
   line-height: 1.6;
 }
@@ -31,7 +32,7 @@ body {
 
 /* ==== Hero Section ==== */
 .hero {
-  background: url('bg.jpg.png') center/cover no-repeat;
+  background: url('jpg.png') center/cover no-repeat;
   position: relative;
   padding: 100px 20px;
   text-align: center;
