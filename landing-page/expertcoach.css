@@ -17,7 +17,15 @@ body, html {
   text-align: center;
   color: white;
   position: relative;
-  padding: 2rem;
+  padding: 5rem;
+  body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: url('./images/expertbg.png') center/cover no-repeat fixed;
+  color: white;
+}
+
 }
 
 .header::after {
