@@ -18,6 +18,9 @@ body {
   background-position: center;
   color: white; /* optional, for better contrast */
 }
+.header {
+  background: transparent;
+}
 
 .header h1,
 .header p {
@@ -101,9 +104,10 @@ body {
 .coach-benefits,
 .coach-reviews {
   padding: 60px 20px;
-  background: #fafafa;
+  background: transparent; /* was #fafafa */
   text-align: center;
 }
+
 
 .container {
   max-width: 1000px;
@@ -113,18 +117,20 @@ body {
 .coach-intro h2,
 .coach-benefits h2,
 .coach-reviews h2 {
-  font-size: 2.4rem;
-  margin-bottom: 20px;
-  color: #222;
+  padding: 60px 20px;
+  background: transparent; /* was #fafafa */
+  text-align: center;
 }
+
 
 .coach-intro p,
 .coach-benefits p,
 .coach-reviews p {
-  font-size: 1.15rem;
-  color: #555;
-  margin-bottom: 25px;
+  padding: 60px 20px;
+  background: transparent; /* was #fafafa */
+  text-align: center;
 }
+
 
 /* ==== Badges / Highlights ==== */
 .coach-badges ul {
