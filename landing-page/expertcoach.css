@@ -7,26 +7,18 @@ body, html {
 }
 
 /* ==== Hero Header with Background Image ==== */
-.header {
-  background: url('./images/expertbg.png') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-  padding: 5rem;
-  body {
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
   background: url('./images/expertbg.png') center/cover no-repeat fixed;
-  color: white;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: white; /* optional, for better contrast */
 }
 
-}
 
 .header::after {
   content: '';
