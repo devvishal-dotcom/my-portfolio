@@ -6,61 +6,47 @@ body, html {
   font-family: Arial, sans-serif;
 }
 
-.background-image {
+/* ==== Hero Header with Background Image ==== */
+.header {
   background: url('./images/expertbg.png') center/cover no-repeat;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: white;
   position: relative;
+  padding: 2rem;
 }
 
-.background-image::after {
+.header::after {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay for readability */
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
 }
 
-.content {
+.header h1,
+.header p {
   position: relative;
   z-index: 1;
-  padding: 2rem;
-}
-
-.content h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
-
-.content p {
-  font-size: 1.2rem;
-}
-
-/* ==== Header ==== */
-.header {
-  text-align: center;
-  padding: 60px 20px 30px;
-  background-color: #f2f2f2;
 }
 
 .header h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #222;
 }
 
 .header p {
   font-size: 1.2rem;
-  color: #666;
 }
 
-/* ==== Hero Image ==== */
+/* ==== Hero Image Below Header ==== */
 .coach-hero img {
   width: 100%;
   height: auto;
@@ -215,15 +201,7 @@ body, html {
   font-size: 0.95rem;
 }
 
-/* ==== Footer ==== */
-.footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 25px 10px;
-  margin-top: 60px;
-  font-size: 0.95rem;
-}
+/* ==== Call to Action ==== */
 .coach-cta {
   padding: 60px 20px;
   text-align: center;
@@ -258,4 +236,14 @@ body, html {
 .cta-button:hover {
   background-color: #cedbd4;
   transform: translateY(-2px);
+}
+
+/* ==== Footer ==== */
+.footer {
+  text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 25px 10px;
+  margin-top: 60px;
+  font-size: 0.95rem;
 }
