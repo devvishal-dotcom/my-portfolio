@@ -235,7 +235,7 @@ body {
 }
 
 .cta-button:hover {
-  background-color: #cedbd4;
+  background-color: #0a0a0a;
   transform: translateY(-2px);
 }
 
