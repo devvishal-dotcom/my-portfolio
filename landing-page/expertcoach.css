@@ -32,6 +32,10 @@ body {
   font-size: 3rem;
   margin-bottom: 10px;
 }
+.hero h1,
+.hero p {
+  font-family: 'Poppins', sans-serif;
+}
 
 .header p {
   font-size: 1.2rem;
