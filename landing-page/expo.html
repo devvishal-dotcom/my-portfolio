@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meet Our Elite Coaches | FitLife</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .hero-section {
+      background: url('your-image.jpg') center/cover no-repeat;
+      height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 960px;
+      padding: 2rem;
+      color: #fff;
+      animation: fadeInUp 1.2s ease-out forwards;
+      opacity: 0;
+      transform: translateY(40px);
+    }
+
+    .content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .content p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .checklist {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+      align-items: flex-start;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+
+    .checklist-item {
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 15px;
+      border-radius: 8px;
+      backdrop-filter: blur(2px);
+      transition: all 0.3s ease;
+    }
+
+    .checklist-item:hover {
+      background: rgba(0, 255, 179, 0.2);
+      transform: scale(1.03);
+    }
+
+    .check-icon {
+      margin-right: 10px;
+      color: #00ffb3;
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content h1 {
+        font-size: 2.2rem;
+      }
+
+      .content p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="overlay"></div>
+    <div class="content">
+      <h1>Meet Our Elite Coaches</h1>
+      <p>
+        At FitLife, our expert coaches are more than just fitness professionals — they’re certified motivators, health advisors, and transformation partners. With globally recognized certifications, they’re here to guide you with personalized workouts and nutrition strategies.
+      </p>
+      <div class="checklist">
+        <div class="checklist-item">
+          <span class="check-icon">✅</span> NASM, ACE, ISSA Certified Trainers
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span> Personalized Plans for Every Body Type
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span> 1-on-1 & Group Coaching Options
+        </div>
+        <div class="checklist-item">
+          <span class="check-icon">✅</span> Proven Transformation Records
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
