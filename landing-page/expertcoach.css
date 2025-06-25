@@ -146,7 +146,7 @@ body {
 .coach-badges li {
   margin-bottom: 12px;
   font-weight: bold;
-  color: #d8e2dc;
+  color: #111111;
   font-size: 1.05rem;
 }
 
@@ -160,7 +160,7 @@ body {
 
 .benefit {
   flex: 1 1 250px;
-  background: #eddde4;
+  background: #8ba09be3;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
