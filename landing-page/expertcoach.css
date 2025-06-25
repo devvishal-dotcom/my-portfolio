@@ -207,8 +207,7 @@ body {
   padding: 60px 20px;
   text-align: center;
   background-color: #eae9e9
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
+  };
 
 .coach-cta h2 {
   font-size: 2.2rem;
