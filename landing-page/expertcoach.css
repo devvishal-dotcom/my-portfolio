@@ -90,7 +90,7 @@ body {
 .card h2 {
   margin-bottom: 6px;
   font-size: 1.6rem;
-  color: #27ae60;
+  color: #fcfcfc;
 }
 
 .card p {
@@ -99,7 +99,7 @@ body {
 }
 
 .card span {
-  color: #777;
+  color: #f9f3f3;
   font-size: 0.95rem;
 }
 
@@ -181,7 +181,7 @@ body {
 }
 
 .review {
-  background: #fffff9;
+  background: #fcf7f7;
   border-left: 5px solid #92c5dd;
   padding: 20px;
   max-width: 320px;
@@ -192,13 +192,13 @@ body {
 
 .review p {
   font-size: 1rem;
-  color: #444;
+  color: #fcf7f7;
   margin-bottom: 10px;
 }
 
 .review .reviewer {
   font-weight: bold;
-  color: #222;
+  color: #fef7f7;
   font-size: 0.95rem;
 }
 
