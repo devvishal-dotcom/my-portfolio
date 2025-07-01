@@ -1,15 +1,8 @@
 /* ==== Hero Header with Background Image ==== */
-.body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  background: url('portfoliobg.png') center/cover no-repeat fixed;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center;
-  color: white; /* optional, for better contrast */
+body {
+  background: red; /* test only */
 }
+
 
 /* Navbar */
 .navbar {
