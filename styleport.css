@@ -9,36 +9,7 @@ body {
   text-align: center;
 }
 
-/* === MARQUEE STYLES === */
-.marquee-container {
-  width: 100%;
-  overflow: hidden;
-  background: white; /* White background */
-  padding: 14px 0;
-  position: relative;
-  z-index: 999;
-  border-bottom: 2px solid #eee;
-}
 
-.marquee-text {
-  display: inline-block;
-  white-space: nowrap;
-  animation: scroll-left 15s linear infinite;
-  color: #f1eded;
-  font-size: 18px;
-  font-weight: 600;
-  padding-left: 100%; /* ensures it starts off-screen */
-}
-
-
-@keyframes scroll-left {
-  0% {
-    transform: translateX(0%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
 
 
 
