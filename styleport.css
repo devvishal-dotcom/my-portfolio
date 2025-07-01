@@ -22,17 +22,13 @@ body {
 .marquee-text {
   display: inline-block;
   padding-left: 100%;
-  animation: scroll-left 15s linear infinite;
-  color: #fff;
+  animation: scroll-left 12s linear infinite;
+  color: #111;
   font-size: 18px;
-  font-weight: bold;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Makes it pop on any background */
+  font-weight: 600;
 }
 
-.marquee-container:hover .marquee-text {
-  animation-play-state: paused;
-}
-
+/* Removed the pause on hover */
 @keyframes scroll-left {
   0% {
     transform: translateX(0%);
