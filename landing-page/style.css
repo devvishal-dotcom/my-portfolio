@@ -107,6 +107,18 @@ body {
   padding: 60px 0;
   text-align: center;
 }
+.white-box {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  line-height: 1.6;
+}
+
 
 /* ===== Cards Layout ===== */
 .cards {
