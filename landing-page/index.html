@@ -1,48 +1,126 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0"/>
-<title>landing-page</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FitLife | Fitness That Fits You</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
 </head>
-
 <body>
-  <div class="marquee-container">
-  <div class="marquee-text">
-    💪 Welcome to <strong>FitLife</strong> — Transform Your Body, Elevate Your Mind! 🏋️‍♂️ Join Now & Begin Your Fitness Journey!
-  </div>
-</div>
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo">FitLife</div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#coaches">Coaches</a></li>
+        <li><a href="#plans">Plans</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<header class="hero">
-<div class="hero-content">
-<h1>Welcome to FitLife</h1>
-<p>Your Journey to a healthier lifestyle starts here</p>
-<a href="signup.html" class="btn">Get Started</a>
-</div>
-</header>
-<section class="features">
-  <a href="plans.html" class="feature-card">
-    <i class="fas fa-dumbbell"></i>
-    <h3>Customized Plans</h3>
-    <p>Tailored workout and diet plans that suit your goals and lifestyle.</p>
-  </a>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Welcome to FitLife</h1>
+      <p>Your journey to a healthier lifestyle starts here</p>
+      <a href="#plans" class="btn">Get Started</a>
+    </div>
+  </section>
 
-  <a href="expertcoach.html" class="feature-card">
-    <i class="fas fa-dumbbell"></i>
-    <h3>Expert Coaches</h3>
-    <p>Train with certified fitness professionals and nutritionists.</p>
-  </a>
+  <!-- About Section -->
+  <section id="about" class="section" data-aos="fade-up">
+    <h2>About FitLife</h2>
+    <p>FitLife is more than a gym — it's a lifestyle. With expert coaching, personalized plans, and cutting-edge equipment, we're here to transform your journey into success.</p>
+  </section>
 
-  <a href="expo.html" class="feature-card">
-    <i class="fas fa-mobile-alt"></i>
-    <h3>Mobile Access</h3>
-    <p>Track your progress anytime, anywhere with our mobile app.</p>
-  </a>
-</section>
-<footer class="footer">
-<p>&copy; 2025FitLife. All right reserved.</p>
-</footer>
+  <!-- Features Section -->
+  <section id="features" class="section features" data-aos="fade-up">
+    <h2>Why Choose Us</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Customized Plans</h3>
+        <p>Tailored workout and diet plans that suit your goals and lifestyle.</p>
+      </div>
+      <div class="card">
+        <h3>Expert Coaches</h3>
+        <p>Train with certified fitness professionals and nutritionists.</p>
+      </div>
+      <div class="card">
+        <h3>Mobile Access</h3>
+        <p>Track your progress anytime, anywhere with our mobile app.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Coaches Section -->
+  <section id="coaches" class="section" data-aos="fade-up">
+    <h2>Meet Our Coaches</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Coach A</h3>
+        <p>Strength & Conditioning Expert</p>
+      </div>
+      <div class="card">
+        <h3>Coach B</h3>
+        <p>Nutrition & Weight Loss Specialist</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Plans Section -->
+  <section id="plans" class="section" data-aos="fade-up">
+    <h2>Our Plans</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Basic</h3>
+        <p>₹999/month<br>Access to gym + 1 training plan</p>
+      </div>
+      <div class="card">
+        <h3>Pro</h3>
+        <p>₹1999/month<br>Everything in Basic + Weekly Coaching</p>
+      </div>
+      <div class="card">
+        <h3>Elite</h3>
+        <p>₹2999/month<br>All features + Custom Meal Plans</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section" data-aos="fade-up">
+    <h2>Testimonials</h2>
+    <div class="cards">
+      <div class="card">
+        <p>"Best fitness app ever! Changed my life!" – Rahul</p>
+      </div>
+      <div class="card">
+        <p>"My trainer helped me reach my goal in 3 months." – Priya</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section" data-aos="fade-up">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Message"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2025 FitLife. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
