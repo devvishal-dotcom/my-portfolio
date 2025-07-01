@@ -11,11 +11,12 @@ body {
 .marquee-container {
   width: 100%;
   overflow: hidden;
-  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark for visibility */
-  padding: 12px 0;
+  background: #ffffff; /* White background */
+  padding: 14px 0;
   white-space: nowrap;
   position: relative;
   z-index: 1000;
+  border-bottom: 2px solid #ddd;
 }
 
 .marquee-text {
