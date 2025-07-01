@@ -5,91 +5,95 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FitLife | Fitness That Fits You</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
 </head>
 <body>
+  <!-- Marquee -->
   <div class="marquee-container">
     <marquee behavior="scroll" direction="left">🔥 Join FitLife Now & Get Your First Month Free! 🔥</marquee>
   </div>
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="">FitLife</div>
-    <nav>
-      <ul>
-        <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#coaches">Coaches</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content" data-aos="fade-up">
-      <h1>Welcome to FitLife</h1>
-      <p>Your journey to a healthier lifestyle starts here</p>
-       <a href="signup.html" class="btn">Get Started</a>
-    </div>
-  </section>
+  <!-- Content Wrapper with transparent background -->
+  <div class="overlay-strip">
+    <!-- Navigation Bar -->
+    <header class="navbar">
+      <div class="logo">FitLife</div>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#coaches">Coaches</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- About Section -->
-  <section id="about" class="section" data-aos="fade-up">
-    <h2>About FitLife</h2>
-    <p>FitLife is more than a gym — it's a lifestyle. With expert coaching, personalized plans, and cutting-edge equipment, we're here to transform your journey into success.</p>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features" class="section features" data-aos="fade-up">
-    <h2>Why Choose Us</h2>
-    <div class="cards">
-      <div class="card">
-        <a href="plans.html" class="btn">View Plans</a>
-        <p>Tailored workout and diet plans that suit your goals and lifestyle.</p>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>Welcome to FitLife</h1>
+        <p>Your journey to a healthier lifestyle starts here</p>
+        <a href="signup.html" class="btn">Get Started</a>
       </div>
-      <div class="card">
-        <a href="expertcoach.html" class="btn">Expert Coaches</a>
-        <p>Train with certified fitness professionals and nutritionists.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" data-aos="fade-up">
+      <h2>About FitLife</h2>
+      <p>FitLife is more than a gym — it's a lifestyle. With expert coaching, personalized plans, and cutting-edge equipment, we're here to transform your journey into success.</p>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section features" data-aos="fade-up">
+      <h2>Why Choose Us</h2>
+      <div class="cards">
+        <div class="card">
+          <a href="plans.html" class="btn">View Plans</a>
+          <p>Tailored workout and diet plans that suit your goals and lifestyle.</p>
+        </div>
+        <div class="card">
+          <a href="expertcoach.html" class="btn">Expert Coaches</a>
+          <p>Train with certified fitness professionals and nutritionists.</p>
+        </div>
+        <div class="card">
+          <h3>Mobile Access</h3>
+          <p>Track your progress anytime, anywhere with our mobile app.</p>
+        </div>
       </div>
-      <div class="card">
-        <h3>Mobile Access</h3>
-        <p>Track your progress anytime, anywhere with our mobile app.</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <div class="cards">
+        <div class="card">
+          <p>"Best fitness app ever! Changed my life!" – Rahul</p>
+        </div>
+        <div class="card">
+          <p>"My trainer helped me reach my goal in 3 months." – Priya</p>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="section" data-aos="fade-up">
+      <h2>Contact Us</h2>
+      <form>
+        <input type="text" placeholder="Your Name" required>
+        <input type="email" placeholder="Your Email" required>
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
 
+    <!-- Footer -->
+    <footer class="footer">
+      <p>© 2025 FitLife. All rights reserved.</p>
+    </footer>
+  </div>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="section" data-aos="fade-up">
-    <h2>Testimonials</h2>
-    <div class="cards">
-      <div class="card">
-        <p>"Best fitness app ever! Changed my life!" – Rahul</p>
-      </div>
-      <div class="card">
-        <p>"My trainer helped me reach my goal in 3 months." – Priya</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contact" class="section" data-aos="fade-up">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Message"></textarea>
-      <button type="submit">Submit</button>
-    </form>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 FitLife. All rights reserved.</p>
-  </footer>
-
+  <!-- JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
   <script src="indexland.js"></script>
 </body>
