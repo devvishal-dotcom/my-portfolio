@@ -11,19 +11,21 @@ body {
 .marquee-container {
   width: 100%;
   overflow: hidden;
-  background: #111;
+  background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark for visibility */
   padding: 12px 0;
-  color: #fff;
-  font-size: 18px;
-  font-weight: 600;
   white-space: nowrap;
   position: relative;
+  z-index: 1000;
 }
 
 .marquee-text {
   display: inline-block;
   padding-left: 100%;
   animation: scroll-left 15s linear infinite;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7); /* Makes it pop on any background */
 }
 
 .marquee-container:hover .marquee-text {
@@ -32,12 +34,13 @@ body {
 
 @keyframes scroll-left {
   0% {
-    transform: translateX(0);
+    transform: translateX(0%);
   }
   100% {
     transform: translateX(-100%);
   }
 }
+
 
 
 /* Navbar */
