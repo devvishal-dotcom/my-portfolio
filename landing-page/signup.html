@@ -5,8 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>FitLife Signup</title>
   <link rel="stylesheet" href="signup.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">FitLife</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Plans</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="search-bar">
+      <input type="text" placeholder="Search..." />
+      <button><i class="fas fa-search"></i></button>
+    </div>
+  </nav>
+
+  <!-- Marquee Banner -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">🔥 Join thousands transforming their lives with FitLife. Get your personalized fitness plan today! 🔥</marquee>
+  </div>
+
+  <!-- Signup Form Section -->
   <div class="container">
     <div class="signup-card">
       <h1>Join FitLife</h1>
@@ -14,10 +36,42 @@
         <input type="text" name="name" placeholder="Full Name" required />
         <input type="email" name="email" placeholder="Email" required />
         <input type="password" name="password" placeholder="Password" required />
+        <input type="password" name="confirm" placeholder="Confirm Password" required />
+
+        <!-- Password strength meter -->
+        <div id="strengthMessage"></div>
+
         <button type="submit">Sign Up</button>
       </form>
       <p>Already have an account? <a href="#">Log in</a></p>
+
+      <!-- Trust signals -->
+      <div class="trust">
+        <p><i class="fa fa-lock"></i> 100% secure signup</p>
+        <p><i class="fa fa-thumbs-up"></i> Trusted by 10,000+ members</p>
+      </div>
     </div>
   </div>
+
+  <footer>
+    <p>© 2025 FitLife. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const password = document.querySelector('input[name="password"]');
+    const strengthMessage = document.getElementById('strengthMessage');
+
+    password.addEventListener('input', () => {
+      const val = password.value;
+      let strength = 'Weak';
+      if (val.length > 6 && /[A-Z]/.test(val) && /[0-9]/.test(val)) {
+        strength = 'Strong';
+      } else if (val.length > 5) {
+        strength = 'Medium';
+      }
+      strengthMessage.textContent = `Password Strength: ${strength}`;
+      strengthMessage.className = strength.toLowerCase();
+    });
+  </script>
 </body>
 </html>
