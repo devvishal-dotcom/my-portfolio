@@ -67,21 +67,11 @@
     <p>© 2025 FitLife. All rights reserved.</p>
   </footer>
 
-  <script>
-    const password = document.querySelector('input[name="password"]');
-    const strengthMessage = document.getElementById('strengthMessage');
+  <!-- JS -->
+  <script src="signup.js"></script>
+  <!-- AOS Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 
-    password.addEventListener('input', () => {
-      const val = password.value;
-      let strength = 'Weak';
-      if (val.length > 6 && /[A-Z]/.test(val) && /[0-9]/.test(val)) {
-        strength = 'Strong';
-      } else if (val.length > 5) {
-        strength = 'Medium';
-      }
-      strengthMessage.textContent = `Password Strength: ${strength}`;
-      strengthMessage.className = strength.toLowerCase();
-    });
-  </script>
 </body>
 </html>
