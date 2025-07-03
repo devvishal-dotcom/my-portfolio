@@ -1,114 +1,189 @@
-/* Reset & Base Styles */
+/* ==== Reset & Base Styles ==== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  background: url('signinbg.png') center center / cover no-repeat fixed;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: url('signinbg.png') center/cover no-repeat fixed;
   min-height: 100vh;
+  color: #fff;
+}
+
+/* ==== Navigation Bar ==== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.9);
+  padding: 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #00ff94;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #00ff94;
+}
+
+.search-bar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 1;
 }
 
-/* Optional overlay to improve readability */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Adjust darkness here */
-  z-index: -1;
+.search-bar input {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 20px 0 0 20px;
+  outline: none;
+  background: #fff;
+  color: #333;
 }
 
-/* Animation */
-@keyframes slideFadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.search-bar button {
+  padding: 6px 12px;
+  border: none;
+  background: #00ff94;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+  color: #000;
 }
 
-/* Container Styling */
+/* ==== Marquee Banner ==== */
+.marquee-container {
+  background: #00ff94;
+  color: black;
+  padding: 8px 0;
+  font-weight: bold;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+/* ==== Signup Form ==== */
 .container {
-  width: 100%;
-  max-width: 400px;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 1rem;
+  min-height: calc(100vh - 160px); /* Adjust for nav + footer */
 }
 
-/* Signup Card */
 .signup-card {
-  background: white;
-  padding: 40px 30px;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 3rem 2rem;
   border-radius: 16px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  animation: slideFadeIn 0.8s ease-out forwards;
-  z-index: 2;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 8px 20px rgba(0, 255, 148, 0.2);
 }
 
 .signup-card h1 {
   text-align: center;
-  color: #2f855a;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
+  color: #00ff94;
   font-size: 28px;
 }
 
-/* Form Elements */
 .signup-card input {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 18px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  transition: border 0.3s;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
 }
 
-.signup-card input:focus {
-  border-color: #2f855a;
-  outline: none;
-}
-
-/* Button */
 .signup-card button {
   width: 100%;
-  padding: 14px;
-  background-color: #38a169;
-  color: white;
+  padding: 12px;
   border: none;
-  border-radius: 10px;
+  background: #00ff94;
+  color: black;
   font-weight: bold;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 .signup-card button:hover {
-  background-color: #2f855a;
+  background: #00d67c;
 }
 
-/* Text Link */
 .signup-card p {
   text-align: center;
-  margin-top: 16px;
-  font-size: 14px;
-  color: #444;
+  margin-top: 1rem;
+  color: #ccc;
 }
 
 .signup-card a {
-  color: #2f855a;
+  color: #00ff94;
   text-decoration: none;
   font-weight: 500;
 }
 
 .signup-card a:hover {
   text-decoration: underline;
+}
+
+/* ==== Trust Signals ==== */
+.trust {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+.trust p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+}
+
+/* ==== Password Strength Indicator ==== */
+#strengthMessage {
+  font-size: 14px;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+#strengthMessage.weak {
+  color: #ff4d4d;
+}
+
+#strengthMessage.medium {
+  color: #ffa500;
+}
+
+#strengthMessage.strong {
+  color: #00ff94;
+}
+
+/* ==== Footer ==== */
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-top: auto;
 }
