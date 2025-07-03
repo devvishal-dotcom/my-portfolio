@@ -1,103 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Vishal Kumar Gupta | Portfolio</title>
-  <link rel="stylesheet" href="styleport.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vishal Kumar Gupta | Web Developer Portfolio</title>
+  <link rel="stylesheet" href="styleport.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <h1>Welcome</h1>
-    <ul>
+  <!-- Header / Navbar -->
+  <nav class="navbar">
+    <div class="logo">Vishal Gupta</div>
+    <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-  </header>
-  
+  </nav>
+
   <!-- Hero Section -->
-  <section class="hero">
-    <img src="profile.jpg.jpeg" alt="Vishal Kumar Gupta Profile Picture" class="profile-pic">
-    <h1>Vishal Kumar Gupta</h1>
-    <p>Web Developer | E-commerce Manager | Programmer</p>
-  </section>
+  <header class="hero">
+    <div class="hero-content">
+      <img src="profile.jpg.jpeg" alt="Vishal Kumar Gupta" class="profile-pic" />
+      <h1>Hi, I'm Vishal Kumar Gupta</h1>
+      <p>Web Developer | E-commerce Manager | Laravel Developer</p>
+      <a href="#contact" class="btn">Hire Me</a>
+    </div>
+  </header>
 
   <!-- About Section -->
   <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-      Hi, I'm <strong>Vishal Kumar Gupta</strong>, a passionate <strong>Web Developer</strong>, 
-      <strong>E-commerce Manager</strong>, and <strong>PHP/Laravel Specialist</strong> based in India.<br><br>
-      I specialize in <strong>responsive web development</strong>, 
-      <strong>custom PHP and Laravel solutions</strong>, and <strong>e-commerce website management</strong> 
-      for growing businesses. Currently, I’m leading digital initiatives at <strong>ManHar Organics</strong>, 
-      focusing on driving <strong>online sales growth</strong> and improving <strong>customer experiences</strong>.<br><br>
-      Alongside my professional work, I am pursuing a <strong>Bachelor of Computer Applications (BCA)</strong> 
-      from <strong>IGNOU</strong>, strengthening my technical foundation in <strong>programming</strong> and 
-      <strong>web technologies</strong>.<br><br>
-      Whether you're looking to <strong>launch a new ecommerce platform</strong>, 
-      <strong>customize a Laravel application</strong>, or <strong>enhance your web presence</strong>, 
-      I bring the right skills and passion to make it happen.<br><br>
-      <em>Let's work together to build stunning digital experiences! 🚀</em>
+      I'm a passionate Web Developer and Laravel Specialist from India with a strong foundation in responsive design,
+      PHP-based web solutions, and digital commerce management. Currently working at <strong>ManHar Organics</strong>, I lead e-commerce strategy and digital transformation.
+      I'm also pursuing a BCA from IGNOU to deepen my technical skills. Whether you need a custom-built site, Laravel system, or e-commerce growth — I'm your guy!
     </p>
   </section>
 
   <!-- Skills Section -->
   <section id="skills" class="section">
     <h2>Skills</h2>
-    <div class="skills-container">
-      <div class="skill-card"><p>HTML5</p></div>
-      <div class="skill-card"><p>CSS3</p></div>
-      <div class="skill-card"><p>JavaScript</p></div>
-      <div class="skill-card"><p>Laravel</p></div>
-      <div class="skill-card"><p>MySQL</p></div>
+    <div class="skills-grid">
+      <div class="skill">HTML5</div>
+      <div class="skill">CSS3</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">Laravel</div>
+      <div class="skill">MySQL</div>
+      <div class="skill">Bootstrap</div>
+      <div class="skill">Git/GitHub</div>
+      <div class="skill">E-commerce</div>
     </div>
   </section>
 
   <!-- Projects Section -->
   <section id="projects" class="section">
     <h2>Projects</h2>
-    <div class="project-item">
-      <p1>My Portfolio Website Based on Fitness</p1>
-      <p>A personal portfolio website showcasing my skills, projects, and professional journey. Built with HTML, CSS, and JavaScript.</p>
-      <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html#" target="_blank" class="btn">View Project</a>
+    <div class="project">
+      <h3>Fitness Portfolio Website</h3>
+      <p>A sleek personal fitness portfolio showcasing professional offerings, built with HTML, CSS, and JS.</p>
+      <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html" target="_blank" class="btn">View Project</a>
     </div>
   </section>
 
   <!-- Contact Section -->
   <section id="contact" class="section contact">
     <h2>Contact Me</h2>
-    <p>Let's create something amazing together!</p>
-    <a href="mailto:vishalkumar4604@gmail.com" class="btn" id="contactBtn">Email Me</a>
-
+    <p>Have a project in mind? Let's connect and bring it to life.</p>
+    <a href="mailto:vishalkumar4604@gmail.com" class="btn">Email Me</a>
   </section>
 
-  <!-- Additional Panels -->
-  <section class="main-content">
-    <div class="left-panel">
+  <!-- Highlights Panel -->
+  <section class="section highlights">
+    <div class="highlight-box">
       <h3>Quick Links</h3>
       <p><a href="#about">About</a>, <a href="#skills">Skills</a>, <a href="#projects">Projects</a></p>
     </div>
-    <div class="middle-panel">
-      <h3>Highlights</h3>
-      <p>Over 3 years of experience in web development and e-commerce management.</p>
+    <div class="highlight-box">
+      <h3>Experience</h3>
+      <p>3+ years in web development & managing e-commerce for growing brands.</p>
     </div>
-    <div class="right-panel">
+    <div class="highlight-box">
       <h3>Let's Connect</h3>
       <p>Email: vishalkumar4604@gmail.com</p>
-      <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
-      <p>: </p>
+      <p><a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn Profile</a></p>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <p>© 2025 Vishal Kumar Gupta | Built with Passion</p>
+    <p>© 2025 Vishal Kumar Gupta | Built with ❤️</p>
   </footer>
-
 </body>
 </html>
