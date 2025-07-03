@@ -3,32 +3,33 @@ body {
   font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: linear-gradient(145deg, #0f2027, #203a43, #2c5364);
+  color: #f0f0f0;
   scroll-behavior: smooth;
+  display: flex;
+  min-height: 100vh;
 }
 
-/* ==== Sidebar Navbar ==== */
+/* ==== Sidebar Navigation ==== */
 .navbar {
+  width: 240px;
+  height: 100vh;
   position: fixed;
   top: 0;
   left: 0;
-  height: 100vh;
-  width: 220px;
-  background-color: #121212;
+  background-color: #111827;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 40px;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.6);
   z-index: 1000;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.6);
 }
 
 .navbar h1 {
-  font-size: 22px;
-  font-weight: 700;
   color: #00e0ff;
-  margin-bottom: 30px;
+  font-size: 24px;
+  margin-bottom: 40px;
 }
 
 .navbar ul {
@@ -39,36 +40,34 @@ body {
 
 .navbar ul li {
   width: 100%;
+  text-align: center;
+  margin: 20px 0;
 }
 
 .navbar ul li a {
-  display: block;
-  padding: 15px 20px;
-  color: #fff;
-  text-decoration: none;
+  color: #cbd5e0;
   font-size: 16px;
-  transition: background 0.3s, color 0.3s;
+  text-decoration: none;
+  display: block;
+  padding: 10px 0;
+  border-radius: 6px;
+  transition: background 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  background: #00e0ff;
-  color: #121212;
-}
-
-/* ==== Main Wrapper ==== */
-.main-wrapper {
-  margin-left: 240px;
-  padding: 40px 20px;
+  background: #1f2937;
+  color: #00e0ff;
 }
 
 /* ==== Hero Section ==== */
 .hero {
-  text-align: center;
+  padding: 60px 20px;
+  margin: 60px auto 40px;
+  max-width: 800px;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 16px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  padding: 60px 30px;
-  margin-bottom: 40px;
+  text-align: center;
 }
 
 .profile-pic {
@@ -81,23 +80,26 @@ body {
 }
 
 .hero h1 {
-  font-size: 34px;
-  color: #fff;
-  margin-bottom: 10px;
+  font-size: 32px;
+  color: #ffffff;
+  margin: 0 0 10px;
 }
 
 .hero p {
   font-size: 18px;
   color: #ccc;
+  margin: 0;
 }
 
-/* ==== Sections ==== */
+/* ==== Section Styling ==== */
 .section {
-  background: rgba(0, 0, 0, 0.3);
-  padding: 50px 30px;
-  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 60px 30px;
+  margin: 40px auto;
+  max-width: 900px;
+  border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-  margin-bottom: 40px;
+  text-align: center;
 }
 
 .section h2 {
@@ -121,12 +123,12 @@ body {
 }
 
 .skill-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 224, 255, 0.1);
   padding: 15px 25px;
   border-radius: 10px;
-  color: #fff;
-  border: 1px solid #00e0ff;
+  color: #ffffff;
   font-weight: 500;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
   transition: transform 0.3s ease;
 }
 
@@ -148,7 +150,7 @@ body {
 }
 
 .contact .btn:hover {
-  background: #00c4e0;
+  background: #00bcd4;
 }
 
 /* ==== Panels Section ==== */
@@ -164,7 +166,7 @@ body {
 .left-panel,
 .middle-panel,
 .right-panel {
-  background: rgba(255,255,255,0.07);
+  background: rgba(0,0,0,0.4);
   padding: 25px;
   border-radius: 12px;
   color: #eee;
@@ -189,6 +191,6 @@ footer {
   padding: 30px 20px;
   font-size: 14px;
   color: #aaa;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   margin-top: 60px;
 }
