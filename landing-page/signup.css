@@ -11,7 +11,17 @@ body {
   min-height: 100vh;
   color: #fff;
 }
-
+.white-box {
+  background: rgba(255, 255, 255, 0.95);
+  color: #111;
+  padding: 40px 30px;
+  border-radius: 12px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  line-height: 1.6;
+}
 /* ==== Navigation Bar ==== */
 .navbar {
   display: flex;
@@ -62,7 +72,7 @@ body {
 .search-bar button {
   padding: 6px 12px;
   border: none;
-  background: #00ff94;
+  background: #213404;
   border-radius: 0 20px 20px 0;
   cursor: pointer;
   color: #000;
@@ -70,7 +80,7 @@ body {
 
 /* ==== Marquee Banner ==== */
 .marquee-container {
-  background: #00ff94;
+  background: #f5f7f6;
   color: black;
   padding: 8px 0;
   font-weight: bold;
