@@ -23,13 +23,13 @@ body {
 }
 .top-logo {
   background-color: rgba(0, 0, 0, 0.85);
-  padding: 1.2rem 0;
+  padding: 1rem 0;
   text-align: center;
-  font-size: 2.4rem;
+  font-size: 2rem;
   font-weight: bold;
-  color: #00ffc8;
-  letter-spacing: 2px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: #f4f4f4;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .header h1,
