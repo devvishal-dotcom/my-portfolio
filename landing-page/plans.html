@@ -7,22 +7,33 @@
   <link rel="stylesheet" href="plans.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<!-- Signup Modal -->
-<div class="modal-overlay" id="signupModal">
-  <div class="modal-content">
-    <span class="close-btn" onclick="closeModal()">&times;</span>
-    <h2>Sign Up for Your Plan</h2>
-    <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <button type="submit">Sign Up</button>
-    </form>
-  </div>
-</div>
-
 <body>
 
+  <!-- Top Logo -->
+  <div class="top-logo">
+    <h1>FitLife</h1>
+  </div>
+
+  <!-- Marquee -->
+  <div class="marquee-container">
+    <marquee behavior="scroll" direction="left">🔥 Join FitLife Today – Personalized Plans to Match Your Goals 🔥</marquee>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal-overlay" id="signupModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Sign Up for Your Plan</h2>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <input type="tel" placeholder="Phone Number" required />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Plans -->
   <header class="navbar">
     <h1>Customized Plans</h1>
   </header>
@@ -38,7 +49,7 @@
         <li>✅ Simple diet plan</li>
       </ul>
       <div class="price">₹499</div>
-      <a href="#" class="btn">Choose Plan</a>
+      <a href="#" class="btn open-modal">Choose Plan</a>
     </section>
 
     <section class="plan-card featured">
@@ -51,7 +62,7 @@
         <li>✅ Custom diet & supplements</li>
       </ul>
       <div class="price">₹999</div>
-      <a href="#" class="btn">Choose Plan</a>
+      <a href="#" class="btn open-modal">Choose Plan</a>
     </section>
 
     <section class="plan-card">
@@ -64,10 +75,11 @@
         <li>✅ Direct WhatsApp/Chat</li>
       </ul>
       <div class="price">₹1499</div>
-      <a href="#" class="btn">Choose Plan</a>
+      <a href="#" class="btn open-modal">Choose Plan</a>
     </section>
   </main>
 
+  <!-- Why FitLife Section -->
   <section class="section" id="why-fitlife">
     <div class="container">
       <h2>Why FitLife Plans Are Different</h2>
@@ -83,6 +95,7 @@
     </div>
   </section>
 
+  <!-- FAQ Section -->
   <section class="section">
     <div class="container">
       <h2>Frequently Asked Questions</h2>
@@ -114,46 +127,61 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
-  <div class="footer-container">
-    <!-- Logo & Tagline -->
-    <div class="footer-column">
-      <div class="footer-logo">
-        <h2 class="logo-text">FitLife</h2>
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="footer-logo">
+          <h2 class="logo-text">FitLife</h2>
+        </div>
+        <p class="tagline">
+          Freshly built transformations with passion and purpose.<br>
+          Live better, train smarter.
+        </p>
       </div>
-      <p class="tagline">
-        Freshly built transformations with passion and purpose.<br>
-        Live better, train smarter.
-      </p>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Us</h3>
+        <p>📞 +91 99999 99999</p>
+        <p>✉️ hello@fitlife.com</p>
+        <p>Akshya Nagar 1st Block, 1st Cross,<br>Bangalore – 560016</p>
+      </div>
     </div>
-
-    <!-- Quick Links -->
-    <div class="footer-column">
-      <h3>Quick Links</h3>
-      <ul class="footer-links">
-         <li><a href="#about">About</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#testimonials">Testimonials</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+    <div class="footer-bottom">
+      <p>© 2025 FitLife. All rights reserved.</p>
     </div>
+  </footer>
 
-    <!-- Contact Info -->
-    <div class="footer-column">
-      <h3>Contact Us</h3>
-      <p>📞 +91 99999 99999</p>
-      <p>✉️ hello@fitlife.com</p>
-      <p>
-        Akshya Nagar 1st Block, 1st Cross,<br />
-        Rammurthy Nagar, Bangalore – 560016
-      </p>
-    </div>
-  </div>
+  <!-- JavaScript for modal -->
+  <script>
+    const modal = document.getElementById('signupModal');
+    const openBtns = document.querySelectorAll('.open-modal');
 
-  <div class="footer-bottom">
-    <p>© 2025 FitLife. All rights reserved.</p>
-  </div>
-</footer>
+    openBtns.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+      });
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
 
 </body>
 </html>

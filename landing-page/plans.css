@@ -1,4 +1,4 @@
-/* Reset & base */
+/* ==== Reset & Base ==== */
 * {
   margin: 0;
   padding: 0;
@@ -23,6 +23,36 @@ body::before {
   z-index: -1;
 }
 
+/* ==== Top Brand Logo ==== */
+.top-logo {
+  background-color: rgba(0, 0, 0, 0.85);
+  padding: 1.2rem 0;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  color: #00ffc8;
+  letter-spacing: 2px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* ==== Marquee ==== */
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 12px 0;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.marquee-container marquee {
+  font-size: 1rem;
+  color: #00ffc8;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* ==== Navbar ==== */
 .navbar {
   background-color: rgba(0,0,0,0.7);
   color: white;
@@ -33,6 +63,7 @@ body::before {
   letter-spacing: 1px;
 }
 
+/* ==== Plans Section ==== */
 .plans-container {
   display: flex;
   flex-wrap: wrap;
@@ -118,6 +149,7 @@ body::before {
   border: 2px solid #00b37a;
 }
 
+/* ==== Section Wrapper ==== */
 .section {
   background-color: rgba(255, 255, 255, 0.08);
   padding: 4rem 2rem;
@@ -142,6 +174,7 @@ body::before {
   color: #f2f2f2;
 }
 
+/* ==== Feature List ==== */
 .custom-features {
   list-style: none;
   padding: 0;
@@ -165,7 +198,7 @@ body::before {
   color: #00ffc8;
 }
 
-/* FAQ Section */
+/* ==== FAQ Section ==== */
 .faq-item {
   margin-bottom: 1.5rem;
   padding: 1.2rem 1rem;
@@ -192,105 +225,7 @@ body::before {
   color: #ddd;
 }
 
-/* Footer */
-.footer {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 40px 20px 10px;
-  font-family: 'Segoe UI', sans-serif;
-  margin-top: 40px;
-  color: #eee;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
-  gap: 30px;
-}
-
-.footer-column {
-  flex: 1 1 250px;
-  min-width: 240px;
-}
-
-.footer-logo .logo-text {
-  font-size: 24px;
-  color: #fff;
-  margin-bottom: 10px;
-}
-
-.footer-column h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #fff;
-}
-
-.footer-column p,
-.footer-column li,
-.footer-column a {
-  font-size: 14px;
-  color: #ccc;
-  line-height: 1.6;
-  text-decoration: none;
-}
-
-.footer-column a:hover {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.footer-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-bottom {
-  text-align: center;
-  margin-top: 30px;
-  border-top: 1px solid #444;
-  padding-top: 10px;
-  font-size: 13px;
-  color: #888;
-}
-
-/* Footer Responsive (Mobile) */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 40px;
-  }
-
-  .footer-column {
-    flex: 1 1 100%;
-  }
-
-  .footer-logo .logo-text {
-    font-size: 28px;
-  }
-}
-
-/* Animations */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.plan-card,
-.section {
-  animation: fadeUp 0.6s ease forwards;
-}
-
-/* ===== Signup Modal ===== */
+/* ==== Modal Signup ==== */
 .modal-overlay {
   display: none;
   position: fixed;
@@ -358,18 +293,100 @@ body::before {
   color: #555;
 }
 
-@media (max-width: 500px) {
-  .modal-content {
-    width: 90%;
-    padding: 1.5rem;
+/* ==== Footer ==== */
+.footer {
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 40px 20px 10px;
+  font-family: 'Segoe UI', sans-serif;
+  margin-top: 40px;
+  color: #eee;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 240px;
+}
+
+.footer-logo .logo-text {
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-column h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.footer-column p,
+.footer-column li,
+.footer-column a {
+  font-size: 14px;
+  color: #ccc;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 13px;
+  color: #888;
+}
+
+/* ==== Responsive Footer ==== */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
   }
 
-  .modal-content h2 {
-    font-size: 1.5rem;
+  .footer-column {
+    flex: 1 1 100%;
   }
 
-  .modal-content button {
-    font-size: 0.95rem;
-    padding: 0.7rem;
+  .footer-logo .logo-text {
+    font-size: 28px;
   }
+}
+
+/* ==== Animations ==== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan-card,
+.section {
+  animation: fadeUp 0.6s ease forwards;
 }
