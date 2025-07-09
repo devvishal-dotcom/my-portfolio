@@ -249,15 +249,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ==== Footer ==== */
-.footer {
-  text-align: center;
-  background-color: #333;
-  color: #fff;
-  padding: 25px 10px;
-  margin-top: 60px;
-  font-size: 0.95rem;
-}
 /* ==== Elite Coaches Hero Section ==== */
 .elite-coaches-section {
   position: relative;
