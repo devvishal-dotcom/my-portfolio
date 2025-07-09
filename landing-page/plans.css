@@ -192,31 +192,7 @@ body::before {
   color: #ddd;
 }
 
-footer {
-  background-color: #111;
-  color: white;
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.plan-card,
-.section {
-  animation: fadeUp 0.6s ease forwards;
-}
-/* ===== Footer ===== */
+/* Footer */
 .footer {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 40px 20px 10px;
@@ -280,7 +256,7 @@ footer {
   color: #888;
 }
 
-/* ===== Footer Responsive (Mobile) ===== */
+/* Footer Responsive (Mobile) */
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
@@ -294,5 +270,106 @@ footer {
 
   .footer-logo .logo-text {
     font-size: 28px;
+  }
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.plan-card,
+.section {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* ===== Signup Modal ===== */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  color: #333;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  animation: fadeUp 0.4s ease forwards;
+}
+
+.modal-content h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #00b37a;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.modal-content input {
+  padding: 0.7rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-content button {
+  padding: 0.8rem;
+  background-color: #00b37a;
+  color: white;
+  border: none;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.modal-content button:hover {
+  background-color: #008861;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+}
+
+@media (max-width: 500px) {
+  .modal-content {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .modal-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .modal-content button {
+    font-size: 0.95rem;
+    padding: 0.7rem;
   }
 }

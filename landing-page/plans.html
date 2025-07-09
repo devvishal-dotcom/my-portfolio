@@ -7,6 +7,20 @@
   <link rel="stylesheet" href="plans.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
+<!-- Signup Modal -->
+<div class="modal-overlay" id="signupModal">
+  <div class="modal-content">
+    <span class="close-btn" onclick="closeModal()">&times;</span>
+    <h2>Sign Up for Your Plan</h2>
+    <form>
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email Address" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</div>
+
 <body>
 
   <header class="navbar">
