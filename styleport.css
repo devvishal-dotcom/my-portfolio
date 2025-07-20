@@ -1,161 +1,148 @@
-/* ===== Reset ===== */
+/* === Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #0e0e10;
-  color: #f0f0f0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0e0e10;
+  color: #f5f5f5;
   line-height: 1.6;
-  padding-top: 80px;
 }
 
-/* ===== Header / Navbar ===== */
-header {
+/* === Header & Navigation === */
+.header {
+  background-color: #141416;
+  padding: 1.2rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   position: fixed;
-  top: 0;
   width: 100%;
-  background: #1a1a1d;
-  padding: 1rem 2rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
   z-index: 999;
 }
 
-nav {
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  margin: auto;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: #9a6bff;
+  font-weight: 700;
+  background: linear-gradient(to right, #6a72ff, #d14df0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
-nav ul {
+/* Navigation Links */
+.nav {
   display: flex;
-  gap: 2rem;
-  list-style: none;
+  gap: 1.8rem;
 }
 
-nav a {
-  color: #f0f0f0;
+.nav a {
+  color: #e0e0e0;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  color: #9a6bff;
+.nav a:hover {
+  color: #d14df0;
 }
 
-/* ===== Hero Section ===== */
+/* Hide mode toggle */
+#modeToggle {
+  display: none;
+}
+
+/* === Hero Section === */
 .hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding-top: 8rem;
+  padding-bottom: 4rem;
   text-align: center;
-  padding: 4rem 2rem;
-  background: radial-gradient(circle at center, #1a1a1d 30%, #111);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  border: 4px solid #9a6bff;
+.hero .container {
+  position: relative;
+  z-index: 2;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  margin-bottom: 1.5rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 4px solid #6a72ff;
 }
 
 .hero h1 {
-  font-size: 2rem;
-  font-weight: 700;
+  font-size: 2.4rem;
+  background: linear-gradient(to right, #6a72ff, #d14df0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   margin-bottom: 0.5rem;
 }
 
 .hero p {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #ccc;
 }
 
-/* ===== Sections ===== */
-section {
-  padding: 3rem 2rem;
-  max-width: 900px;
-  margin: auto;
+/* Blob background */
+.blob {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle at center, #6a72ff33 0%, transparent 70%);
+  transform: translateX(-50%);
+  z-index: 1;
+  filter: blur(80px);
 }
 
-section h2 {
-  font-size: 1.5rem;
-  color: #9a6bff;
-  margin-bottom: 1rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.5rem;
-}
-
-section p,
-section li {
-  font-size: 1rem;
-  color: #ddd;
-  margin-bottom: 0.5rem;
-}
-
-/* ===== Footer ===== */
-footer {
-  background: #1a1a1d;
+/* === Section Titles === */
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.2rem;
+  color: #ffffff;
   text-align: center;
-  padding: 2rem;
-  color: #999;
-  font-size: 0.9rem;
-  border-top: 1px solid #333;
 }
 
-footer a {
-  color: #9a6bff;
-  text-decoration: none;
-}
-
-footer a:hover {
-  text-decoration: underline;
-}
-
-/* ===== Responsive ===== */
-@media screen and (max-width: 768px) {
-  nav ul {
+/* === Responsive === */
+@media (max-width: 768px) {
+  .nav {
     flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-    display: none;
-    padding: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.7);
+    align-items: flex-start;
+    margin-top: 1rem;
   }
 
-  nav ul.show {
-    display: flex;
+  .hero h1 {
+    font-size: 2rem;
   }
 
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    color: #fff;
-    font-size: 1.5rem;
+  .hero p {
+    font-size: 1rem;
   }
 
-  nav {
-    justify-content: space-between;
+  .profile-pic {
+    width: 130px;
+    height: 130px;
+  }
+
+  .container {
+    padding: 0 1rem;
   }
 }
