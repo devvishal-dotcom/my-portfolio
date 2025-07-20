@@ -26,13 +26,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
   padding: 1.5rem 2rem;
   background: #ffffffaa;
   backdrop-filter: blur(6px);
   position: sticky;
   top: 0;
   z-index: 100;
+  flex-wrap: wrap;
 }
 .dark-mode .header {
   background: #1f1f1faa;
@@ -83,6 +83,7 @@ body {
 .hero p {
   font-size: 1.2rem;
   color: #555;
+  margin-top: 0.5rem;
 }
 .dark-mode .hero p {
   color: #bbb;
@@ -118,7 +119,7 @@ body {
 .project-card {
   background: #fff;
   padding: 2rem;
-  margin: 2rem auto;
+  margin: 1rem auto;
   max-width: 600px;
   border-radius: 16px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
@@ -131,6 +132,7 @@ body {
   margin-top: 1rem;
   color: #6a72ff;
   font-weight: 500;
+  text-decoration: none;
 }
 
 /* Contact */
@@ -177,14 +179,8 @@ body {
   z-index: -1;
 }
 
-/* ============================= */
-/*       MOBILE RESPONSIVE      */
-/* ============================= */
+/* MEDIA QUERIES FOR RESPONSIVENESS */
 @media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
-
   .header {
     flex-direction: column;
     align-items: flex-start;
@@ -197,41 +193,68 @@ body {
     margin-top: 1rem;
   }
 
-  .nav a {
-    margin: 0.5rem 0;
-  }
-
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .hero p {
     font-size: 1rem;
   }
 
-  .skills-grid span {
-    font-size: 0.9rem;
-    padding: 0.4rem 0.8rem;
+  .profile-pic {
+    width: 120px;
+    height: 120px;
   }
 
-  .project-card {
-    padding: 1.5rem;
-    margin: 1rem;
+  .skills-grid {
+    gap: 0.5rem;
   }
 
   .section h2 {
     font-size: 1.5rem;
   }
 
-  .blob {
-    width: 250px;
-    height: 250px;
-    top: -50px;
-    right: -50px;
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .container {
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
   }
 
   .profile-pic {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+  }
+
+  .mode-toggle {
+    font-size: 1rem;
+  }
+
+  .skills-grid span {
+    font-size: 0.85rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .footer {
+    font-size: 0.9rem;
   }
 }
