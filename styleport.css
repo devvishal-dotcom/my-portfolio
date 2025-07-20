@@ -56,9 +56,11 @@ body {
 
 .gradient-text {
   background: linear-gradient(to right, #6a72ff, #d14df0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;                /* ✅ Standard */
+  -webkit-background-clip: text;        /* ✅ Chrome, Safari */
+  -webkit-text-fill-color: transparent; /* ✅ Chrome, Safari */
 }
+
 
 .hero p {
   font-size: 1.1rem;
