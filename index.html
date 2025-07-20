@@ -58,6 +58,24 @@
       </div>
     </div>
   </section>
+  <!-- Add just after your existing nav -->
+<div id="mobileMenu">
+  <a href="#hero">Home</a>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+<button class="hamburger" onclick="toggleMenu()">
+  <div></div><div></div><div></div>
+</button>
+
+<script>
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+</script>
+
 
   <!-- Projects Section -->
   <section id="projects" class="section">
