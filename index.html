@@ -3,30 +3,101 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Vishal | Portfolio</title>
+  <title>Vishal Kumar Gupta | Portfolio</title>
   <link rel="stylesheet" href="styleport.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
-  <!-- Header -->
+  <!-- Header / Navigation -->
   <header class="header">
-    <h1 class="logo">Vishal</h1>
-    <nav class="nav">
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container">
+      <h1 class="logo">Vishal</h1>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <button id="modeToggle" class="mode-toggle">🌙</button>
+      </nav>
+    </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1><span class="gradient-text">Full-Stack</span> Developer</h1>
-      <p>Building modern web applications with passion and precision.</p>
+  <section id="hero" class="hero">
+    <div class="container">
+      <img src="profile.jpg.jpeg" alt="Profile Picture" class="profile-pic" />
+      <h1>Vishal Kumar Gupta</h1>
+      <p>Web Developer | E-commerce Manager | Laravel Enthusiast</p>
     </div>
-    <div class="blob"></div>
   </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I'm <strong>Vishal Kumar Gupta</strong>, a passionate <strong>Web Developer</strong> and <strong>E-commerce Manager</strong> with expertise in <strong>Laravel, MySQL</strong> and modern web technologies. I craft sleek, functional digital experiences that help brands grow.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="section">
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="skills-grid">
+        <span>HTML5</span>
+        <span>CSS3</span>
+        <span>JavaScript</span>
+        <span>Laravel</span>
+        <span>MySQL</span>
+        <span>UI/UX</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="project-card">
+        <h3>Fitness Portfolio Website</h3>
+        <p>Developed a fitness-themed responsive website using HTML, CSS, and JavaScript.</p>
+        <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html#" target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <p>Let’s build something amazing together.</p>
+      <a href="mailto:vishalkumar4604@gmail.com" class="btn">📧 Email Me</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Vishal Kumar Gupta | Built with 💻 & ☕</p>
+      <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn</a>
+    </div>
+  </footer>
+
+  <script>
+    // ScrollReveal animations
+    ScrollReveal().reveal('.section', { delay: 200, duration: 800, distance: '50px', origin: 'bottom' });
+
+    // Dark/Light mode toggle
+    const toggleBtn = document.getElementById('modeToggle');
+    toggleBtn.onclick = () => {
+      document.body.classList.toggle('dark-mode');
+      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    }
+  </script>
 
 </body>
 </html>
