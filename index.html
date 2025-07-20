@@ -4,117 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishal Kumar Gupta | Portfolio</title>
-  <link rel="stylesheet" href="styleport.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Dark/Light Toggle -->
-  <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
-
-  <!-- Sidebar Navigation -->
-  <aside class="navbar">
-    <h1>Vishal</h1>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+  <!-- Navbar -->
+  <header class="header">
+    <div class="logo">PORTFOLIO | Vishal</div>
+    <nav class="nav">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </nav>
-  </aside>
+    <a href="resume.pdf" class="btn resume-btn" target="_blank">Download Resume</a>
+  </header>
 
-  <!-- Main Content -->
-  <main class="main-wrapper">
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero" data-sr>
-      <img src="profile.jpg.jpeg" alt="Vishal Kumar Gupta" class="profile-pic" />
-      <h1>Vishal Kumar Gupta</h1>
-      <p>Web Developer | E-commerce Manager | Laravel Enthusiast</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section" data-sr>
-      <h2>About Me</h2>
-      <p>
-        I'm <strong>Vishal Kumar Gupta</strong>, a creative and detail-oriented <strong>Web Developer</strong> and <strong>E-commerce Manager</strong> passionate about building responsive, intuitive websites. With expertise in <strong>PHP/Laravel</strong> and managing successful online businesses, I help brands grow digitally with modern solutions.
-      </p>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section" data-sr>
-      <h2>Skills</h2>
-      <div class="skills-container">
-        <div class="skill-card">HTML5</div>
-        <div class="skill-card">CSS3</div>
-        <div class="skill-card">JavaScript</div>
-        <div class="skill-card">Laravel</div>
-        <div class="skill-card">MySQL</div>
-        <div class="skill-card">UI/UX</div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1><span class="gradient-text">Full-Stack</span> Developer</h1>
+      <p>Crafting digital experiences that blend design, development & innovation.</p>
+      <div class="hero-buttons">
+        <a href="#projects" class="btn primary">View My Work</a>
+        <a href="#contact" class="btn secondary">Get In Touch</a>
       </div>
-    </section>
+    </div>
+    <div class="blob"></div>
+  </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section" data-sr>
-      <h2>Projects</h2>
-      <div class="project-item">
-        <h3>Fitness Portfolio Website</h3>
-        <p>A fitness-themed personal portfolio using HTML, CSS, and JavaScript with custom visuals and animations.</p>
-        <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html" target="_blank" class="btn">View Project</a>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section contact" data-sr>
-      <h2>Contact Me</h2>
-      <p>Let's build something amazing together.</p>
-      <a href="mailto:vishalkumar4604@gmail.com" class="btn">Email Me</a>
-    </section>
-
-    <!-- Highlights Panels -->
-    <section class="main-content" data-sr>
-      <div class="panel left-panel">
-        <h3>Quick Links</h3>
-        <p><a href="#about">About</a> • <a href="#skills">Skills</a> • <a href="#projects">Projects</a></p>
-      </div>
-      <div class="panel middle-panel">
-        <h3>Experience</h3>
-        <p>Over 3 years in full-stack web development and ecommerce strategy execution.</p>
-      </div>
-      <div class="panel right-panel">
-        <h3>Connect with Me</h3>
-        <p>Email: vishalkumar4604@gmail.com</p>
-        <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn</a>
-      </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-      <p>© 2025 Vishal Kumar Gupta | Built with 💻 and ☕</p>
-    </footer>
-
-  </main>
-
-  <!-- ScrollReveal JS -->
-  <script src="https://unpkg.com/scrollreveal"></script>
-
-  <!-- Toggle Theme & Reveal Script -->
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
-
-    ScrollReveal().reveal('[data-sr]', {
-      distance: '40px',
-      duration: 800,
-      easing: 'ease-out',
-      origin: 'bottom',
-      interval: 200
-    });
-  </script>
 </body>
 </html>
