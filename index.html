@@ -10,30 +10,35 @@
 </head>
 <body>
 
+  <!-- Dark/Light Toggle -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌓 Toggle Theme</button>
+
   <!-- Sidebar Navigation -->
-  <nav class="navbar">
+  <aside class="navbar">
     <h1>Vishal</h1>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </aside>
 
   <!-- Main Content -->
-  <div class="main-wrapper" style="margin-left: 240px; padding: 40px 20px; flex: 1;">
+  <main class="main-wrapper">
 
     <!-- Hero Section -->
-    <section id="hero" class="hero">
-      <img src="profile.jpg.jpeg" alt="Profile Picture" class="profile-pic" />
+    <section id="hero" class="hero" data-sr>
+      <img src="profile.jpg.jpeg" alt="Vishal Kumar Gupta" class="profile-pic" />
       <h1>Vishal Kumar Gupta</h1>
       <p>Web Developer | E-commerce Manager | Laravel Enthusiast</p>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="section" data-sr>
       <h2>About Me</h2>
       <p>
         I'm <strong>Vishal Kumar Gupta</strong>, a creative and detail-oriented <strong>Web Developer</strong> and <strong>E-commerce Manager</strong> passionate about building responsive, intuitive websites. With expertise in <strong>PHP/Laravel</strong> and managing successful online businesses, I help brands grow digitally with modern solutions.
@@ -41,7 +46,7 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="section">
+    <section id="skills" class="section" data-sr>
       <h2>Skills</h2>
       <div class="skills-container">
         <div class="skill-card">HTML5</div>
@@ -54,36 +59,36 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="section">
+    <section id="projects" class="section" data-sr>
       <h2>Projects</h2>
       <div class="project-item">
-        <p><strong>Fitness Portfolio Website</strong></p>
-        <p>My personal fitness-themed portfolio using HTML, CSS, and JS with interactive design and custom visuals.</p>
-        <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html#" target="_blank" class="btn">View Project</a>
+        <h3>Fitness Portfolio Website</h3>
+        <p>A fitness-themed personal portfolio using HTML, CSS, and JavaScript with custom visuals and animations.</p>
+        <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html" target="_blank" class="btn">View Project</a>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact" data-sr>
       <h2>Contact Me</h2>
       <p>Let's build something amazing together.</p>
       <a href="mailto:vishalkumar4604@gmail.com" class="btn">Email Me</a>
     </section>
 
     <!-- Highlights Panels -->
-    <section class="main-content">
-      <div class="left-panel">
+    <section class="main-content" data-sr>
+      <div class="panel left-panel">
         <h3>Quick Links</h3>
         <p><a href="#about">About</a> • <a href="#skills">Skills</a> • <a href="#projects">Projects</a></p>
       </div>
-      <div class="middle-panel">
+      <div class="panel middle-panel">
         <h3>Experience</h3>
         <p>Over 3 years in full-stack web development and ecommerce strategy execution.</p>
       </div>
-      <div class="right-panel">
+      <div class="panel right-panel">
         <h3>Connect with Me</h3>
         <p>Email: vishalkumar4604@gmail.com</p>
-        <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn</a>
       </div>
     </section>
 
@@ -92,6 +97,24 @@
       <p>© 2025 Vishal Kumar Gupta | Built with 💻 and ☕</p>
     </footer>
 
-  </div>
+  </main>
+
+  <!-- ScrollReveal JS -->
+  <script src="https://unpkg.com/scrollreveal"></script>
+
+  <!-- Toggle Theme & Reveal Script -->
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+
+    ScrollReveal().reveal('[data-sr]', {
+      distance: '40px',
+      duration: 800,
+      easing: 'ease-out',
+      origin: 'bottom',
+      interval: 200
+    });
+  </script>
 </body>
 </html>
