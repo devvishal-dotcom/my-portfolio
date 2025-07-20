@@ -1,4 +1,4 @@
-/* === Reset and Base Styles === */
+/* ========== Global Styles ========== */
 * {
   margin: 0;
   padding: 0;
@@ -7,46 +7,57 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f7f7f7;
-  color: #333;
+  background-color: #f8f8f8;
+  color: #222;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1rem;
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
-/* === Header & Navigation === */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========== Header ========== */
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 1rem 2rem;
   background: #fff;
   position: sticky;
   top: 0;
-  z-index: 1000;
-  border-bottom: 1px solid #eaeaea;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  color: #6a72ff;
+  background: linear-gradient(to right, #6a72ff, #d14df0);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
 }
 
 .nav a {
-  text-decoration: none;
-  color: #333;
+  font-size: 1rem;
   font-weight: 500;
+  color: #333;
   transition: color 0.3s ease;
 }
 
@@ -55,69 +66,62 @@ body {
 }
 
 .mode-toggle {
-  font-size: 1.3rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
   cursor: pointer;
+  margin-left: 1rem;
 }
 
-/* === Hero Section === */
+/* ========== Hero Section ========== */
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 4rem 1rem;
+  background: linear-gradient(145deg, #f2f2ff, #fef7ff);
   position: relative;
-  background: linear-gradient(145deg, #f0f0ff, #fafaff);
-  overflow: hidden;
 }
 
-.blob {
-  position: absolute;
-  width: 280px;
-  height: 280px;
-  background: radial-gradient(circle at 30% 30%, #d14df0, #6a72ff);
+.hero .profile-pic {
+  border: 4px solid #6a72ff;
   border-radius: 50%;
-  top: -50px;
-  right: -50px;
-  opacity: 0.15;
-  z-index: 0;
-}
-
-.profile-pic {
   width: 160px;
   height: 160px;
-  border-radius: 50%;
-  border: 5px solid #6a72ff;
   object-fit: cover;
-  z-index: 1;
-  position: relative;
+  margin-bottom: 1.5rem;
 }
 
 .hero h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  margin-top: 1rem;
-  color: #222;
-  z-index: 1;
-  position: relative;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 0.5rem;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  color: #555;
-  margin-top: 0.5rem;
-  z-index: 1;
-  position: relative;
+.hero h2 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #666;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
-/* === Responsive === */
+/* ========== Responsive ========== */
 @media (max-width: 768px) {
   .header {
     flex-direction: column;
     align-items: flex-start;
+    padding: 1rem;
   }
 
   .nav {
     flex-direction: column;
+    align-items: flex-start;
     width: 100%;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
   }
 
   .mode-toggle {
@@ -125,34 +129,57 @@ body {
     margin-top: 0.5rem;
   }
 
-  .hero {
-    padding: 3rem 1rem;
-  }
-
   .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
-  .hero p {
+  .hero h2 {
     font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .logo {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
   }
 
-  .profile-pic {
-    width: 130px;
-    height: 130px;
+  .hero .profile-pic {
+    width: 120px;
+    height: 120px;
   }
 
   .hero h1 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
-  .hero p {
+  .hero h2 {
     font-size: 0.95rem;
   }
+}
+
+/* ========== Dark Mode ========== */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+
+body.dark-mode .header {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .nav a {
+  color: #ddd;
+}
+
+body.dark-mode .nav a:hover {
+  color: #9f86ff;
+}
+
+body.dark-mode .hero {
+  background: linear-gradient(145deg, #1e1e2e, #2c2c3a);
+}
+
+body.dark-mode .hero h1,
+body.dark-mode .hero h2 {
+  color: #eee;
 }
