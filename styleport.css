@@ -1,15 +1,24 @@
-/* Reset */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #0f0f1a;
-  color: #fff;
+  background-color: #f0f0f0;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
   overflow-x: hidden;
+}
+.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+.container {
+  max-width: 1100px;
+  margin: auto;
+  padding: 2rem;
 }
 
 /* Header */
@@ -17,73 +26,148 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
-  background-color: #151521;
+  padding: 1.5rem 2rem;
+  background: #ffffffaa;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
-
+.dark-mode .header {
+  background: #1f1f1faa;
+}
 .logo {
-  font-size: 1.4rem;
+  font-size: 1.8rem;
   font-weight: 700;
+  background: linear-gradient(to right, #6a72ff, #d14df0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.nav a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+}
+.mode-toggle {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.nav a {
-  margin: 0 12px;
-  text-decoration: none;
-  color: #ccc;
+/* Hero */
+.hero {
+  text-align: center;
+  padding: 5rem 1rem;
+  position: relative;
+}
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #6a72ff;
+  margin-bottom: 1.5rem;
+}
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: bold;
+}
+.hero p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+.dark-mode .hero p {
+  color: #bbb;
+}
+
+/* Sections */
+.section {
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.skills-grid span {
+  background: #6a72ff;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+}
+.dark-mode .skills-grid span {
+  background: #9a7cff;
+}
+
+/* Project Card */
+.project-card {
+  background: #fff;
+  padding: 2rem;
+  margin: auto;
+  max-width: 600px;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+}
+.dark-mode .project-card {
+  background: #1f1f1f;
+}
+.project-card a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #6a72ff;
   font-weight: 500;
 }
 
-.nav a:hover {
+/* Contact */
+.contact .btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  background: #6a72ff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+.contact .btn:hover {
+  background: #4f5eea;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #eee;
+}
+.dark-mode .footer {
+  background: #181818;
+}
+.footer a {
+  display: block;
+  margin-top: 0.5rem;
+  text-decoration: none;
   color: #6a72ff;
 }
 
-/* Hero Section */
-.hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 90vh;
-  padding: 60px 20px;
-  text-align: center;
-  position: relative;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-
-.gradient-text {
-  background: linear-gradient(to right, #6a72ff, #d14df0);
-  background-clip: text;                /* ✅ Standard */
-  -webkit-background-clip: text;        /* ✅ Chrome, Safari */
-  -webkit-text-fill-color: transparent; /* ✅ Chrome, Safari */
-}
-
-
-.hero p {
-  font-size: 1.1rem;
-  color: #bbb;
-  max-width: 600px;
-}
-
-/* Blob */
+/* Blob Effect */
 .blob {
   position: absolute;
-  width: 300px;
-  height: 300px;
-  background: linear-gradient(135deg, #6a72ff, #d14df0);
-  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
-  filter: blur(40px);
+  top: -80px;
+  right: -80px;
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #6a72ff 0%, #d14df0 100%);
+  opacity: 0.15;
+  border-radius: 50%;
   z-index: -1;
-  animation: float 6s ease-in-out infinite;
-  top: 50px;
-  right: 20px;
-}
-
-@keyframes float {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
 }
