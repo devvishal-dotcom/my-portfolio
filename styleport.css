@@ -26,6 +26,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   padding: 1.5rem 2rem;
   background: #ffffffaa;
   backdrop-filter: blur(6px);
@@ -40,13 +41,16 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   background: linear-gradient(to right, #6a72ff, #d14df0);
-  background-clip: text;                /* Standard syntax */
-  -webkit-background-clip: text;        /* WebKit prefix for Chrome/Safari */
-  -webkit-text-fill-color: transparent; /* Needed for the gradient text effect */
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .nav a {
-  margin: 0 1rem;
   text-decoration: none;
   color: inherit;
   font-weight: 500;
@@ -79,7 +83,6 @@ body {
 .hero p {
   font-size: 1.2rem;
   color: #555;
-  margin-top: 0.5rem;
 }
 .dark-mode .hero p {
   color: #bbb;
@@ -115,7 +118,7 @@ body {
 .project-card {
   background: #fff;
   padding: 2rem;
-  margin: auto;
+  margin: 2rem auto;
   max-width: 600px;
   border-radius: 16px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
@@ -172,4 +175,63 @@ body {
   opacity: 0.15;
   border-radius: 50%;
   z-index: -1;
+}
+
+/* ============================= */
+/*       MOBILE RESPONSIVE      */
+/* ============================= */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .nav a {
+    margin: 0.5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .skills-grid span {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .project-card {
+    padding: 1.5rem;
+    margin: 1rem;
+  }
+
+  .section h2 {
+    font-size: 1.5rem;
+  }
+
+  .blob {
+    width: 250px;
+    height: 250px;
+    top: -50px;
+    right: -50px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
 }
