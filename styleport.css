@@ -12,62 +12,41 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
   background-color: #151521;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
 
 .logo {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: 700;
 }
 
 .nav a {
-  margin: 0 15px;
+  margin: 0 12px;
   text-decoration: none;
-  color: #eee;
+  color: #ccc;
   font-weight: 500;
-  transition: color 0.3s;
 }
 
 .nav a:hover {
   color: #6a72ff;
 }
 
-.resume-btn {
-  background: linear-gradient(to right, #6a72ff, #d14df0);
-  padding: 10px 20px;
-  color: white;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: opacity 0.3s;
-}
-
-.resume-btn:hover {
-  opacity: 0.85;
-}
-
 /* Hero Section */
 .hero {
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
   min-height: 90vh;
-  padding: 80px 40px;
+  padding: 60px 20px;
+  text-align: center;
   position: relative;
-}
-
-.hero-content {
-  max-width: 600px;
-  z-index: 2;
 }
 
 .hero h1 {
@@ -83,68 +62,26 @@ body {
 
 .hero p {
   font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #ccc;
+  color: #bbb;
+  max-width: 600px;
 }
 
-.hero-buttons .btn {
-  padding: 12px 24px;
-  font-weight: 600;
-  border-radius: 30px;
-  margin-right: 15px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.btn.primary {
-  background: linear-gradient(to right, #6a72ff, #d14df0);
-  color: white;
-}
-
-.btn.primary:hover {
-  opacity: 0.85;
-}
-
-.btn.secondary {
-  border: 1px solid #999;
-  color: white;
-}
-
-.btn.secondary:hover {
-  background-color: #222;
-}
-
-/* Blob Background */
+/* Blob */
 .blob {
   position: absolute;
-  right: 50px;
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
   background: linear-gradient(135deg, #6a72ff, #d14df0);
-  border-radius: 50% 40% 60% 50% / 50% 40% 60% 50%;
+  border-radius: 50% 40% 60% 50% / 50% 60% 40% 50%;
   filter: blur(40px);
-  z-index: 1;
+  z-index: -1;
   animation: float 6s ease-in-out infinite;
+  top: 50px;
+  right: 20px;
 }
 
 @keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
   100% { transform: translateY(0); }
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .hero {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .blob {
-    position: absolute;
-    top: 20%;
-    right: 0;
-    left: 0;
-    margin: auto;
-  }
 }
