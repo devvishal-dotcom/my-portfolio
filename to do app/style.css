@@ -10,10 +10,10 @@ body {
 
 .todo-container {
   background: white;
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-  width: 350px;
+  padding: 4rem;
+  border-radius: 25px;
+  box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+  width: 650px;
 }
 
 h1 {
