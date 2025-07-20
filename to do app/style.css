@@ -11,11 +11,11 @@ body {
 .todo-container {
  .container {
   background: #fff;
-  padding: 40px;
-  border-radius: 12px;
+  padding: 100px;
+  border-radius: 120px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
-  width: 800px; /* You will change this */
+  width: 2000px; /* You will change this */
 }
 
 }
