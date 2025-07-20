@@ -40,9 +40,11 @@ body {
   font-size: 1.8rem;
   font-weight: 700;
   background: linear-gradient(to right, #6a72ff, #d14df0);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-clip: text;                /* Standard syntax */
+  -webkit-background-clip: text;        /* WebKit prefix for Chrome/Safari */
+  -webkit-text-fill-color: transparent; /* Needed for the gradient text effect */
 }
+
 .nav a {
   margin: 0 1rem;
   text-decoration: none;
