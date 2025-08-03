@@ -1,16 +1,14 @@
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background: #f5f5f5;
-  display: flex;
-  background: url('todobg.png') center/cover no-repeat fixed;
+  margin: 0;
+  padding: 0;
+  height: 300vh;
+  font-family:'Segoe UI', sans-serif;
+  background: url('expertbg.png') center/cover no-repeat fixed;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  justify-content: center;
-  align-items: center;
-  height: 300vh;
-  margin: 0;
+  color: white; /* optional, for better contrast */
 }
 
 .todo-container {
