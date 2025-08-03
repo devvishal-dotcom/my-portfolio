@@ -101,12 +101,15 @@ body {
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  background: linear-gradient(to right, #60a5fa, #c084fc);
-  -webkit-background-clip: text;
+  font-size: 2.75rem;
+  line-height: 1.1;
+  background: linear-gradient(90deg, #7f5af0, #60a5fa);
+  background-clip: text;              /* Standard syntax */
+  -webkit-background-clip: text;      /* Chrome, Safari */
   -webkit-text-fill-color: transparent;
+  color: transparent;                 /* Fallback for other browsers */
 }
+
 
 .hero p {
   font-size: 1.2rem;
