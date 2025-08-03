@@ -3,7 +3,7 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: url('todobg.png') center/cover no-repeat fixed;
+  background: url('todo.png.png') center/cover no-repeat fixed;
   color: white; /* better text contrast on background */
   display: flex;
   justify-content: center;
