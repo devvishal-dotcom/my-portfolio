@@ -9,16 +9,19 @@ body {
 }
 
 .todo-container {
- .container {
-  background: #fff;
-  padding: 100px;
-  border-radius: 120px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  width: 2000px; /* You will change this */
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 90%; /* Makes it responsive */
+    max-width: 600px; /* Keeps it from getting too large */
+    min-width: 300px; /* Keeps it from shrinking too much */
+    text-align: center;
+    margin: 50px auto;
+    transition: all 0.3s ease;
 }
 
-}
+
 
 h1 {
   text-align: center;
