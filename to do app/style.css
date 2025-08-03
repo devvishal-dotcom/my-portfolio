@@ -3,7 +3,7 @@ body {
   padding: 0;
   height: 300vh;
   font-family:'Segoe UI', sans-serif;
-  background: url('expertbg.png') center/cover no-repeat fixed;
+  background: url('todobg.png') center/cover no-repeat fixed;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
