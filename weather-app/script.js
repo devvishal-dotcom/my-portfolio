@@ -1,4 +1,4 @@
-const apiKey = "c68f4dcf6d3d427a23a1ca8eebc97a67"; 
+const apiKey = "c7ea85f61ba6e86ca399cdabb469167a"; 
 
 async function getWeather() {
   const city = document.getElementById("cityInput").value.trim(); // trim removes extra spaces
