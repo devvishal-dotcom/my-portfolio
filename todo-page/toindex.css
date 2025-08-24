@@ -42,7 +42,7 @@ body {
   margin-bottom: 20px;
   font-size: 26px;
   font-weight: bold;
-  background: linear-gradient(to right, #f6d365, #fda085);
+  background: linear-gradient(to right, #f6d365, #7d331f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -62,11 +62,11 @@ body {
   outline: none;
   font-size: 14px;
   background: rgba(255,255,255,0.2);
-  color: white;
+  color: rgb(182, 132, 132);
 }
 
 .input-section input::placeholder {
-  color: rgba(255,255,255,0.7);
+  color: rgba(255, 255, 255, 0.316);
 }
 
 .input-section button {
@@ -104,7 +104,7 @@ body {
   margin-bottom: 10px;
   background: rgba(255,255,255,0.2);
   border-radius: 12px;
-  color: white;
+  color: rgba(16, 16, 15, 0.008);
   font-size: 15px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
