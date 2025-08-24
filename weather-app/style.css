@@ -10,15 +10,15 @@ body {
 
 .container {
   background: white;
-  padding: 20px 30px;
-  border-radius: 12px;
+  padding: 40px 60px;
+  border-radius: 24px;
   text-align: center;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  width: 300px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  width: 600px;
 }
 
 .search-box {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .search-box input {
