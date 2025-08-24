@@ -3,60 +3,79 @@ body {
   padding: 0;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
-  background: url('todo.png.png') center/cover no-repeat fixed;
-  color: white; /* better text contrast on background */
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* premium gradient */
+  color: white;
   display: flex;
   justify-content: center;
   align-items: flex-start;
+  padding: 40px 20px;
 }
 
 /* To-Do Container */
 .todo-container {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 90%;          /* responsive width */
-  max-width: 700px;    /* increases maximum size on large screens */
+  background: rgba(255, 255, 255, 0.97);
+  padding: 35px;
+  border-radius: 16px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25); /* deeper shadow */
+  width: 90%;
+  max-width: 700px;
   min-width: 280px;
   text-align: center;
   margin: 50px auto;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.todo-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #222;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 .input-section {
   display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 12px;
+  margin-bottom: 25px;
   flex-wrap: wrap;
 }
 
 input {
   flex: 1;
-  padding: 12px;
+  padding: 14px 16px;
   border: 1px solid #ddd;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
 }
 
 button {
-  padding: 12px 18px;
-  background: #4CAF50;
+  padding: 14px 22px;
+  background: linear-gradient(135deg, #43cea2, #185a9d); /* premium button */
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   font-size: 16px;
-  transition: background 0.3s ease;
+  font-weight: 500;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
 button:hover {
-  background: #3e8e41;
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
 }
 
 ul {
@@ -66,12 +85,17 @@ ul {
 }
 
 li {
-  padding: 12px;
+  padding: 14px 12px;
   border-bottom: 1px solid #eee;
   display: flex;
   justify-content: space-between;
   align-items: center;
   font-size: 16px;
+  transition: background 0.3s ease;
+}
+
+li:hover {
+  background: #f9f9f9;
 }
 
 li.completed {
@@ -84,7 +108,7 @@ li.completed {
   .todo-container {
     margin: 20px;
     width: 95%;
-    padding: 20px;
+    padding: 25px;
   }
 
   .input-section {
