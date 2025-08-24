@@ -7,11 +7,18 @@
 }
 
 body {
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+
+  /* 🎨 Doodle background */
+  background: url("dobg.png") center/cover no-repeat fixed;
+
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  align-items: flex-start;
+  padding: 40px;
 }
 
 /* ==== Container ==== */
