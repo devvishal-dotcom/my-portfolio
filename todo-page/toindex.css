@@ -24,11 +24,11 @@ body {
 /* ==== Container ==== */
 .todo-container {
   background: rgba(255, 255, 255, 0.15);
-  padding: 25px;
-  border-radius: 20px;
+  padding: 35px;
+  border-radius: 30px;
   backdrop-filter: blur(12px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-  width: 380px;
+  box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+  width: 480px;
   text-align: center;
   color: rgb(13, 13, 13);
   transition: transform 0.3s ease-in-out;
