@@ -30,7 +30,7 @@ body {
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   width: 380px;
   text-align: center;
-  color: white;
+  color: rgb(13, 13, 13);
   transition: transform 0.3s ease-in-out;
 }
 
