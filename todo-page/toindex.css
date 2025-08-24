@@ -140,7 +140,7 @@ body {
 /* Input field */
 input[type="text"] {
   color: black;              /* Text color */
-  background: rgba(255, 255, 255, 0.9); /* Light background */
+  background: rgba(16, 15, 15, 0.9); /* Light background */
   border: none;
   padding: 10px;
   border-radius: 12px;
