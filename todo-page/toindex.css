@@ -137,21 +137,17 @@ body {
   background: #ff1e3c;
   transform: scale(1.1);
 }
-/* Input field */
-input[type="text"] {
-  color: black;              /* Text color */
-  background: rgba(244, 242, 242, 0.9); /* Light background */
-  border: none;
-  padding: 10px;
-  border-radius: 12px;
-  width: 100%;
-  font-size: 16px;
-}
-
-/* Task list items */
+/* Force black text inside tasks */
 ul li {
-  color: black;   /* Makes tasks text black */
+  color: black !important;     /* Strongly force black text */
   font-size: 16px;
+  font-weight: 500;
   list-style: none;
   margin: 8px 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9); /* Light background so text is visible */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
