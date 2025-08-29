@@ -1,16 +1,21 @@
-const data = null;
+const express = require("express");
+const fetch = require("node-fetch");
+const app = express();
+const PORT = 5000;
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener('readystatechange', function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
+app.get("/airquality", async (req, res) => {
+  const city = req.query.city || "Seattle";
+  const url = `https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=${city}`;
+  
+  const response = await fetch(url, {
+    headers: {
+      "X-RapidAPI-Key": "YOUR_API_KEY",
+      "X-RapidAPI-Host": "air-quality-by-api-ninjas.p.rapidapi.com"
+    }
+  });
+  
+  const data = await response.json();
+  res.json(data);
 });
 
-xhr.open('GET', 'https://air-quality-by-api-ninjas.p.rapidapi.com/v1/airquality?city=Seattle');
-xhr.setRequestHeader('x-rapidapi-key', 'e39efddf8dmsh13864a298f2a67cp147cbfjsn2441b2a5341a');
-xhr.setRequestHeader('x-rapidapi-host', 'air-quality-by-api-ninjas.p.rapidapi.com');
-
-xhr.send(data);
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
