@@ -25,24 +25,19 @@ body::before {
 
 /* ==== Top Brand Logo ==== */
 .top-logo {
-  background-color: rgba(0, 0, 0, 0.85);
-  padding: 1.2rem 0;
-  text-align: center;
-  font-size: 2.4rem;
+font-size: 3.5em;
   font-weight: bold;
-  color: #00ffc8;
-  letter-spacing: 2px;
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
 }
 
 /* ==== Marquee ==== */
 .marquee-container {
-  width: 100%;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.08);
-  padding: 12px 0;
+    background: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  font-weight: bold;
+  padding: 10px;
   text-align: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
 }
 
 .marquee-container marquee {
