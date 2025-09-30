@@ -48,6 +48,8 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: color 0.7s ease;
+   font-size: 3.5em;
+  font-weight: bold;
 }
 
 .navbar nav ul li a:hover {
