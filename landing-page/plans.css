@@ -58,7 +58,24 @@ font-size: 1.5em;
   position: relative;
   z-index: 4; /* ensure navbar is above hero overlay */
 }
+.navbar nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  padding-left: 0;
+}
 
+.navbar nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+  color: #28a745;
+}
 /* ==== Plans Section ==== */
 .plans-container {
   display: flex;
