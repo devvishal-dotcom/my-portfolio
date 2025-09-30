@@ -36,7 +36,7 @@ body::before {
   font-weight: bold;
   padding: 10px;
   text-align: center;
-  border-radius: 8px; /* subtle rounded edges */
+  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -48,63 +48,41 @@ body::before {
 }
 
 /* ==== Navbar ==== */
-/* ==== Navbar ==== */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 50px;
-    background: rgba(0, 0, 0, 0.3);
-    color: white;
-    position: relative;
-    z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  position: relative;
+  z-index: 4;
 }
 
 .navbar nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-    padding-left: 0;
-    flex-wrap: nowrap; /* prevent wrapping to next line */
-    overflow-x: auto; /* enable horizontal scroll if too long */
-    -webkit-overflow-scrolling: touch; /* smooth scroll on iOS */
-}
-
-.navbar nav ul::-webkit-scrollbar {
-    display: none; /* hide scrollbar */
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  flex-wrap: nowrap;
 }
 
 .navbar nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.5em;
-    padding: 6px 12px;
-    border-radius: 6px;
-    transition: all 0.3s ease;
-    white-space: nowrap; /* prevent text from breaking */
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
 }
 
 .navbar nav ul li a:hover {
-    color: #28a745;
-    background: rgba(255, 255, 255, 0.1);
+  color: #28a745;
+  background: rgba(255, 255, 255, 0.1);
 }
 
-/* ==== Mobile Adjustment ==== */
-@media (max-width: 768px) {
-    .navbar {
-        padding: 15px 20px;
-    }
-
-    .navbar nav ul {
-        gap: 12px;
-    }
-
-    .navbar nav ul li a {
-        font-size: 1.2em;
-        padding: 6px 10px;
-    }
-}
 /* ==== Hero Section ==== */
 .hero {
   text-align: center;
@@ -452,11 +430,13 @@ body::before {
     flex-direction: column;
     text-align: center;
     gap: 12px;
+    padding: 15px 20px;
   }
 
   .navbar nav ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
+    overflow-x: visible;
   }
 
   .navbar nav ul li a {
@@ -476,7 +456,7 @@ body::before {
     font-size: 1.2rem;
   }
 
-  .cards {
+  .plans-container {
     flex-direction: column;
     align-items: center;
   }
@@ -496,19 +476,4 @@ body::before {
   }
 }
 
-/* ==== Animations ==== */
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.plan-card,
-.section {
-  animation: fadeUp 0.6s ease forwards;
-}
+/* Ext*
