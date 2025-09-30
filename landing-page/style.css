@@ -35,7 +35,7 @@ body {
   background: transparent;
   color: white;
   position: relative;
-  z-index: 4; /* ensure navbar is above hero overlay */
+  z-index: 4;
 }
 
 .navbar nav ul {
@@ -43,6 +43,7 @@ body {
   display: flex;
   gap: 15px;
   padding-left: 0;
+  flex-wrap: wrap;
 }
 
 .navbar nav ul li a {
@@ -65,7 +66,7 @@ body {
 /* ===== Hero Section ===== */
 .hero {
   text-align: center;
-  padding: 100px 20px 60px;
+  padding: 120px 20px 80px;
   position: relative;
   color: white;
 }
@@ -76,12 +77,12 @@ body {
   top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(0, 0, 0, 0.4);
   z-index: 1;
-  pointer-events: none; /* allow clicks through overlay */
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
-  z-index: 2; /* bring content above overlay */
+  z-index: 2;
 }
 
 .hero h1 {
@@ -97,17 +98,18 @@ body {
 .hero .btn {
   background: #28a745;
   color: white;
-  padding: 12px 24px;
+  padding: 14px 28px;
   text-decoration: none;
   border-radius: 5px;
   display: inline-block;
   margin-top: 20px;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
 
 .hero .btn:hover {
   background: #1e7e34;
+  transform: scale(1.05);
 }
 
 /* ===== Section Styles ===== */
@@ -255,11 +257,25 @@ form button:hover {
 }
 
 /* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  .navbar nav ul li a {
+    font-size: 1.3em;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar {
     flex-direction: column;
     text-align: center;
-    gap: 10px;
+    gap: 15px;
   }
 
   .hero {
@@ -267,11 +283,16 @@ form button:hover {
   }
 
   .hero h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 
   .hero p {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+  }
+
+  .hero .btn {
+    padding: 12px 20px;
+    font-size: 1rem;
   }
 
   .cards {
