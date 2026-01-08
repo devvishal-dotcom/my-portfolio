@@ -1,70 +1,78 @@
 // script.js
 
-const apiKey = "YOUR_OPENWEATHER_API_KEY";
-const form = document.getElementById("search-form");
-const input = document.getElementById("city-input");
-const currentBox = document.getElementById("current-weather");
+const cityInput = document.getElementById("cityInput");
+const searchBtn = document.getElementById("searchBtn");
+
+const weatherBox = document.getElementById("weather");
+const cityEl = document.getElementById("city");
+const iconEl = document.getElementById("icon");
+const tempEl = document.getElementById("temp");
+const conditionEl = document.getElementById("condition");
+const humidityEl = document.getElementById("humidity");
+
 const forecastBox = document.getElementById("forecast");
 const loader = document.getElementById("loader");
+const errorEl = document.getElementById("error");
 
-form.addEventListener("submit", e => {
-  e.preventDefault();
-  const city = input.value.trim();
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
   if (!city) return;
-  loadWeather(city);
+  getWeather(city);
 });
 
-async function loadWeather(city) {
-  loader.style.display = "block";
-  currentBox.innerHTML = "";
+async function getWeather(city) {
+  errorEl.textContent = "";
+  weatherBox.classList.add("hidden");
   forecastBox.innerHTML = "";
+  loader.classList.remove("hidden");
 
   try {
     const currentRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
     );
+
     if (!currentRes.ok) throw new Error("City not found");
-    const currentData = await currentRes.json();
+
+    const current = await currentRes.json();
 
     const forecastRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`
+      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
     );
-    const forecastData = await forecastRes.json();
 
-    showCurrent(currentData);
-    showForecast(forecastData.list);
+    const forecast = await forecastRes.json();
+
+    renderCurrent(current);
+    renderForecast(forecast.list);
   } catch (err) {
-    currentBox.innerHTML = `<p class="error">${err.message}</p>`;
+    errorEl.textContent = err.message;
   } finally {
-    loader.style.display = "none";
+    loader.classList.add("hidden");
   }
 }
 
-function showCurrent(data) {
-  currentBox.innerHTML = `
-    <h2>${data.name}</h2>
-    <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
-    <p class="temp">${Math.round(data.main.temp)} °C</p>
-    <p>${data.weather[0].description}</p>
-  `;
+function renderCurrent(data) {
+  weatherBox.classList.remove("hidden");
+
+  cityEl.textContent = data.name;
+  tempEl.textContent = `${Math.round(data.main.temp)} °C`;
+  conditionEl.textContent = data.weather[0].description;
+  humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
+  iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
 }
 
-function showForecast(list) {
+function renderForecast(list) {
   const days = {};
 
-  // grab first forecast entry for each day
   list.forEach(item => {
-    const day = item.dt_txt.split(" ")[0];
-    if (!days[day]) {
-      days[day] = item;
-    }
+    const d = item.dt_txt.split(" ")[0];
+    if (!days[d]) days[d] = item;
   });
 
   Object.values(days)
     .slice(0, 4)
     .forEach((day, i) => {
       const date = new Date(day.dt * 1000);
-      const title =
+      const label =
         i === 0
           ? "Today"
           : date.toLocaleDateString(undefined, { weekday: "short" });
@@ -73,7 +81,7 @@ function showForecast(list) {
       card.className = "forecast-card";
 
       card.innerHTML = `
-        <h4>${title}</h4>
+        <h4>${label}</h4>
         <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
         <p>${Math.round(day.main.temp)} °C</p>
       `;
