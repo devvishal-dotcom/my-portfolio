@@ -86,14 +86,36 @@ button {
   animation: shimmer 1.2s ease-in-out infinite;
 }
 
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+/* ===== DEFAULT SKY ANIMATION ===== */
+body {
+  background: linear-gradient(-45deg, #74ebd5, #9face6, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: sky 12s ease infinite;
 }
+
+@keyframes sky {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 100%;
+  background: url("https://i.imgur.com/NM9pGkR.png") repeat-x;
+  opacity: 0.25;
+  animation: clouds 60s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes clouds {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
 
 
 /* ===== LOADER ===== */
