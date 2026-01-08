@@ -1,11 +1,52 @@
+/* ===== GLOBAL ===== */
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #87ceeb;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  transition: background 0.6s ease;
 }
+
+/* ===== APP CARD ===== */
+.app {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 300px;
+  text-align: center;
+}
+
+/* ===== SEARCH ===== */
+.search {
+  display: flex;
+  gap: 8px;
+}
+
+input {
+  flex: 1;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+/* ===== WEATHER ===== */
+.weather {
+  margin-top: 15px;
+}
+
+.weather img {
+  width: 80px;
+}
+
+/* ===== FORECAST ===== */
 .forecast {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -24,37 +65,7 @@ body {
   width: 50px;
 }
 
-.app {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
-}
-
-.search {
-  display: flex;
-  gap: 8px;
-}
-
-input {
-  flex: 1;
-  padding: 6px;
-}
-
-button {
-  padding: 6px 10px;
-  cursor: pointer;
-}
-
-.weather {
-  margin-top: 15px;
-}
-
-.weather img {
-  width: 80px;
-}
-
+/* ===== UTIL ===== */
 .hidden {
   display: none;
 }
@@ -64,7 +75,7 @@ button {
   margin-top: 10px;
 }
 
-/* Loader */
+/* ===== LOADER ===== */
 .loader {
   margin: 15px auto;
   width: 40px;
@@ -80,27 +91,49 @@ button {
     transform: rotate(360deg);
   }
 }
+
+/* ========================= */
+/* 🌤 WEATHER BACKGROUNDS */
+/* ========================= */
+
+/* ☀️ SUNNY */
+.sunny {
+  background: linear-gradient(#56ccf2, #f2fcfe);
+}
+
+/* ☁️ CLOUDY */
+.cloudy {
+  background: linear-gradient(#bdc3c7, #2c3e50);
+}
+
+/* 🌧 RAIN */
 .rain {
   background: linear-gradient(#2c3e50, #000);
+  background-size: 400px 400px;
   animation: rain 0.4s linear infinite;
 }
 
 @keyframes rain {
-  from { background-position: 0 0; }
-  to { background-position: 0 100%; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 100%;
+  }
 }
-.sunny {
-  background: linear-gradient(#56ccf2, #f2fcfe);
-}
-.cloudy {
-  background: linear-gradient(#bdc3c7, #2c3e50);
-}
+
+/* ❄️ SNOW */
 .snow {
   background: linear-gradient(#e6dada, #274046);
+  background-size: 300px 300px;
   animation: snow 3s linear infinite;
 }
 
 @keyframes snow {
-  from { background-position: 0 0; }
-  to { background-position: 0 200px; }
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 0 200px;
+  }
 }
