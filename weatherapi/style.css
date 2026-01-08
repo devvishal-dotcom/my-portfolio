@@ -57,10 +57,65 @@ body::after {
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 12px;
-  width: 300px;
+  width: 100%;
+  max-width: 360px;
+  margin: 16px;
   text-align: center;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 480px) {
+
+  body {
+    align-items: flex-start;
+    padding-top: 20px;
+  }
+
+  .app {
+    padding: 16px;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  input,
+  button {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  button {
+    margin-top: 6px;
+  }
+
+  .weather img {
+    width: 64px;
+  }
+
+  .forecast {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .forecast-card {
+    padding: 10px;
+  }
+}
+button {
+  border-radius: 6px;
+}
+
+input {
+  border-radius: 6px;
+}
+
 
 /* =========================
    SEARCH
