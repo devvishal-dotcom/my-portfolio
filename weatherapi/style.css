@@ -6,6 +6,23 @@ body {
   align-items: center;
   height: 100vh;
 }
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.forecast-card {
+  background: #f1f1f1;
+  padding: 8px;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.forecast-card img {
+  width: 50px;
+}
 
 .app {
   background: white;
