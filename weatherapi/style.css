@@ -1,4 +1,6 @@
-/* ===== GLOBAL ===== */
+/* =========================
+   GLOBAL
+========================= */
 * {
   box-sizing: border-box;
 }
@@ -9,19 +11,60 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
   transition: background 0.6s ease;
 }
 
-/* ===== APP CARD ===== */
-.app {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-  width: 300px;
-  text-align: center;
+/* =========================
+   DEFAULT ANIMATED SKY
+========================= */
+body {
+  background: linear-gradient(-45deg, #74ebd5, #9face6, #89f7fe, #66a6ff);
+  background-size: 400% 400%;
+  animation: sky 14s ease infinite;
 }
 
-/* ===== SEARCH ===== */
+@keyframes sky {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* subtle floating light particles */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.15) 2px, transparent 3px),
+    radial-gradient(circle at 70% 60%, rgba(255,255,255,0.12) 2px, transparent 3px),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.1) 2px, transparent 3px);
+  background-size: 220px 220px;
+  animation: float 18s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  from { transform: translateY(0); }
+  to { transform: translateY(-200px); }
+}
+
+/* =========================
+   APP CARD
+========================= */
+.app {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+}
+
+/* =========================
+   SEARCH
+========================= */
 .search {
   display: flex;
   gap: 8px;
@@ -37,7 +80,9 @@ button {
   cursor: pointer;
 }
 
-/* ===== WEATHER ===== */
+/* =========================
+   WEATHER
+========================= */
 .weather {
   margin-top: 15px;
 }
@@ -46,7 +91,9 @@ button {
   width: 80px;
 }
 
-/* ===== FORECAST ===== */
+/* =========================
+   FORECAST
+========================= */
 .forecast {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -55,9 +102,9 @@ button {
 }
 
 .forecast-card {
-  background: #f1f1f1;
+  background: rgba(255,255,255,0.7);
   padding: 8px;
-  border-radius: 6px;
+  border-radius: 8px;
   text-align: center;
 }
 
@@ -65,7 +112,9 @@ button {
   width: 50px;
 }
 
-/* ===== UTIL ===== */
+/* =========================
+   UTIL
+========================= */
 .hidden {
   display: none;
 }
@@ -74,51 +123,10 @@ button {
   color: red;
   margin-top: 10px;
 }
-/* ===== LOADING SHIMMER ===== */
-.loading {
-  background: linear-gradient(
-    110deg,
-    #e0e0e0 25%,
-    #f5f5f5 37%,
-    #e0e0e0 63%
-  );
-  background-size: 400% 100%;
-  animation: shimmer 1.2s ease-in-out infinite;
-}
 
-/* ===== DEFAULT SKY ANIMATION ===== */
-body {
-  background: linear-gradient(-45deg, #74ebd5, #9face6, #89f7fe, #66a6ff);
-  background-size: 400% 400%;
-  animation: sky 12s ease infinite;
-}
-
-@keyframes sky {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-body::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 200%;
-  height: 100%;
-  background: url("https://i.imgur.com/NM9pGkR.png") repeat-x;
-  opacity: 0.25;
-  animation: clouds 60s linear infinite;
-  pointer-events: none;
-}
-
-@keyframes clouds {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
-
-
-
-/* ===== LOADER ===== */
+/* =========================
+   LOADER
+========================= */
 .loader {
   margin: 15px auto;
   width: 40px;
@@ -130,14 +138,12 @@ body::before {
 }
 
 @keyframes spin {
-  to {
-    transform: rotate(360deg);
-  }
+  to { transform: rotate(360deg); }
 }
 
-/* ========================= */
-/* 🌤 WEATHER BACKGROUNDS */
-/* ========================= */
+/* =========================
+   WEATHER BACKGROUNDS
+========================= */
 
 /* ☀️ SUNNY */
 .sunny {
@@ -157,12 +163,8 @@ body::before {
 }
 
 @keyframes rain {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 100%;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
 }
 
 /* ❄️ SNOW */
@@ -173,10 +175,6 @@ body::before {
 }
 
 @keyframes snow {
-  from {
-    background-position: 0 0;
-  }
-  to {
-    background-position: 0 200px;
-  }
+  from { background-position: 0 0; }
+  to { background-position: 0 200px; }
 }
