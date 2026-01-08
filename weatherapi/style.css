@@ -80,3 +80,27 @@ button {
     transform: rotate(360deg);
   }
 }
+.rain {
+  background: linear-gradient(#2c3e50, #000);
+  animation: rain 0.4s linear infinite;
+}
+
+@keyframes rain {
+  from { background-position: 0 0; }
+  to { background-position: 0 100%; }
+}
+.sunny {
+  background: linear-gradient(#56ccf2, #f2fcfe);
+}
+.cloudy {
+  background: linear-gradient(#bdc3c7, #2c3e50);
+}
+.snow {
+  background: linear-gradient(#e6dada, #274046);
+  animation: snow 3s linear infinite;
+}
+
+@keyframes snow {
+  from { background-position: 0 0; }
+  to { background-position: 0 200px; }
+}

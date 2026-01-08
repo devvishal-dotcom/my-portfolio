@@ -1,91 +1,150 @@
-// script.js
+const API_KEY = "60dcc472314d360166b37f1fa47725a3";
 
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
+const weatherDiv = document.getElementById("weather");
+const errorEl = document.getElementById("error");
+const loader = document.getElementById("loader");
 
-const weatherBox = document.getElementById("weather");
 const cityEl = document.getElementById("city");
-const iconEl = document.getElementById("icon");
 const tempEl = document.getElementById("temp");
 const conditionEl = document.getElementById("condition");
 const humidityEl = document.getElementById("humidity");
+const iconEl = document.getElementById("icon");
 
-const forecastBox = document.getElementById("forecast");
-const loader = document.getElementById("loader");
-const errorEl = document.getElementById("error");
-
-searchBtn.addEventListener("click", () => {
-  const city = cityInput.value.trim();
-  if (!city) return;
-  getWeather(city);
+searchBtn.addEventListener("click", handleSearch);
+cityInput.addEventListener("keydown", (e) => {
+if (e.key === "Enter") handleSearch();
 });
+const forecastEl = document.getElementById("forecast");
 
-async function getWeather(city) {
-  errorEl.textContent = "";
-  weatherBox.classList.add("hidden");
-  forecastBox.innerHTML = "";
-  loader.classList.remove("hidden");
-
-  try {
-    const currentRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`
-    );
-
-    if (!currentRes.ok) throw new Error("City not found");
-
-    const current = await currentRes.json();
-
-    const forecastRes = await fetch(
-      `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${API_KEY}`
-    );
-
-    const forecast = await forecastRes.json();
-
-    renderCurrent(current);
-    renderForecast(forecast.list);
-  } catch (err) {
-    errorEl.textContent = err.message;
-  } finally {
-    loader.classList.add("hidden");
-  }
+function handleSearch() {
+const city = cityInput.value.trim();
+if (!city) {
+showError("Please enter a city name");
+return;
+}
+fetchWeather(city);
 }
 
-function renderCurrent(data) {
-  weatherBox.classList.remove("hidden");
+async function fetchWeather(city) {
+showLoader();
 
-  cityEl.textContent = data.name;
-  tempEl.textContent = `${Math.round(data.main.temp)} °C`;
-  conditionEl.textContent = data.weather[0].description;
-  humidityEl.textContent = `Humidity: ${data.main.humidity}%`;
-  iconEl.src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+try {
+const url = new URL("https://api.openweathermap.org/data/2.5/weather");
+url.searchParams.set("q", city);
+url.searchParams.set("units", "metric");
+url.searchParams.set("appid", API_KEY);
+
+const response = await fetch(url);
+
+const data = await response.json();
+
+if (!response.ok) {
+throw new Error(data.message || "Failed to fetch weather");
+}
+
+renderWeather(data);
+} catch (error) {
+showError(error.message);
+} finally {
+hideLoader();
+}
+fetchForecast(city);
+
+}
+async function fetchForecast(city) {
+try {
+const url = new URL("https://api.openweathermap.org/data/2.5/forecast");
+url.searchParams.set("q", city);
+url.searchParams.set("units", "metric");
+url.searchParams.set("appid", API_KEY);
+
+const res = await fetch(url);
+const data = await res.json();
+
+if (!res.ok) {
+throw new Error("Forecast not available");
+}
+
+renderForecast(data.list);
+} catch (err) {
+console.error(err.message);
+}
 }
 
 function renderForecast(list) {
-  const days = {};
+forecastEl.innerHTML = "";
 
-  list.forEach(item => {
-    const d = item.dt_txt.split(" ")[0];
-    if (!days[d]) days[d] = item;
-  });
+const dailyMap = {};
 
-  Object.values(days)
-    .slice(0, 4)
-    .forEach((day, i) => {
-      const date = new Date(day.dt * 1000);
-      const label =
-        i === 0
-          ? "Today"
-          : date.toLocaleDateString(undefined, { weekday: "short" });
-
-      const card = document.createElement("div");
-      card.className = "forecast-card";
-
-      card.innerHTML = `
-        <h4>${label}</h4>
-        <img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png">
-        <p>${Math.round(day.main.temp)} °C</p>
-      `;
-
-      forecastBox.appendChild(card);
-    });
+list.forEach(item => {
+const date = item.dt_txt.split(" ")[0];
+if (!dailyMap[date]) {
+dailyMap[date] = item;
 }
+});
+
+const days = Object.values(dailyMap).slice(0, 4);
+
+days.forEach((day, index) => {
+const date = new Date(day.dt * 1000);
+const label =
+index === 0 ? "Yesterday*" :
+index === 1 ? "Today" :
+date.toLocaleDateString(undefined, { weekday: "short" });
+
+const card = document.createElement("div");
+card.className = "forecast-card";
+
+card.innerHTML = `
+<h4>${label}</h4>
+<img src="https://openweathermap.org/img/wn/${day.weather[0].icon}@2x.png" />
+<p>${Math.round(day.main.temp)} °C</p>
+`;
+
+
+});
+}
+
+
+function renderWeather(data) {
+errorEl.textContent = "";
+weatherDiv.classList.remove("hidden");
+
+cityEl.textContent = `${data.name}, ${data.sys.country}`;
+tempEl.textContent = `🌡 ${Math.round(data.main.temp)} °C`;
+conditionEl.textContent = data.weather[0].description;
+humidityEl.textContent = `💧 ${data.main.humidity}%`;
+
+const iconCode = data.weather[0].icon;
+iconEl.src = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+iconEl.alt = data.weather[0].description;
+}
+forecastEl.appendChild(card);
+function showError(message) {
+weatherDiv.classList.add("hidden");
+errorEl.textContent = message;
+}
+
+function showLoader() {
+loader.classList.remove("hidden");
+errorEl.textContent = "";
+weatherDiv.classList.add("hidden");
+}
+
+function hideLoader() {
+loader.classList.add("hidden");
+}
+function setWeatherBackground(weather) {
+  const body = document.getElementById("app");
+
+  if (weather.includes("rain")) body.className = "rain";
+  else if (weather.includes("cloud")) body.className = "cloudy";
+  else if (weather.includes("snow")) body.className = "snow";
+  else body.className = "sunny";
+}
+
+// example usage
+const weatherCondition = "rain"; // from API → weather[0].main
+setWeatherBackground(weatherCondition.toLowerCase());
