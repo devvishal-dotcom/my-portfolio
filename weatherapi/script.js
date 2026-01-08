@@ -128,3 +128,10 @@ function setWeatherBackground(weather) {
   else if (weather.includes("snow")) body.className = "snow";
   else body.className = "sunny";
 }
+function showLoader() {
+  loader.classList.remove("hidden");
+  errorEl.textContent = "";
+  weatherDiv.classList.add("hidden");
+
+  document.getElementById("app").className = "loading";
+}
