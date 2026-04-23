@@ -277,36 +277,48 @@
           </div>
         </div>
       </div>
-      <form class="contact__form" id="contactForm">
-        <div class="form__group">
-          <label for="name">Your Name</label>
-          <input type="text" id="name" placeholder="Bride / Groom name" required />
-        </div>
-        <div class="form__group">
-          <label for="email">Email Address</label>
-          <input type="email" id="email" placeholder="your@email.com" required />
-        </div>
-        <div class="form__group">
-          <label for="wdate">Wedding Date</label>
-          <input type="date" id="wdate" />
-        </div>
-        <div class="form__group">
-          <label for="pkg">Package Interest</label>
-          <select id="pkg">
-            <option value="">Select a package</option>
-            <option>Photography Only</option>
-            <option>Videography Only</option>
-            <option>Photo + Video Combo</option>
-            <option>Full Wedding Coverage</option>
-          </select>
-        </div>
-        <div class="form__group form__group--full">
-          <label for="message">Tell us about your wedding</label>
-          <textarea id="message" rows="4" placeholder="Venue, guest count, ceremonies..."></textarea>
-        </div>
-        <button type="submit" class="btn btn--solid btn--full">Send Enquiry ✦</button>
-        <p class="form__success" id="formSuccess">Thank you! We'll be in touch within 24 hours. 🙏</p>
-      </form>
+      <form class="contact__form"
+      action="mailto:pixelperfectjourney4u@gmail.com"
+      method="POST"
+      enctype="text/plain">
+
+  <div class="form__group">
+    <label>Your Name</label>
+    <input type="text" name="Name" placeholder="Bride / Groom name" required />
+  </div>
+
+  <div class="form__group">
+    <label>Email Address</label>
+    <input type="email" name="Email" placeholder="your@email.com" required />
+  </div>
+
+  <div class="form__group">
+    <label>Wedding Date</label>
+    <input type="date" name="Wedding Date" />
+  </div>
+
+  <div class="form__group">
+    <label>Package Interest</label>
+    <select name="Package">
+      <option value="">Select a package</option>
+      <option>Photography Only</option>
+      <option>Videography Only</option>
+      <option>Photo + Video Combo</option>
+      <option>Full Wedding Coverage</option>
+    </select>
+  </div>
+
+  <div class="form__group form__group--full">
+    <label>Tell us about your wedding</label>
+    <textarea name="Message" rows="4"
+      placeholder="Venue, guest count, ceremonies..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn--solid btn--full">
+    Send Enquiry ✦
+  </button>
+
+</form>
     </div>
   </section>
 
