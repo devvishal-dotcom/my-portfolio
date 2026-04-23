@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="The story behind Black Baaj — premium monochrome fashion brand specializing in Trousers and T-Shirts.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://blackbaaj.com/about.html">
+  <title>About Us | Black Baaj</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Space+Mono:wght@400;700&display=swap"></noscript>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .about-hero { padding: 10rem 2rem 6rem; max-width: 1280px; margin: 0 auto; }
+    .about-hero h1 { font-family: var(--font-display); font-size: clamp(4rem, 10vw, 9rem); line-height: 0.9; }
+    .about-hero h1 span { color: transparent; -webkit-text-stroke: 1px var(--white); }
+    .about-body { max-width: 1280px; margin: 0 auto; padding: 0 2rem 6rem; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+    .about-text p { margin-bottom: 1.8rem; font-size: 1.1rem; line-height: 1.9; color: var(--gray-pale); }
+    .about-text p:first-child { font-size: 1.4rem; font-style: italic; color: var(--white); }
+    .about-visual { position: sticky; top: 100px; }
+    .about-stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--gray-dark); border: var(--border); }
+    .about-stat { background: var(--black-mid); padding: 2.5rem; }
+    .stat-num { font-family: var(--font-display); font-size: 3.5rem; line-height: 1; }
+    .stat-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.2em; color: var(--gray-mid); margin-top: 0.5rem; }
+    .values-section { border-top: var(--border); padding: 5rem 2rem; max-width: 1280px; margin: 0 auto; }
+    .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .value-card { padding: 2rem; border: var(--border); }
+    .value-num { font-family: var(--font-mono); font-size: 0.65rem; color: var(--gray-dark); margin-bottom: 1rem; }
+    .value-title { font-family: var(--font-display); font-size: 2rem; margin-bottom: 0.8rem; }
+    .value-desc { font-size: 0.95rem; color: var(--gray-pale); }
+    @media(max-width:768px){ .about-body{grid-template-columns:1fr;} .values-grid{grid-template-columns:1fr;} .about-visual{position:static;} }
+  </style>
+  <script>
+    // Emergency preloader kill — fires before any external JS
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        var p = document.getElementById('preloader');
+        if (p) { p.style.opacity='0'; p.style.visibility='hidden'; p.style.pointerEvents='none'; }
+      }, 1500);
+    });
+    setTimeout(function() {
+      var p = document.getElementById('preloader');
+      if (p) { p.style.opacity='0'; p.style.visibility='hidden'; p.style.pointerEvents='none'; }
+    }, 3000);
+  </script>
+</head>
+<body>
+  <div id="preloader"><div class="preloader-inner"><span class="brand-pre">BLACK BAAJ</span><div class="pre-line"></div></div></div>
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <header class="site-header scrolled" id="siteHeader">
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo"><span class="logo-bb">BLACK</span><span class="logo-mark">✦</span><span class="logo-baaj">BAAJ</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="shop.html" class="nav-link">Shop</a></li>
+        <li><a href="trousers.html" class="nav-link">Trousers</a></li>
+        <li><a href="tshirts.html" class="nav-link">T-Shirts</a></li>
+        <li><a href="about.html" class="nav-link active">About</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="nav-icon nav-account-link" aria-label="Account">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </a>
+        <a href="cart.html" class="nav-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span class="cart-count" >0</span></a>
+        <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+      </div>
+    </nav>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="nav-link">HOME</a>
+    <a href="shop.html" class="nav-link">SHOP</a>
+    <a href="trousers.html" class="nav-link">TROUSERS</a>
+    <a href="tshirts.html" class="nav-link">T-SHIRTS</a>
+    <a href="about.html" class="nav-link">ABOUT</a>
+    <a href="contact.html" class="nav-link">CONTACT</a>
+    <a href="login.html" class="nav-link nav-account-link">MY ACCOUNT</a>
+  </div>
+
+  <main>
+    <section class="about-hero">
+      <h1>BORN IN<br><span>CONTRAST</span></h1>
+    </section>
+
+    <div class="about-body">
+      <div class="about-text">
+        <p>Black Baaj was built on a single belief: that the boldest statement is often the simplest one.</p>
+        <p>We started with two colours and two garments. Black. White. Trousers. T-Shirts. No noise, no distraction — just premium craftsmanship and a sharp sense of identity.</p>
+        <p>Every piece in our collection is designed with architectural precision. We obsess over the fall of fabric, the tension of a seam, the weight of a cut. Because when your palette is monochrome, the quality of execution is everything.</p>
+        <p>Black Baaj isn't about fashion cycles or seasonal trends. It's about building a wardrobe that outlasts them — one that speaks quietly and says everything.</p>
+      </div>
+      <div class="about-visual">
+        <div class="about-stat-grid">
+          <div class="about-stat"><div class="stat-num">2</div><div class="stat-label">COLOURS. INFINITE COMBINATIONS.</div></div>
+          <div class="about-stat"><div class="stat-num">100%</div><div class="stat-label">PREMIUM QUALITY MATERIALS</div></div>
+          <div class="about-stat"><div class="stat-num">2</div><div class="stat-label">CATEGORIES. ZERO COMPROMISE.</div></div>
+          <div class="about-stat"><div class="stat-num">∞</div><div class="stat-label">WAYS TO WEAR BLACK BAAJ</div></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="values-section">
+      <h2 class="section-title">Our Values</h2>
+      <div class="values-grid">
+        <div class="value-card"><div class="value-num">01</div><h3 class="value-title">Precision</h3><p class="value-desc">Every cut, every stitch is executed with architectural exactness. We do not settle for approximate.</p></div>
+        <div class="value-card"><div class="value-num">02</div><h3 class="value-title">Restraint</h3><p class="value-desc">We resist the urge to add. Our strength comes from knowing when to stop — and what to leave out.</p></div>
+        <div class="value-card"><div class="value-num">03</div><h3 class="value-title">Permanence</h3><p class="value-desc">We make clothes that don't expire. No trends. No seasons. Just garments that age with dignity.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border-top:none;padding-top:0;">
+        <p>© 2025 Black Baaj. All rights reserved.</p>
+        <div class="footer-legal"><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
