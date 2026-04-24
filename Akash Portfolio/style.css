@@ -795,6 +795,19 @@ ul { list-style: none; }
 }
 .form__success.visible { display: block; }
 
+.form__error {
+  display: none;
+  grid-column: span 2;
+  text-align: center;
+  font-style: italic;
+  color: #b91c1c;
+  font-size: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(185, 28, 28, 0.06);
+  border-left: 3px solid #b91c1c;
+}
+.form__error.visible { display: block; }
+
 /* =========================================
    FOOTER
    ========================================= */

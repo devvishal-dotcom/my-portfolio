@@ -1,44 +1,132 @@
-// js/main.js
+/* =========================================
+   PIXELPERFECT JOURNEY — CONTACT FORM
+   Direct email via EmailJS (no backend)
+   ========================================= */
 
+/* ------------------------------------------
+   EMAILJS SETUP — REPLACE THESE 3 VALUES
+   1. Go to https://emailjs.com and sign up (free)
+   2. Create a service (Gmail recommended)
+   3. Create an email template
+   4. Paste your IDs below
+   ------------------------------------------ */
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";    // e.g. "aBcDeFgHiJkLmNoP"
+
+/* ------------------------------------------
+   EMAILJS TEMPLATE VARIABLES
+   In your EmailJS template, use these tags:
+   {{from_name}}   — sender's name
+   {{from_email}}  — sender's email
+   {{wedding_date}} — chosen wedding date
+   {{package}}     — selected package
+   {{message}}     — their message
+   {{to_email}}    — your studio email
+   ------------------------------------------ */
+
+const STUDIO_EMAIL = "pixelperfectjourney4u@gmail.com";
+
+// ---- Load EmailJS SDK dynamically ----
+(function loadEmailJS() {
+  const script = document.createElement("script");
+  script.src = "https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js";
+  script.onload = () => {
+    emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+  };
+  document.head.appendChild(script);
+})();
+
+// ---- Form Submit Handler ----
 document.getElementById("contactForm").addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  const data = {
-    name: document.getElementById("name").value,
-    email: document.getElementById("email").value,
-    date: document.getElementById("wdate").value,
-    package: document.getElementById("pkg").value,
-    message: document.getElementById("message").value,
+  const form        = this;
+  const submitBtn   = form.querySelector("button[type='submit']");
+  const successMsg  = document.getElementById("formSuccess");
+  const errorMsg    = document.getElementById("formError");
+
+  // Grab values
+  const name    = document.getElementById("name").value.trim();
+  const email   = document.getElementById("email").value.trim();
+  const wdate   = document.getElementById("wdate").value;
+  const pkg     = document.getElementById("pkg").value;
+  const message = document.getElementById("message").value.trim();
+
+  // Basic validation
+  if (!name || !email) {
+    showError(errorMsg, "Please fill in your name and email.");
+    return;
+  }
+  if (!isValidEmail(email)) {
+    showError(errorMsg, "Please enter a valid email address.");
+    return;
+  }
+
+  // Loading state
+  submitBtn.textContent = "Sending… ✦";
+  submitBtn.disabled    = true;
+  hideMsg(successMsg);
+  hideMsg(errorMsg);
+
+  const templateParams = {
+    from_name:    name,
+    from_email:   email,
+    wedding_date: wdate   || "Not specified",
+    package:      pkg     || "Not specified",
+    message:      message || "No message provided",
+    to_email:     STUDIO_EMAIL,
+    reply_to:     email,
   };
 
   try {
-    const res = await fetch("http://localhost:5000/send-enquiry", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    });
+    await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
 
-    if (res.ok) {
-      document.getElementById("formSuccess").style.display = "block";
-      this.reset();
-    } else {
-      alert("Failed to send enquiry");
-    }
+    // Success
+    successMsg.textContent = `🙏 Thank you, ${name}! Your enquiry has been sent to ${STUDIO_EMAIL}. We'll reply within 24 hours.`;
+    successMsg.classList.add("visible");
+    form.reset();
+
   } catch (err) {
-    console.error(err);
-    alert("Error sending enquiry");
+    console.error("EmailJS error:", err);
+    showError(
+      errorMsg,
+      `Something went wrong. Please email us directly at ${STUDIO_EMAIL}`
+    );
+
+  } finally {
+    submitBtn.textContent = "Send Enquiry ✦";
+    submitBtn.disabled    = false;
   }
 });
-// Button Click Alert for Contact
-const btn = document.getElementById("contactBtn") || document.querySelector(".contact .btn");
-if (btn) {
-  btn.addEventListener("click", function (e) {
-    // Prevent default link behavior
+
+// ---- Helpers ----
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
+function showError(el, msg) {
+  el.textContent = msg;
+  el.classList.add("visible");
+}
+
+function hideMsg(el) {
+  el.classList.remove("visible");
+  el.textContent = "";
+}
+
+
+/* =========================================
+   CONTACT BUTTON — mailto fallback
+   ========================================= */
+const contactBtn = document.getElementById("contactBtn")
+  || document.querySelector(".contact .btn--solid");
+
+if (contactBtn) {
+  contactBtn.addEventListener("click", function (e) {
+    // Only intercept if it's not the form submit button
+    if (this.type === "submit") return;
     e.preventDefault();
-    alert("Thanks for reaching out!\nEmail: pixelperfectjourney4u@gmail.com");
-    // Open email client
-    window.location.href = "mailto:pixelperfectjourney4u@gmail.com";
+    window.location.href = `mailto:${STUDIO_EMAIL}?subject=Wedding Enquiry — Pixelperfect Journey`;
   });
 }
