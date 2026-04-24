@@ -282,17 +282,18 @@
       method="POST"
       enctype="text/plain">
 
-  <div class="form__group">
-    <label>Your Name</label>
-    <input type="text" name="Name" placeholder="Bride / Groom name" required />
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <a href="mailto:pixelperfectjourney4u@gmail.com" class="btn">📧 Email Me</a>
+    </div>
+    <div class="form__group form__group--full">
+    <label>Tell us about your wedding</label>
+    <textarea name="Message" rows="4"
+      placeholder="Venue, guest count, ceremonies..."></textarea>
   </div>
-
-  <div class="form__group">
-    <label>Email Address</label>
-    <input type="email" name="Email" placeholder="your@email.com" required />
-  </div>
-
-  <div class="form__group">
+<div class="form__group">
     <label>Wedding Date</label>
     <input type="date" name="Wedding Date" />
   </div>
@@ -306,14 +307,9 @@
       <option>Photo + Video Combo</option>
       <option>Full Wedding Coverage</option>
     </select>
-  </div>
-
-  <div class="form__group form__group--full">
-    <label>Tell us about your wedding</label>
-    <textarea name="Message" rows="4"
-      placeholder="Venue, guest count, ceremonies..."></textarea>
-  </div>
-
+  </section>
+  
+  
   <button type="submit" class="btn btn--solid btn--full">
     Send Enquiry ✦
   </button>
