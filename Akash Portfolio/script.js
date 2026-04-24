@@ -31,3 +31,14 @@ document.getElementById("contactForm").addEventListener("submit", async function
     alert("Error sending enquiry");
   }
 });
+// Button Click Alert for Contact
+const btn = document.getElementById("contactBtn") || document.querySelector(".contact .btn");
+if (btn) {
+  btn.addEventListener("click", function (e) {
+    // Prevent default link behavior
+    e.preventDefault();
+    alert("Thanks for reaching out!\nEmail: pixelperfectjourney4u@gmail.com");
+    // Open email client
+    window.location.href = "mailto:pixelperfectjourney4u@gmail.com";
+  });
+}
