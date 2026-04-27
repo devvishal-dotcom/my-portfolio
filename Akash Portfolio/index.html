@@ -4,340 +4,150 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PixelPerfect Journey — Wedding Photography</title>
+
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Cinzel&family=Lato&display=swap" rel="stylesheet">
+
+  <!-- ScrollReveal -->
   <script src="https://unpkg.com/scrollreveal"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
-  <!-- NAV -->
-  <nav class="nav" id="navbar">
-    <div class="nav__logo">PixelPerfect Journey</div>
-    <ul class="nav__links">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#gallery">Gallery</a></li>
-      <li><a href="#video">Films</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="nav__hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav__logo">PixelPerfect Journey</div>
+  <ul class="nav__links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#gallery">Gallery</a></li>
+    <li><a href="#instagram">Instagram</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
-  <!-- HERO -->
-  <section class="hero" id="hero">
-    <div class="hero__overlay"></div>
-    <div class="hero__bg-image"></div>
-    <div class="hero__content">
-      <p class="hero__tagline">Where Traditions Meet Timelessness</p>
-      <h1 class="hero__title">PixelPerfect<br/><em>Journey</em></h1>
-      <p class="hero__subtitle">Luxury Wedding Photography & Cinematography</p>
-      <a href="#gallery" class="btn btn--outline">View Portfolio</a>
-      <a href="#contact" class="btn btn--solid">Book Now</a>
-    </div>
-    <div class="hero__scroll-indicator">
-      <span>Scroll</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="about" id="about">
-    <div class="about__deco-text">STORY</div>
-    <div class="about__inner">
-      <div class="about__image-col">
-        <div class="about__img-frame">
-          <img src="AKG01382.JPG" alt="Bride portrait" />
-        </div>
-        <div class="about__img-small">
-          <img src="AKG01567.JPG" alt="Ceremony moment" />
-        </div>
-      </div>
-      <div class="about__text-col">
-        <span class="section__label">Our Story</span>
-        <h2 class="section__heading">We Don't Just<br/><em>Capture Photos</em><br/>We Preserve Legacies</h2>
-        <p>Every Indian wedding is a symphony of rituals, colours, and emotions — from the vibrant haldi ceremony to the sacred pheras. We are here to document every laugh, every tear, and every blessed moment with artistry and reverence.</p>
-        <p>Based in Patna, Bihar, we specialise in traditional Hindu weddings, bridal portraits, and multi-day wedding films that families treasure for generations.</p>
-        <div class="about__stats">
-          <div class="about__stat">
-            <span class="about__stat-num">250+</span>
-            <span class="about__stat-label">Weddings</span>
-          </div>
-          <div class="about__stat">
-            <span class="about__stat-num">5</span>
-            <span class="about__stat-label">Years</span>
-          </div>
-          <div class="about__stat">
-            <span class="about__stat-num">4</span>
-            <span class="about__stat-label">Awards</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section class="gallery" id="gallery">
-    <div class="gallery__header">
-      <span class="section__label">Portfolio</span>
-      <h2 class="section__heading">A Glimpse of<br/><em>Sacred Moments</em></h2>
-    </div>
-
-    <!-- Filter Tabs -->
-    <div class="gallery__filters">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="haldi">Haldi</button>
-      <button class="filter-btn" data-filter="bridal">Bridal</button>
-      <button class="filter-btn" data-filter="ceremony">Ceremony</button>
-    </div>
-
-    <div class="gallery__grid" id="galleryGrid">
-
-      <div class="gallery__item" data-category="haldi">
-        <img src="AKG00733.JPG" alt="Haldi ceremony portrait" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Haldi Ceremony</span>
-        </div>
-      </div>
-
-      <div class="gallery__item gallery__item--wide" data-category="ceremony">
-        <img src="AKG01507.JPG" alt="Wedding ceremony" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Sacred Pheras</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="bridal">
-        <img src="AKG01382.JPG" alt="Bridal portrait" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Bridal Splendour</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="bridal">
-        <img src="AKG01377.JPG" alt="Bride side profile" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>The Bride</span>
-        </div>
-      </div>
-
-      <div class="gallery__item gallery__item--tall" data-category="ceremony">
-        <img src="AKG01567.JPG" alt="Prayer during ceremony" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Devotion</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="ceremony">
-        <img src="AKG00940.JPG" alt="Bridal veil" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Veiled Grace</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="ceremony">
-        <img src="AKG01613.JPG" alt="Traditional headgear" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Divine Crown</span>
-        </div>
-      </div>
-
-      <div class="gallery__item gallery__item--wide" data-category="haldi">
-        <img src="AKG00732.JPG" alt="Haldi smiling" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Joy of Haldi</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="haldi">
-        <img src="AKG00731.JPG" alt="Haldi pose" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Sunshine & Smiles</span>
-        </div>
-      </div>
-
-      <div class="gallery__item gallery__item--wide" data-category="ceremony">
-        <img src="AKG01594.JPG" alt="Couple at ceremony" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Together Forever</span>
-        </div>
-      </div>
-
-      <div class="gallery__item" data-category="haldi">
-        <img src="AKG00734.JPG" alt="Haldi hands" loading="lazy"/>
-        <div class="gallery__item-overlay">
-          <span>Mehndi & Flowers</span>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- LIGHTBOX -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox__close" id="lightboxClose">&times;</button>
-    <button class="lightbox__prev" id="lightboxPrev">&#8249;</button>
-    <button class="lightbox__next" id="lightboxNext">&#8250;</button>
-    <div class="lightbox__img-wrap">
-      <img src="" alt="" id="lightboxImg" />
-      <p class="lightbox__caption" id="lightboxCaption"></p>
-    </div>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero__content">
+    <p>Where Traditions Meet Timelessness</p>
+    <h1>PixelPerfect <em>Journey</em></h1>
+    <p>Luxury Wedding Photography & Films</p>
+    <a href="#gallery" class="btn">View Portfolio</a>
   </div>
-  <div class="lightbox__backdrop" id="lightboxBackdrop"></div>
+</section>
 
-  <!-- VIDEO SECTION -->
-  <section class="video-section" id="video">
-    <div class="video-section__header">
-      <span class="section__label">Wedding Films</span>
-      <h2 class="section__heading">Feel the<br/><em>Magic Unfold</em></h2>
-    </div>
-    <div class="video-section__wrapper">
-      <div class="video-section__player">
-        <!-- Auto-play, muted YouTube embed. Replace VIDEO_ID with your own -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HADSJUyu3Rc?si=WBywIQH3Vch_PM1_" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-      </div>
-      <div class="video-section__text">
-        <h3>Cinematic Wedding Films</h3>
-        <p>Our films aren't just recordings — they are cinematic love stories. Scored with emotion, crafted frame-by-frame, and delivered as heirlooms your family will watch for decades.</p>
-        <ul class="video-section__features">
-          <li>✦ 4K Ultra HD Filming</li>
-          <li>✦ Drone Aerial Shots</li>
-          <li>✦ Full Ceremony Coverage</li>
-          <li>✦ Highlight Reel + Full Film</li>
-          <li>✦ Colour Graded & Scored</li>
-        </ul>
-        <a href="#contact" class="btn btn--solid">Enquire About Films</a>
-      </div>
-    </div>
-  </section>
+<!-- ABOUT -->
+<section class="about" id="about">
+  <h2>We Preserve <em>Memories</em></h2>
+  <p>
+    Every wedding tells a story. We capture emotions, rituals, and timeless
+    moments so your memories live forever.
+  </p>
+</section>
 
-  <!-- TESTIMONIALS -->
-  <section class="testimonials">
-    <span class="section__label">Kind Words</span>
-    <h2 class="section__heading">What Families Say</h2>
-    <div class="testimonials__track" id="testimonialsTrack">
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <h2>Our Work</h2>
 
-      <div class="testimonial__card">
-        <p>"The photos from our daughter's wedding left us speechless. Every tradition, every emotion — perfectly preserved forever."</p>
-        <cite>— Sharma Family, Patna</cite>
-      </div>
-
-      <div class="testimonial__card">
-        <p>"The team was so respectful and professional throughout. They captured moments we didn't even realise were happening. Pure magic."</p>
-        <cite>— Priya & Rohit, Bihar</cite>
-      </div>
-
-      <div class="testimonial__card">
-        <p>"From the haldi to the vidaai, every frame feels like a painting. We couldn't have asked for a better memory keeper."</p>
-        <cite>— Gupta Family, Patna</cite>
-      </div>
-
-      <div class="testimonial__card">
-        <p>"The wedding film made our whole family cry with joy. It's a treasure we'll watch every anniversary. Truly exceptional work."</p>
-        <cite>— Anjali & Vikram, Muzaffarpur</cite>
-      </div>
-
-    </div>
-    <div class="testimonials__dots" id="testimonialsDots"></div>
-  </section>
-
-  <!-- CONTACT -->
-  <section class="contact" id="contact">
-    <div class="contact__deco">CONTACT</div>
-    <div class="contact__inner">
-      <div class="contact__text">
-        <span class="section__label">Get In Touch</span>
-        <h2 class="section__heading">Let's Create<br/><em>Your Story</em></h2>
-        <p>Reach out to check availability for your wedding date. We'd love to hear about your special day and how we can make it unforgettable.</p>
-        <div class="contact__details">
-          <div class="contact__detail-item">
-            <span class="contact__icon">📍</span>
-            <span>Ranchi, Jh, India</span>
-          </div>
-          <div class="contact__detail-item">
-            <span class="contact__icon">📞</span>
-            <span>+91 7352455408</span>
-          </div>
-          <div class="contact__detail-item">
-            <span class="contact__icon">✉️</span>
-            <span>pixelperfectjourney4u@gmail.com
-            </span>
-          </div>
-          <div class="contact__detail-item">
-            <span class="contact__icon">📸</span>
-            <span>@pixelperfectjourney</span>
-          </div>
-        </div>
-      </div>
-      <form class="contact__form"
-      action="mailto:pixelperfectjourney4u@gmail.com"
-      method="POST"
-      enctype="text/plain">
-
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <a href="mailto:pixelperfectjourney4u@gmail.com" class="btn">📧 Email Me</a>
-    </div>
-    <div class="form__group form__group--full">
-    <label>Tell us about your wedding</label>
-    <textarea name="Message" rows="4"
-      placeholder="Venue, guest count, ceremonies..."></textarea>
+  <div class="gallery__grid">
+    <img src="AKG00733.JPG" loading="lazy">
+    <img src="AKG01507.JPG" loading="lazy">
+    <img src="AKG01382.JPG" loading="lazy">
+    <img src="AKG01377.JPG" loading="lazy">
+    <img src="AKG01567.JPG" loading="lazy">
+    <img src="AKG00940.JPG" loading="lazy">
   </div>
-<div class="form__group">
-    <label>Wedding Date</label>
-    <input type="date" name="Wedding Date" />
+</section>
+
+<!-- INSTAGRAM FEED (NEW SECTION) -->
+<section class="instagram" id="instagram">
+  <div class="section__header">
+    <h2>Follow Our Journey</h2>
+    <p>@pixelperfectjourney</p>
   </div>
 
-  <div class="form__group">
-    <label>Package Interest</label>
-    <select name="Package">
-      <option value="">Select a package</option>
-      <option>Photography Only</option>
-      <option>Videography Only</option>
-      <option>Photo + Video Combo</option>
-      <option>Full Wedding Coverage</option>
+  <div class="instagram__grid">
+    <!-- Replace images with real Instagram exports -->
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG00731.JPG" alt="Instagram post">
+    </a>
+
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG00732.JPG" alt="Instagram post">
+    </a>
+
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG00734.JPG" alt="Instagram post">
+    </a>
+
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG01594.JPG" alt="Instagram post">
+    </a>
+
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG01613.JPG" alt="Instagram post">
+    </a>
+
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank">
+      <img src="AKG01567.JPG" alt="Instagram post">
+    </a>
+  </div>
+
+  <div class="instagram__cta">
+    <a href="https://instagram.com/pixelperfectjourney" target="_blank" class="btn">
+      View More on Instagram →
+    </a>
+  </div>
+</section>
+
+<!-- VIDEO -->
+<section class="video">
+  <h2>Wedding Films</h2>
+  <iframe 
+    src="https://www.youtube.com/embed/HADSJUyu3Rc"
+    loading="lazy"
+    allowfullscreen>
+  </iframe>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <h2>Let's Create Your Story</h2>
+
+  <form class="contact__form">
+
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Email" required>
+    <input type="tel" placeholder="Phone">
+
+    <input type="date">
+
+    <select>
+      <option>Select Package</option>
+      <option>Photography</option>
+      <option>Videography</option>
+      <option>Full Coverage</option>
     </select>
-  </section>
-  
-  
-  <button type="submit" class="btn btn--solid btn--full">
-    Send Enquiry ✦
-  </button>
 
-</form>
-    </div>
-  </section>
+    <textarea placeholder="Tell us about your wedding"></textarea>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <div class="footer__logo">PixelPerfect Journey</div>
-        <p>Luxury Wedding Photography & Films<br/>Ranchi, Jharkhand</p>
-      </div>
-      <div class="footer__links">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#video">Films</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <div class="footer__social">
-        <a href="#">Instagram</a>
-        <a href="#">Facebook</a>
-        <a href="#">YouTube</a>
-        <a href="#">Pinterest</a>
-      </div>
-    </div>
-    <div class="footer__bottom">
-      <p>© 2025 PixelPerfect Journey Photography. All rights reserved.</p>
-    </div>
-  </footer>
+    <button type="submit" class="btn">Send Enquiry</button>
+  </form>
 
-  <script src="js/main.js"></script>
+  <!-- WhatsApp CTA -->
+  <a href="https://wa.me/917352455408" class="btn whatsapp">
+    Chat on WhatsApp
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2025 PixelPerfect Journey</p>
+</footer>
+
 </body>
 </html>
