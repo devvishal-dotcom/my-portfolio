@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WA Order Tracker — Admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --green:#00c853;--green-dim:#00a844;--green-bg:#e8faf1;
+  --surface:#ffffff;--surface2:#f7f8fa;--surface3:#eef0f4;
+  --border:#e2e5ec;--border2:#d0d4de;
+  --text:#0d0f14;--text2:#4a5068;--text3:#8890a8;
+  --red:#e53935;--red-bg:#fdecea;
+  --amber:#f59e0b;--amber-bg:#fef3c7;
+  --blue:#2563eb;--blue-bg:#eff6ff;
+  --radius:10px;--radius-lg:16px;
+}
+body{font-family:'Syne',sans-serif;background:var(--surface2);color:var(--text);min-height:100vh}
+.app{display:grid;grid-template-columns:240px 1fr;min-height:100vh}
+.sidebar{background:#0d1117;color:#fff;padding:0;display:flex;flex-direction:column}
+.logo{padding:24px 20px 20px;border-bottom:1px solid #1e2530}
+.logo-mark{display:flex;align-items:center;gap:10px}
+.logo-icon{width:32px;height:32px;background:#00c853;border-radius:8px;display:flex;align-items:center;justify-content:center}
+.logo-icon svg{width:18px;height:18px;fill:#fff}
+.logo-text{font-size:15px;font-weight:700;letter-spacing:-0.3px}
+.logo-sub{font-size:11px;color:#4a5568;font-family:'DM Mono',monospace;margin-top:1px}
+.nav{padding:16px 12px;flex:1}
+.nav-item{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:8px;cursor:pointer;font-size:13px;color:#8890a8;transition:all .15s;margin-bottom:2px;border:none;background:none;width:100%;text-align:left;font-family:'Syne',sans-serif}
+.nav-item svg{width:16px;height:16px;flex-shrink:0}
+.nav-item:hover{color:#fff;background:#1e2530}
+.nav-item.active{color:#00c853;background:#0d2218}
+.nav-section{font-size:10px;color:#4a5568;letter-spacing:1px;text-transform:uppercase;font-family:'DM Mono',monospace;padding:12px 12px 6px}
+.sidebar-footer{padding:16px 12px;border-top:1px solid #1e2530}
+.api-badge{background:#0d2218;border:1px solid #1e4d30;border-radius:8px;padding:10px 12px}
+.api-badge-label{font-size:10px;color:#4a5568;font-family:'DM Mono',monospace;margin-bottom:4px}
+.api-badge-val{font-size:11px;color:#00c853;font-family:'DM Mono',monospace;word-break:break-all}
+.main{display:flex;flex-direction:column;overflow:hidden}
+.topbar{background:var(--surface);border-bottom:1px solid var(--border);padding:0 28px;height:60px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.topbar-title{font-size:16px;font-weight:600;letter-spacing:-0.3px}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.status-dot{width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+.status-label{font-size:13px;color:var(--text2)}
+.content{padding:28px;flex:1;overflow-y:auto}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);padding:18px 20px}
+.stat-label{font-size:11px;color:var(--text3);font-family:'DM Mono',monospace;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.stat-val{font-size:26px;font-weight:700;letter-spacing:-1px}
+.stat-badge{display:inline-block;font-size:11px;padding:2px 8px;border-radius:20px;margin-top:6px;font-family:'DM Mono',monospace}
+.badge-green{background:var(--green-bg);color:var(--green-dim)}
+.badge-amber{background:var(--amber-bg);color:#92400e}
+.badge-blue{background:var(--blue-bg);color:var(--blue)}
+.badge-red{background:var(--red-bg);color:var(--red)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;margin-bottom:0}
+.card-header{padding:18px 20px 0;display:flex;align-items:center;justify-content:space-between}
+.card-title{font-size:14px;font-weight:600;letter-spacing:-0.2px}
+.card-body{padding:20px}
+.form-group{margin-bottom:16px}
+.form-label{display:block;font-size:12px;font-weight:600;color:var(--text2);margin-bottom:6px;letter-spacing:.3px}
+.form-input{width:100%;padding:10px 14px;border:1px solid var(--border2);border-radius:var(--radius);font-size:13px;font-family:'Syne',sans-serif;color:var(--text);background:var(--surface2);transition:border .15s,box-shadow .15s;outline:none}
+.form-input:focus{border-color:#00c853;box-shadow:0 0 0 3px rgba(0,200,83,.1);background:#fff}
+.form-input::placeholder{color:var(--text3)}
+textarea.form-input{resize:vertical;min-height:72px;line-height:1.5}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:12px;border:none;border-radius:var(--radius);font-size:14px;font-weight:600;cursor:pointer;font-family:'Syne',sans-serif;transition:all .15s}
+.btn-primary{background:#00c853;color:#fff}
+.btn-primary:hover{background:#00b848;transform:translateY(-1px)}
+.btn-primary:disabled{background:#a8d5b8;cursor:not-allowed;transform:none}
+.btn-ghost{background:var(--surface2);color:var(--text2);border:1px solid var(--border);margin-top:8px}
+.btn-ghost:hover{background:var(--surface3)}
+.toast{position:fixed;top:20px;right:20px;padding:14px 18px;border-radius:var(--radius);font-size:13px;font-weight:600;display:flex;align-items:center;gap:10px;z-index:999;animation:slide-in .25s ease;box-shadow:0 4px 20px rgba(0,0,0,.12)}
+.toast.success{background:#0d1117;color:#00c853;border:1px solid #1e4d30}
+.toast.error{background:#0d1117;color:#ff5252;border:1px solid #4d1e1e}
+@keyframes slide-in{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:13px}
+thead th{text-align:left;padding:10px 14px;font-size:11px;font-family:'DM Mono',monospace;color:var(--text3);text-transform:uppercase;letter-spacing:.5px;border-bottom:1px solid var(--border);font-weight:500}
+tbody tr{border-bottom:1px solid var(--border);transition:background .1s}
+tbody tr:last-child{border-bottom:none}
+tbody tr:hover{background:var(--surface2)}
+tbody td{padding:12px 14px;color:var(--text2);vertical-align:middle}
+.td-id{font-family:'DM Mono',monospace;font-size:12px;color:var(--text);font-weight:500}
+.td-link{font-family:'DM Mono',monospace;font-size:11px;color:var(--blue);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.td-phone{font-family:'DM Mono',monospace;font-size:12px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:3px 10px;border-radius:20px;font-size:11px;font-family:'DM Mono',monospace;font-weight:500}
+.chip-green{background:var(--green-bg);color:var(--green-dim)}
+.chip-amber{background:var(--amber-bg);color:#92400e}
+.chip-red{background:var(--red-bg);color:var(--red)}
+.chip-dot{width:5px;height:5px;border-radius:50%;background:currentColor}
+.action-btn{padding:5px 10px;border-radius:6px;border:1px solid var(--border2);background:none;font-size:11px;font-family:'DM Mono',monospace;cursor:pointer;color:var(--text2);transition:all .15s}
+.action-btn:hover{background:var(--green-bg);color:var(--green-dim);border-color:#a8d5b8}
+.action-btn.del:hover{background:var(--red-bg);color:var(--red);border-color:#f5c6c6}
+.empty{text-align:center;padding:40px 20px;color:var(--text3)}
+.empty p{font-size:13px}
+.preview-box{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:var(--radius);padding:14px 16px;margin-top:16px}
+.preview-label{font-size:10px;font-family:'DM Mono',monospace;color:var(--green-dim);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px}
+.preview-msg{font-size:12px;color:#166534;line-height:1.7;font-family:'DM Mono',monospace;white-space:pre-wrap}
+.sep{height:1px;background:var(--border);margin:16px 0}
+.gap16{margin-top:16px}
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">
+        <div class="logo-icon">
+          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <div>
+          <div class="logo-text">WA Tracker</div>
+          <div class="logo-sub">Admin Panel</div>
+        </div>
+      </div>
+    </div>
+    <nav class="nav">
+      <div class="nav-section">Main</div>
+      <button class="nav-item active" onclick="showTab('dashboard')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        Dashboard
+      </button>
+      <button class="nav-item" onclick="showTab('send')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        Send Notification
+      </button>
+      <button class="nav-item" onclick="showTab('orders')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+        All Orders
+      </button>
+      <div class="nav-section">Config</div>
+      <button class="nav-item" onclick="showTab('settings')">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        API Settings
+      </button>
+    </nav>
+    <div class="sidebar-footer">
+      <div class="api-badge">
+        <div class="api-badge-label">Backend Status</div>
+        <div class="api-badge-val" id="api-status-label">● Checking...</div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="topbar-title" id="topbar-title">Dashboard</div>
+      <div class="topbar-right">
+        <span class="status-dot"></span>
+        <span class="status-label" id="conn-status">Connecting...</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- DASHBOARD -->
+      <div id="tab-dashboard">
+        <div class="stats">
+          <div class="stat-card"><div class="stat-label">Total Orders</div><div class="stat-val" id="s-total">0</div><div class="stat-badge badge-blue">All time</div></div>
+          <div class="stat-card"><div class="stat-label">Sent Today</div><div class="stat-val" id="s-today">0</div><div class="stat-badge badge-green">Active</div></div>
+          <div class="stat-card"><div class="stat-label">Delivered</div><div class="stat-val" id="s-delivered">0</div><div class="stat-badge badge-green">Success</div></div>
+          <div class="stat-card"><div class="stat-label">Failed</div><div class="stat-val" id="s-failed">0</div><div class="stat-badge badge-red">Errors</div></div>
+        </div>
+        <div class="card">
+          <div class="card-header"><div class="card-title">Recent Orders</div><button class="action-btn" onclick="showTab('send')">+ New</button></div>
+          <div class="card-body" style="padding:0"><div class="table-wrap"><table>
+            <thead><tr><th>Order ID</th><th>Phone</th><th>Tracking Link</th><th>Status</th><th>Sent At</th><th>Action</th></tr></thead>
+            <tbody id="dashboard-tbody"><tr><td colspan="6"><div class="empty"><p>No orders yet.</p></div></td></tr></tbody>
+          </table></div></div>
+        </div>
+      </div>
+
+      <!-- SEND -->
+      <div id="tab-send" style="display:none">
+        <div class="grid2">
+          <div>
+            <div class="card">
+              <div class="card-header"><div class="card-title">Send Order Tracking</div></div>
+              <div class="card-body">
+                <div class="form-group"><label class="form-label">Customer WhatsApp Number</label><input class="form-input" id="f-phone" placeholder="+91 98765 43210" type="tel"></div>
+                <div class="form-group"><label class="form-label">Order / Tracking ID</label><input class="form-input" id="f-orderid" placeholder="ORD-2024-00123"></div>
+                <div class="form-group"><label class="form-label">Tracking Link</label><input class="form-input" id="f-link" placeholder="https://shiprocket.co/tracking/..." type="url"></div>
+                <div class="form-group"><label class="form-label">Custom Message (optional)</label><textarea class="form-input" id="f-msg" placeholder="Leave blank to use default template..."></textarea></div>
+                <div class="sep"></div>
+                <button class="btn btn-primary" id="send-btn" onclick="sendNotification()">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                  Send WhatsApp Notification
+                </button>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="card">
+              <div class="card-header"><div class="card-title">Message Preview</div></div>
+              <div class="card-body">
+                <div class="preview-box"><div class="preview-label">WhatsApp Message</div><div class="preview-msg" id="preview-msg">Fill the form to preview...</div></div>
+              </div>
+            </div>
+            <div class="card gap16">
+              <div class="card-header"><div class="card-title">Bulk CSV Upload</div></div>
+              <div class="card-body">
+                <div style="font-size:12px;color:var(--text2);margin-bottom:12px">Columns: <code style="background:var(--surface3);padding:2px 6px;border-radius:4px">phone, order_id, tracking_link</code></div>
+                <input type="file" accept=".csv" id="csv-input" style="display:none" onchange="handleCSV(this)">
+                <button class="btn btn-ghost" onclick="document.getElementById('csv-input').click()">Choose CSV File</button>
+                <div id="csv-status" style="font-size:12px;color:var(--text3);margin-top:8px;font-family:'DM Mono',monospace"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDERS -->
+      <div id="tab-orders" style="display:none">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-title">All Orders</div>
+            <input class="form-input" style="width:200px;padding:7px 12px;font-size:12px" placeholder="Search..." id="search-input" oninput="loadOrders()">
+          </div>
+          <div class="card-body" style="padding:0"><div class="table-wrap"><table>
+            <thead><tr><th>Order ID</th><th>Phone</th><th>Tracking Link</th><th>Status</th><th>Sent At</th><th>Action</th></tr></thead>
+            <tbody id="orders-tbody"><tr><td colspan="6"><div class="empty"><p>Loading...</p></div></td></tr></tbody>
+          </table></div></div>
+        </div>
+      </div>
+
+      <!-- SETTINGS -->
+      <div id="tab-settings" style="display:none">
+        <div class="grid2">
+          <div class="card">
+            <div class="card-header"><div class="card-title">Backend API URL</div></div>
+            <div class="card-body">
+              <div class="form-group">
+                <label class="form-label">API Base URL</label>
+                <input class="form-input" id="cfg-api-url" placeholder="https://your-backend.vercel.app">
+                <div style="font-size:11px;color:var(--text3);margin-top:4px">Your Vercel deployment URL or localhost:3000</div>
+              </div>
+              <div class="sep"></div>
+              <button class="btn btn-primary" onclick="saveSettings()">Save & Test Connection</button>
+              <div id="conn-result" style="margin-top:10px;font-size:12px;font-family:'DM Mono',monospace"></div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header"><div class="card-title">Setup Checklist</div></div>
+            <div class="card-body">
+              <ol style="font-size:13px;color:var(--text2);line-height:2.2;padding-left:16px">
+                <li>Backend running (local or Vercel)</li>
+                <li>.env configured with WA credentials</li>
+                <li>WhatsApp template approved on Meta</li>
+                <li>Enter API URL above and save</li>
+                <li>Go to Send Notification and test!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+const TABS=['dashboard','send','orders','settings'];
+const TITLES={dashboard:'Dashboard',send:'Send Notification',orders:'All Orders',settings:'API Settings'};
+let apiUrl = localStorage.getItem('wa_api_url') || 'http://localhost:3000';
+
+function showTab(t){
+  TABS.forEach(id=>document.getElementById('tab-'+id).style.display=id===t?'':'none');
+  document.querySelectorAll('.nav-item').forEach((el,i)=>el.classList.toggle('active',TABS[i]===t));
+  document.getElementById('topbar-title').textContent=TITLES[t];
+  if(t==='dashboard'){loadStats();loadRecentOrders();}
+  if(t==='orders') loadOrders();
+  if(t==='settings') document.getElementById('cfg-api-url').value=apiUrl;
+}
+
+async function api(path,opts={}){
+  const res = await fetch(apiUrl+path,{headers:{'Content-Type':'application/json'},...opts});
+  return res.json();
+}
+
+async function loadStats(){
+  try{
+    const d = await api('/api/stats');
+    if(d.success){
+      document.getElementById('s-total').textContent=d.stats.total;
+      document.getElementById('s-today').textContent=d.stats.today;
+      document.getElementById('s-delivered').textContent=d.stats.delivered;
+      document.getElementById('s-failed').textContent=d.stats.failed;
+    }
+  }catch(e){}
+}
+
+async function loadRecentOrders(){
+  try{
+    const d = await api('/api/orders?limit=8');
+    renderTable('dashboard-tbody', d.orders||[], 6);
+  }catch(e){}
+}
+
+async function loadOrders(){
+  const search = document.getElementById('search-input')?.value||'';
+  try{
+    const d = await api(`/api/orders?limit=100&search=${search}`);
+    renderTable('orders-tbody', d.orders||[], 6);
+  }catch(e){document.getElementById('orders-tbody').innerHTML='<tr><td colspan="6"><div class="empty"><p>Cannot reach backend.</p></div></td></tr>';}
+}
+
+function renderTable(tbodyId, orders, cols){
+  const tbody=document.getElementById(tbodyId);
+  if(!orders||!orders.length){tbody.innerHTML=`<tr><td colspan="${cols}"><div class="empty"><p>No orders found.</p></div></td></tr>`;return;}
+  tbody.innerHTML=orders.map(o=>`
+    <tr>
+      <td class="td-id">${o.order_id}</td>
+      <td class="td-phone">${o.phone}</td>
+      <td class="td-link"><a href="${o.tracking_link}" target="_blank" style="color:var(--blue)">${o.tracking_link.substring(0,35)}...</a></td>
+      <td><span class="chip ${o.status==='sent'||o.status==='delivered'||o.status==='read'?'chip-green':o.status==='pending'?'chip-amber':'chip-red'}"><span class="chip-dot"></span>${o.status}</span></td>
+      <td style="font-size:12px;color:var(--text3)">${new Date(o.created_at).toLocaleString()}</td>
+      <td style="display:flex;gap:6px">
+        <button class="action-btn" onclick="resend(${o.id})">Resend</button>
+        <button class="action-btn del" onclick="delOrder(${o.id})">Del</button>
+      </td>
+    </tr>`).join('');
+}
+
+async function resend(id){
+  try{const d=await api(`/api/retry/${id}`,{method:'POST'});toast(d.success?'Resent!':'Failed: '+d.error,d.success?'success':'error');}
+  catch(e){toast('Cannot reach backend','error');}
+  loadRecentOrders();loadOrders();
+}
+
+async function delOrder(id){
+  try{await api(`/api/orders/${id}`,{method:'DELETE'});}catch(e){}
+  loadRecentOrders();loadOrders();loadStats();
+}
+
+function getPreview(){
+  const oid=document.getElementById('f-orderid').value||'[ORDER-ID]';
+  const link=document.getElementById('f-link').value||'[tracking-url]';
+  const custom=document.getElementById('f-msg').value;
+  return custom||`Hello! 👋\n\nYour order *${oid}* has been shipped! 🚚\n\nTrack your delivery here:\n${link}\n\nThank you for shopping with us!`;
+}
+
+['f-phone','f-orderid','f-link','f-msg'].forEach(id=>{
+  document.getElementById(id)?.addEventListener('input',()=>{
+    document.getElementById('preview-msg').textContent=getPreview();
+  });
+});
+
+async function sendNotification(){
+  const phone=document.getElementById('f-phone').value.trim();
+  const orderId=document.getElementById('f-orderid').value.trim();
+  const trackingLink=document.getElementById('f-link').value.trim();
+  const customMsg=document.getElementById('f-msg').value.trim();
+  if(!phone||!orderId||!trackingLink){toast('Fill all required fields','error');return;}
+  const btn=document.getElementById('send-btn');
+  btn.disabled=true;btn.textContent='Sending...';
+  try{
+    const d=await api('/api/send',{method:'POST',body:JSON.stringify({phone,orderId,trackingLink,customMsg})});
+    toast(d.success?'Message sent! ✓':'Error: '+(d.error||'Unknown'),d.success?'success':'error');
+    if(d.success){['f-phone','f-orderid','f-link','f-msg'].forEach(id=>document.getElementById(id).value='');document.getElementById('preview-msg').textContent='Fill the form to preview...';}
+  }catch(e){toast('Cannot reach backend at '+apiUrl,'error');}
+  btn.disabled=false;btn.textContent='Send WhatsApp Notification';
+  loadStats();
+}
+
+async function handleCSV(input){
+  const file=input.files[0];if(!file)return;
+  const text=await file.text();
+  const rows=text.trim().split('\n').slice(1);
+  document.getElementById('csv-status').textContent=`Sending ${rows.length} messages...`;
+  let sent=0;
+  for(const row of rows){
+    const [phone,order_id,tracking_link]=row.split(',').map(s=>s.trim().replace(/"/g,''));
+    if(!phone||!order_id||!tracking_link)continue;
+    try{await api('/api/send',{method:'POST',body:JSON.stringify({phone,orderId:order_id,trackingLink:tracking_link})});sent++;}catch(e){}
+    await new Promise(r=>setTimeout(r,1100));
+  }
+  document.getElementById('csv-status').textContent=`Done! Sent ${sent}/${rows.length}`;
+}
+
+async function saveSettings(){
+  apiUrl=document.getElementById('cfg-api-url').value.trim().replace(/\/$/,'');
+  localStorage.setItem('wa_api_url',apiUrl);
+  const el=document.getElementById('conn-result');
+  el.textContent='Testing...';el.style.color='var(--text3)';
+  try{
+    const d=await api('/api/health');
+    el.textContent='✓ Connected — '+d.service;el.style.color='var(--green)';
+    document.getElementById('api-status-label').textContent='● Connected';
+    document.getElementById('conn-status').textContent='Backend Live';
+    toast('Settings saved & connected!','success');
+  }catch(e){
+    el.textContent='✗ Cannot reach: '+apiUrl;el.style.color='var(--red)';
+    document.getElementById('api-status-label').textContent='● Disconnected';
+    toast('Cannot reach backend','error');
+  }
+}
+
+let toastTimer;
+function toast(msg,type='success'){
+  document.querySelectorAll('.toast').forEach(e=>e.remove());
+  const el=document.createElement('div');
+  el.className=`toast ${type}`;
+  el.innerHTML=`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">${type==='success'?'<polyline points="20 6 9 17 4 12"/>':'<circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>'}</svg>${msg}`;
+  document.body.appendChild(el);
+  clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.remove(),3500);
+}
+
+// Auto check connection
+async function checkConnection(){
+  try{
+    await api('/api/health');
+    document.getElementById('api-status-label').textContent='● Connected';
+    document.getElementById('conn-status').textContent='Backend Live';
+  }catch(e){
+    document.getElementById('api-status-label').textContent='● Disconnected';
+    document.getElementById('conn-status').textContent='Backend Offline';
+  }
+}
+
+// Init
+document.getElementById('cfg-api-url') && (document.getElementById('cfg-api-url').value=apiUrl);
+checkConnection();
+loadStats();
+</script>
+</body>
+</html>
