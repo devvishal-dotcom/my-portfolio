@@ -4,140 +4,332 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vishal Kumar Gupta | Portfolio</title>
-  <link rel="stylesheet" href="styleport.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://unpkg.com/scrollreveal"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleport.css" />
 </head>
 <body>
 
-  <!-- Header / Navigation -->
+  <!-- ── HEADER ── -->
   <header class="header">
     <div class="container">
-      <h1 class="logo">Vishal</h1>
+      <a href="#hero" class="logo">Vishal.dev</a>
+
       <nav class="nav">
-        <a href="#hero">Home</a>
+        <a href="#hero" aria-current="page">Home</a>
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
         <a href="#projects">Projects</a>
         <a href="#contact">Contact</a>
-        
       </nav>
+
+      <a href="mailto:vishalkumar4604@gmail.com" class="nav-cta">Let's Talk →</a>
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero" class="hero">
-    <div class="blob"></div>
-    <div class="container">
-      <img src="profile.jpg.jpeg" alt="Profile Picture" class="profile-pic" />
-      <h1>Vishal Kumar Gupta</h1>
-      <p>Web Developer | E-commerce Manager | Laravel Enthusiast</p>
+  <!-- ── HERO ── -->
+  <section id="hero" class="hero container">
+
+    <!-- Left: pitch -->
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="hero-badge__dot"></span>
+        Available for freelance work
+      </div>
+
+      <h1>Building <em>digital experiences</em> that matter</h1>
+
+      <p class="hero__sub">
+        Hi, I'm <strong>Vishal Kumar Gupta</strong> — a Web Developer, E-commerce Manager,
+        and Laravel enthusiast who turns ideas into sleek, functional web products.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="mailto:vishalkumar4604@gmail.com" class="btn-outline">Get In Touch</a>
+      </div>
     </div>
+
+    <!-- Right: stats + currently building -->
+    <div class="hero-aside">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat__num">5+</div>
+          <div class="stat__label">Projects</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat__num">2+</div>
+          <div class="stat__label">Years exp.</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat__num">3+</div>
+          <div class="stat__label">Clients</div>
+        </div>
+      </div>
+
+      <div class="hero-current">
+        <div class="hero-current__label">Currently building</div>
+        <div class="hero-current__row">
+          <div class="hero-current__icon">🛒</div>
+          <div>
+            <div class="hero-current__name">E-commerce Platform</div>
+            <div class="hero-current__stack">Laravel · MySQL · Blade</div>
+          </div>
+          <div class="live-dot"></div>
+        </div>
+      </div>
+    </div>
+
   </section>
 
-  <!-- About Section -->
+  <div class="divider"></div>
+
+  <!-- ── ABOUT ── -->
   <section id="about" class="section">
     <div class="container">
-      <h2>About Me</h2>
-      <p>I'm <strong>Vishal Kumar Gupta</strong>, a passionate <strong>Web Developer</strong> and <strong>E-commerce Manager</strong> with expertise in <strong>Laravel, MySQL</strong>, and modern web technologies. I craft sleek, functional digital experiences that help brands grow. 
-With a strong focus on <strong>clean code, responsive design</strong>, and <strong>seamless user experiences</strong>, I bring ideas to life through innovative web solutions. 
-I have hands-on experience in developing <strong>scalable web applications</strong>, managing <strong>e-commerce platforms</strong>, and optimizing workflows for improved performance. 
-My goal is to combine <strong>creativity and problem-solving skills</strong> to deliver digital products that make a lasting impact.
-</p>
-
+      <div class="section-tag">About</div>
+      <div class="section-title">Who I am</div>
+      <p style="color:var(--text-muted);max-inline-size:72ch;line-height:1.85;font-size:.9375rem;">
+        I'm a passionate <strong style="color:var(--text-primary)">Web Developer</strong> and
+        <strong style="color:var(--text-primary)">E-commerce Manager</strong> with expertise in
+        <strong style="color:var(--text-primary)">Laravel, MySQL</strong>, and modern web technologies.
+        I craft sleek, functional digital experiences that help brands grow. With a strong focus on
+        clean code, responsive design, and seamless user experiences, I bring ideas to life through
+        innovative web solutions. My goal is to combine creativity and problem-solving skills to
+        deliver digital products that make a lasting impact.
+      </p>
     </div>
   </section>
 
-  <!-- Skills Section -->
+  <div class="divider"></div>
+
+  <!-- ── SKILLS ── -->
   <section id="skills" class="section">
     <div class="container">
-      <h2>Skills</h2>
+      <div class="section-tag">Skills</div>
+      <div class="section-title">Tools I work with</div>
       <div class="skills-grid">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>JavaScript</span>
-        <span>Laravel</span>
-        <span>MySQL</span>
-        <span>Php</span>
+        <span class="skill-pill">HTML5</span>
+        <span class="skill-pill">CSS3</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Laravel</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">Responsive Design</span>
+        <span class="skill-pill">Git & GitHub</span>
       </div>
     </div>
   </section>
-  <!-- Add just after your existing nav -->
 
-  <button class="hamburger" onclick="toggleMenu()">
-  <div></div><div></div><div></div>
-</button>
+  <div class="divider"></div>
 
-<script>
-  function toggleMenu() {
-    document.getElementById('mobileMenu').classList.toggle('open');
-  }
-</script>
-
-
-  <!-- Projects Section -->
+  <!-- ── PROJECTS ── -->
   <section id="projects" class="section">
     <div class="container">
-      <h2>Projects</h2>
-      <div class="project-card">
-        <h3>Fitness Portfolio Website</h3>
-        <p>Developed a fitness-themed responsive website using HTML, CSS, and JavaScript.</p>
-        <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html#" target="_blank">View Project</a>
-         </div>
+      <div class="section-tag">Work</div>
+      <div class="section-title">Featured projects</div>
 
-         <div class="project-card">
-         <h3>To Do List </h3>
-        <p>A minimal and responsive To-Do List web app built using HTML, CSS, and JavaScript to manage daily tasks efficiently.</p>
-        <a href="https://devvishal-dotcom.github.io/todo-page/" target="_blank">View Project</a>
-      </div>
+      <div class="projects-grid">
 
+        <!-- Card 1 -->
         <div class="project-card">
-         <h3>Weather App </h3>
-        <p>A beginner-friendly web app built with HTML, CSS, and JavaScript that fetches real-time weather data from the OpenWeather API. Users can enter any city to see the current temperature, weather conditions, and an icon representing the forecast.</p>
-        <a href="https://devvishal-dotcom.github.io/weather-app/" target="_blank">View Project</a>
+          <div class="card-top">
+            <div class="card-icon">💪</div>
+            <div class="card-meta">
+              <span class="card-year">2024</span>
+              <span class="card-status status--live">Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">Fitness Portfolio Website</h3>
+          <p class="card-desc">A fitness-themed responsive website built with HTML, CSS, and JavaScript — clean layout, smooth animations, mobile-friendly.</p>
+          <div class="card-tags">
+            <span class="card-tag">HTML</span>
+            <span class="card-tag">CSS</span>
+            <span class="card-tag">JavaScript</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://devvishal-dotcom.github.io/my-portfolio/landing-page/index.html#" target="_blank" class="card-link">
+              View project
+              <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/devvishal-dotcom" target="_blank" class="card-github">
+              <svg viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-icon card-icon--teal">✅</div>
+            <div class="card-meta">
+              <span class="card-year">2024</span>
+              <span class="card-status status--live">Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">To Do List App</h3>
+          <p class="card-desc">A minimal and responsive To-Do List web app built with HTML, CSS, and JavaScript to manage daily tasks efficiently.</p>
+          <div class="card-tags">
+            <span class="card-tag">HTML</span>
+            <span class="card-tag">CSS</span>
+            <span class="card-tag">JavaScript</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://devvishal-dotcom.github.io/todo-page/" target="_blank" class="card-link">
+              View project
+              <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/devvishal-dotcom" target="_blank" class="card-github">
+              <svg viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-icon card-icon--blue">🌤️</div>
+            <div class="card-meta">
+              <span class="card-year">2024</span>
+              <span class="card-status status--live">Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">Weather App</h3>
+          <p class="card-desc">Fetches real-time weather data from the OpenWeather API. Enter any city to see current temperature, conditions, and a forecast icon.</p>
+          <div class="card-tags">
+            <span class="card-tag">HTML</span>
+            <span class="card-tag">CSS</span>
+            <span class="card-tag">JavaScript</span>
+            <span class="card-tag">API</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://devvishal-dotcom.github.io/weather-app/" target="_blank" class="card-link">
+              View project
+              <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/devvishal-dotcom" target="_blank" class="card-github">
+              <svg viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-icon">📸</div>
+            <div class="card-meta">
+              <span class="card-year">2024</span>
+              <span class="card-status status--live">Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">Photography Portfolio</h3>
+          <p class="card-desc">A modern photography portfolio for a client — clean gallery layout, project showcase, and a smooth contact/booking flow.</p>
+          <div class="card-tags">
+            <span class="card-tag">HTML</span>
+            <span class="card-tag">CSS</span>
+            <span class="card-tag">JavaScript</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://devvishal-dotcom.github.io/pixelperfectjourney/" target="_blank" class="card-link">
+              View project
+              <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/devvishal-dotcom" target="_blank" class="card-github">
+              <svg viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="project-card">
+          <div class="card-top">
+            <div class="card-icon card-icon--teal">🎮</div>
+            <div class="card-meta">
+              <span class="card-year">2024</span>
+              <span class="card-status status--live">Live</span>
+            </div>
+          </div>
+          <h3 class="card-title">Tic Tac Toe Game</h3>
+          <p class="card-desc">A simple and fun Tic Tac Toe game — play against a friend or challenge the computer in this classic strategy game.</p>
+          <div class="card-tags">
+            <span class="card-tag">HTML</span>
+            <span class="card-tag">CSS</span>
+            <span class="card-tag">JavaScript</span>
+          </div>
+          <div class="card-footer">
+            <a href="https://devvishal-dotcom.github.io/tic-tac-toe/" target="_blank" class="card-link">
+              View project
+              <svg viewBox="0 0 16 16" width="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+            </a>
+            <a href="https://github.com/devvishal-dotcom" target="_blank" class="card-github">
+              <svg viewBox="0 0 16 16" width="14" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
       </div>
-      <div class="project-card">
-         <h4>Photography Portfolio For Client </h4>
-        <p>A modern photography portfolio website built with HTML, CSS, and JavaScript that showcases the photographers work in a clean, visually appealing gallery. It allows potential clients to explore projects and easily get in touch for pricing, bookings, or custom quotations, ensuring a smooth and professional user experience.</p>
-        <a href="https://devvishal-dotcom.github.io/pixelperfectjourney/" target="_blank">View Project</a>
-      </div>
-      <div class="project-card">
-         <h5>Tic Tac Toe Game </h5>
-        <p>A simple and fun Tic Tac Toe game built with HTML, CSS, and JavaScript. Test your skills against a friend or challenge the computer in this classic strategy game.</p>
-        <a href="https://devvishal-dotcom.github.io/tic-tac-toe/" target="_blank"> View Project</a>
-      </div>
-      </div> 
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <div class="divider"></div>
+
+  <!-- ── CONTACT ── -->
   <section id="contact" class="section contact">
     <div class="container">
-      <h2>Contact Me</h2>
-      <p>Let’s build something amazing together.</p>
-      <a href="mailto:vishalkumar4604@gmail.com" class="btn">📧 Email Me</a>
+      <div class="section-tag">Contact</div>
+      <div class="section-title">Let's work together</div>
+      <p>Have a project in mind or want to collaborate? I'd love to hear from you.</p>
+      <a href="mailto:vishalkumar4604@gmail.com" class="btn-primary">📧 Email Me</a>
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ── FOOTER ── -->
   <footer class="footer">
     <div class="container">
-      <p>© 2025 Vishal Kumar Gupta | Built with 💻 & ☕</p>
-      <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn</a>
+      <p>© 2025 Vishal Kumar Gupta | Built with 💻 & ☕ &nbsp;·&nbsp;
+        <a href="https://www.linkedin.com/in/vishal-kumar-gupta-b15a4a2ba" target="_blank">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <a href="https://github.com/devvishal-dotcom" target="_blank">GitHub</a>
+      </p>
     </div>
   </footer>
 
+  <!-- ScrollReveal -->
+  <script src="https://unpkg.com/scrollreveal"></script>
   <script>
-    // ScrollReveal animations
-    ScrollReveal().reveal('.section', { delay: 200, duration: 800, distance: '50px', origin: 'bottom' });
+    ScrollReveal().reveal('.project-card', {
+      delay: 100,
+      duration: 700,
+      distance: '40px',
+      origin: 'bottom',
+      interval: 100
+    });
+    ScrollReveal().reveal('.section-title, .section-tag, .skill-pill', {
+      delay: 100,
+      duration: 600,
+      distance: '30px',
+      origin: 'bottom',
+      interval: 80
+    });
 
-    // Dark/Light mode toggle
-    const toggleBtn = document.getElementById('modeToggle');
-    toggleBtn.onclick = () => {
-      document.body.classList.toggle('dark-mode');
-      toggleBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
-    }
+    // Active nav link on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => {
+        if (window.scrollY >= s.offsetTop - 100) current = s.id;
+      });
+      navLinks.forEach(a => {
+        a.removeAttribute('aria-current');
+        if (a.getAttribute('href') === '#' + current) a.setAttribute('aria-current', 'page');
+      });
+    });
   </script>
 
 </body>
