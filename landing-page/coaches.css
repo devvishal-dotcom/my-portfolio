@@ -2,7 +2,7 @@
 body {
   background-color: #0f0f0f;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #d0d0d0;
+  color: #e0e0e0;
   line-height: 1.7;
 }
 
@@ -11,6 +11,11 @@ h1, h3 {
   color: #ffffff;
   font-weight: 700;
   letter-spacing: 0.5px;
+}
+
+h1 span,
+h3 span {
+  color: #FFD700;
 }
 
 /* ==== Container ==== */
@@ -23,12 +28,17 @@ h1, h3 {
 /* ==== Testimonial Card ==== */
 .testimonial {
   background: #1a1a1a;
-  border-left: 4px solid #c0392b;
+  border-left: 4px solid #FFD700;
   padding: 15px 20px;
   margin: 20px 0;
   font-style: italic;
-  color: #bbbbbb;
+  color: #cccccc;
   border-radius: 0 6px 6px 0;
+  transition: background 0.3s ease;
+}
+
+.testimonial:hover {
+  background: #222222;
 }
 
 /* ==== CTA ==== */
@@ -38,17 +48,21 @@ h1, h3 {
 }
 
 .btn {
-  background-color: #c0392b;
-  color: #ffffff;
-  padding: 10px 20px;
+  background-color: #FFD700;
+  color: #0f0f0f;
+  padding: 10px 24px;
   text-decoration: none;
   border-radius: 5px;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: background 0.3s ease, transform 0.2s ease;
+  display: inline-block;
 }
 
 .btn:hover {
-  background-color: #a93226;
+  background-color: #e6c200;
+  transform: translateY(-2px);
 }
 
 /* ==== Footer ==== */
@@ -56,7 +70,12 @@ footer {
   text-align: center;
   margin-top: 50px;
   padding: 20px;
-  background-color: #141414;
+  background-color: #0a0a0a;
   color: #666666;
-  border-top: 1px solid #222222;
+  border-top: 1px solid #FFD700;
+  font-size: 0.88rem;
+}
+
+footer span {
+  color: #FFD700;
 }

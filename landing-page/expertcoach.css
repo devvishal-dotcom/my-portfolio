@@ -6,7 +6,7 @@ body, html {
   font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* ==== Hero Header with Background Image ==== */
+/* ==== Background ==== */
 body {
   margin: 0;
   padding: 0;
@@ -16,22 +16,36 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center;
-  color: #d0d0d0;
+  color: #e0e0e0;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.70);
+  z-index: -1;
+}
+
+/* ==== Header ==== */
 .header {
   background: transparent;
 }
 
 .top-logo {
-  background-color: rgba(0, 0, 0, 0.9);
-  padding: 0;
+  background-color: rgba(0, 0, 0, 0.95);
+  padding: 14px 0;
   text-align: center;
   font-size: 2rem;
-  font-weight: bold;
-  color: #f4f4f4;
-  letter-spacing: 1px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-weight: 900;
+  color: #ffffff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-bottom: 2px solid #FFD700;
+}
+
+.top-logo span {
+  color: #FFD700;
 }
 
 .header h1,
@@ -44,6 +58,7 @@ body {
   font-size: 3rem;
   margin-bottom: 10px;
   color: #ffffff;
+  font-weight: 800;
 }
 
 .hero h1,
@@ -53,10 +68,10 @@ body {
 
 .header p {
   font-size: 1.2rem;
-  color: #bbbbbb;
+  color: #cccccc;
 }
 
-/* ==== Hero Image Below Header ==== */
+/* ==== Hero Image ==== */
 .coach-hero img {
   width: 100%;
   height: auto;
@@ -77,20 +92,20 @@ body {
 }
 
 .card {
-  background-color: #1a1a1a;
+  background-color: #111111;
   border-radius: 12px;
-  border: 1px solid #222222;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+  border: 1px solid #2a2a2a;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
   width: 300px;
   padding: 25px 20px;
   text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
-  border-color: #c0392b;
+  transform: translateY(-8px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.6);
+  border-color: #FFD700;
 }
 
 .card img {
@@ -100,23 +115,28 @@ body {
   object-position: top;
   border-radius: 10px;
   margin-bottom: 15px;
+  border: 2px solid #2a2a2a;
 }
 
 .card h2 {
   margin-bottom: 6px;
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: #ffffff;
+  font-weight: 700;
 }
 
 .card p {
   font-weight: 600;
   margin-bottom: 10px;
-  color: #bbbbbb;
+  color: #FFD700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .card span {
-  color: #888888;
-  font-size: 0.95rem;
+  color: #999999;
+  font-size: 0.9rem;
 }
 
 /* ==== Section Styles ==== */
@@ -136,22 +156,30 @@ body {
 .coach-intro h2,
 .coach-benefits h2,
 .coach-reviews h2 {
-  padding: 20px 0 10px;
-  background: transparent;
+  padding: 10px 0;
   text-align: center;
   color: #ffffff;
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.coach-intro h2 span,
+.coach-benefits h2 span,
+.coach-reviews h2 span {
+  color: #FFD700;
 }
 
 .coach-intro p,
 .coach-benefits p,
 .coach-reviews p {
   padding: 10px 20px;
-  background: transparent;
   text-align: center;
   color: #bbbbbb;
   font-size: 1rem;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 /* ==== Badges / Highlights ==== */
@@ -163,9 +191,18 @@ body {
 
 .coach-badges li {
   margin-bottom: 12px;
-  font-weight: bold;
-  color: #d0d0d0;
-  font-size: 1.05rem;
+  font-weight: 700;
+  color: #ffffff;
+  font-size: 1rem;
+  padding-left: 1.4rem;
+  position: relative;
+}
+
+.coach-badges li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: #FFD700;
 }
 
 /* ==== Benefit Boxes ==== */
@@ -178,21 +215,29 @@ body {
 
 .benefit {
   flex: 1 1 250px;
-  background: #1a1a1a;
-  border: 1px solid #222222;
+  background: #111111;
+  border: 1px solid #2a2a2a;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.benefit:hover {
+  border-color: #FFD700;
+  transform: translateY(-4px);
 }
 
 .benefit h3 {
   margin-bottom: 10px;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #FFD700;
+  font-weight: 700;
 }
 
 .benefit p {
   color: #bbbbbb;
+  font-size: 0.95rem;
 }
 
 /* ==== Customer Reviews ==== */
@@ -204,64 +249,78 @@ body {
 }
 
 .review {
-  background: #1a1a1a;
-  border-left: 4px solid #c0392b;
+  background: #111111;
+  border-left: 4px solid #FFD700;
   padding: 20px;
   max-width: 320px;
   border-radius: 0 8px 8px 0;
   text-align: left;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+
+.review:hover {
+  background: #1a1a1a;
 }
 
 .review p {
   font-size: 1rem;
-  color: #bbbbbb;
+  color: #cccccc;
   margin-bottom: 10px;
   font-style: italic;
 }
 
 .review .reviewer {
-  font-weight: bold;
-  color: #ffffff;
+  font-weight: 700;
+  color: #FFD700;
   font-size: 0.95rem;
 }
 
 /* ==== Call to Action ==== */
 .coach-cta {
-  padding: 60px 20px;
+  padding: 70px 20px;
   text-align: center;
-  background-color: #141414;
-  border-top: 1px solid #222222;
+  background-color: #0a0a0a;
+  border-top: 2px solid #FFD700;
 }
 
 .coach-cta h2 {
   font-size: 2.2rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
   color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .coach-cta p {
   font-size: 1.1rem;
   color: #bbbbbb;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cta-button {
   display: inline-block;
-  padding: 14px 30px;
+  padding: 14px 36px;
   font-size: 1rem;
-  background-color: #c0392b;
-  color: #ffffff;
+  background-color: #FFD700;
+  color: #0a0a0a;
   border: none;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
   transition: background 0.3s ease, transform 0.2s ease;
-  font-weight: bold;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .cta-button:hover {
-  background-color: #a93226;
-  transform: translateY(-2px);
+  background-color: #e6c200;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
 }
 
 /* ==== Elite Coaches Hero Section ==== */
@@ -278,26 +337,32 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.65);
   z-index: -1;
 }
 
 .elite-coaches-section h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 20px;
   color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.elite-coaches-section h1 span {
+  color: #FFD700;
 }
 
 .elite-coaches-section p {
   font-size: 1.1rem;
-  max-width: 900px;
+  max-width: 800px;
   margin: 0 auto 30px;
-  line-height: 1.6;
-  color: #bbbbbb;
+  line-height: 1.7;
+  color: #cccccc;
 }
 
-/* Checklist Style */
+/* ==== Checklist ==== */
 .elite-checklist {
   display: flex;
   flex-direction: column;
@@ -308,35 +373,35 @@ body {
 }
 
 .elite-checklist-item {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid #222222;
-  padding: 12px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid #2a2a2a;
+  padding: 14px 20px;
   border-radius: 8px;
   font-size: 1rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  color: #d0d0d0;
+  color: #e0e0e0;
   transition: 0.3s ease;
   width: 100%;
 }
 
 .elite-checklist-item:hover {
-  background: rgba(192, 57, 43, 0.1);
-  border-color: #c0392b;
+  background: rgba(255, 215, 0, 0.08);
+  border-color: #FFD700;
   transform: scale(1.02);
 }
 
 .elite-checklist-item .icon {
-  color: #c0392b;
-  margin-right: 10px;
+  color: #FFD700;
+  margin-right: 12px;
   font-size: 1.2rem;
 }
 
 /* ==== Footer ==== */
 .footer {
-  background-color: #0f0f0f;
-  border-top: 1px solid #222222;
+  background-color: #0a0a0a;
+  border-top: 2px solid #FFD700;
   padding: 40px 20px 10px;
   font-family: 'Segoe UI', sans-serif;
   margin-top: 40px;
@@ -358,28 +423,39 @@ body {
 }
 
 .footer-logo .logo-text {
-  font-size: 24px;
+  font-size: 1.6rem;
+  font-weight: 900;
   color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   margin-bottom: 10px;
+  display: block;
+}
+
+.footer-logo .logo-text span {
+  color: #FFD700;
 }
 
 .footer-column h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  color: #FFD700;
 }
 
 .footer-column p,
 .footer-column li,
 .footer-column a {
-  font-size: 14px;
+  font-size: 0.88rem;
   color: #888888;
-  line-height: 1.6;
+  line-height: 1.8;
   text-decoration: none;
 }
 
 .footer-column a:hover {
-  color: #ffffff;
+  color: #FFD700;
 }
 
 .footer-links {
@@ -388,13 +464,27 @@ body {
   margin: 0;
 }
 
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a::before {
+  content: '› ';
+  color: #FFD700;
+  font-weight: bold;
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
   border-top: 1px solid #1e1e1e;
   padding-top: 10px;
-  font-size: 13px;
+  font-size: 0.8rem;
   color: #444444;
+}
+
+.footer-bottom span {
+  color: #FFD700;
 }
 
 /* ==== Responsive ==== */
@@ -402,7 +492,7 @@ body {
   .footer-container {
     flex-direction: column;
     text-align: center;
-    gap: 40px;
+    gap: 30px;
   }
 
   .footer-column {
@@ -410,7 +500,7 @@ body {
   }
 
   .footer-logo .logo-text {
-    font-size: 28px;
+    font-size: 1.8rem;
   }
 
   .coach-cards {
@@ -420,6 +510,10 @@ body {
 
   .elite-coaches-section h1 {
     font-size: 2.2rem;
+  }
+
+  .footer-links a::before {
+    display: none;
   }
 }
 
