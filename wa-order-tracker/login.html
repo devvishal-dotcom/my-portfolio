@@ -55,7 +55,8 @@ body{font-family:'Syne',sans-serif;background:#0d1117;min-height:100vh;display:f
 </div>
 
 <script>
-const API_URL = localStorage.getItem('wa_api_url') || 'http://localhost:3000';
+// Use relative path - login page is served from same domain as API
+const API_URL = '';
 
 if(localStorage.getItem('wa_token')) {
   window.location.href = '/';
@@ -88,6 +89,7 @@ async function doLogin() {
       localStorage.setItem('wa_token', data.token);
       localStorage.setItem('wa_user', JSON.stringify(data.user));
       localStorage.setItem('wa_permissions', JSON.stringify(data.permissions));
+      localStorage.setItem('wa_api_url', window.location.origin);
       window.location.href = '/';
     } else {
       showError(data.error || 'Login failed');

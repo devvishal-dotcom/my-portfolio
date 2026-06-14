@@ -18,30 +18,25 @@ app.use(cors({ origin: '*' }));
 app.use(morgan('dev'));
 app.use(express.json());
 
-// Serve admin panel
+// Serve static files (login.html, admin-panel.html, etc.)
+app.use(express.static(path.join(__dirname)));
+
+// Serve admin panel at root
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'admin-panel.html'));
 });
 
-// ─── Public Routes (no auth needed) ──────────────────────────
+// ─── Public Routes ──────────────────────────────────────────
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', service: 'WA Order Tracker', timestamp: new Date().toISOString() });
 });
 
-// Login
 app.post('/api/auth/login', login);
-
-// Webhook (verified by Meta token)
 app.use('/webhook', webhookRouter);
 
-// ─── Protected Routes (auth required) ────────────────────────
-// All routes below require valid JWT token
+// ─── Protected Routes ───────────────────────────────────────
 app.use('/api', verifyToken);
-
-// Get current user info
 app.get('/api/auth/me', getMe);
-
-// Orders routes with role permissions
 app.use('/api', ordersRouter);
 
 // Error handler
@@ -54,7 +49,7 @@ initDB().then(() => {
   app.listen(PORT, () => {
     console.log(`\n🚀 WA Order Tracker running on http://localhost:${PORT}`);
     console.log(`🖥️  Admin Panel: http://localhost:${PORT}`);
-    console.log(`🔐 Auth: JWT enabled`);
+    console.log(`🔐 Login: http://localhost:${PORT}/login.html`);
     console.log(`📱 WhatsApp API: ${process.env.WA_PHONE_NUMBER_ID ? '✓ Configured' : '✗ Not configured'}`);
   });
 });
