@@ -1,37 +1,62 @@
-    body {
-      background-color: #cbcfd1;
-    }
-    h1, h3 {
-      text-align: center;
-      color: #2c3e50;
-    }
-    .container {
-      max-width: 900px;
-      margin: auto;
-      padding: 20px;
-    }
-    .testimonial {
-      background: #fff;
-      border-left: 4px solid #4CAF50;
-      padding: 15px;
-      margin: 20px 0;
-      font-style: italic;
-    }
-    .cta-center {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .btn {
-      background-color: #4CAF50;
-      color: white;
-      padding: 10px 20px;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: bold;
-    }
-    footer {
-      text-align: center;
-      margin-top: 50px;
-      padding: 20px;
-      background-color: #ddd;
-    }
+/* ==== Base ==== */
+body {
+  background-color: #0f0f0f;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #d0d0d0;
+  line-height: 1.7;
+}
+
+h1, h3 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* ==== Container ==== */
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* ==== Testimonial Card ==== */
+.testimonial {
+  background: #1a1a1a;
+  border-left: 4px solid #c0392b;
+  padding: 15px 20px;
+  margin: 20px 0;
+  font-style: italic;
+  color: #bbbbbb;
+  border-radius: 0 6px 6px 0;
+}
+
+/* ==== CTA ==== */
+.cta-center {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.btn {
+  background-color: #c0392b;
+  color: #ffffff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #a93226;
+}
+
+/* ==== Footer ==== */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #141414;
+  color: #666666;
+  border-top: 1px solid #222222;
+}
