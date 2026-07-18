@@ -1,8 +1,3 @@
-/* =========================================
-   PIXELPERFECT JOURNEY — CONTACT FORM
-   Direct email via EmailJS (no backend)
-   ========================================= */
-
 /* ------------------------------------------
    EMAILJS SETUP — REPLACE THESE 3 VALUES
    1. Go to https://emailjs.com and sign up (free)
@@ -14,16 +9,6 @@ const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // e.g. "service_abc123"
 const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // e.g. "template_xyz789"
 const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";    // e.g. "aBcDeFgHiJkLmNoP"
 
-/* ------------------------------------------
-   EMAILJS TEMPLATE VARIABLES
-   In your EmailJS template, use these tags:
-   {{from_name}}   — sender's name
-   {{from_email}}  — sender's email
-   {{wedding_date}} — chosen wedding date
-   {{package}}     — selected package
-   {{message}}     — their message
-   {{to_email}}    — your studio email
-   ------------------------------------------ */
 
 const STUDIO_EMAIL = "pixelperfectjourney4u@gmail.com";
 
@@ -116,9 +101,6 @@ function hideMsg(el) {
 }
 
 
-/* =========================================
-   CONTACT BUTTON — mailto fallback
-   ========================================= */
 const contactBtn = document.getElementById("contactBtn")
   || document.querySelector(".contact .btn--solid");
 
@@ -129,4 +111,26 @@ if (contactBtn) {
     e.preventDefault();
     window.location.href = `mailto:${STUDIO_EMAIL}?subject=Wedding Enquiry — Pixelperfect Journey`;
   });
+}
+
+
+function reelPlay(el) {
+  const src = el.getAttribute("data-src");
+
+  if (!src) {
+    const btn = el.querySelector(".reel-frame__play");
+    btn.style.background = "rgba(139,28,43,0.9)";
+    setTimeout(() => { btn.style.background = ""; }, 500);
+    return;
+  }
+
+  const video = document.createElement("video");
+  video.src = src;
+  video.autoplay = true;
+  video.controls = true;
+  video.loop = true;
+  video.playsInline = true;
+
+  el.innerHTML = "";
+  el.appendChild(video);
 }

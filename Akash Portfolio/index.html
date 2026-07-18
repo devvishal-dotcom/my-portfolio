@@ -7,7 +7,148 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <script src="https://unpkg.com/scrollreveal"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600;700&family=Lato:wght@300;400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Scoped styles for the Reels section (safe to move into style.css) -->
+  <style>
+    .reels{
+      padding:100px 6vw;
+      background:var(--cream, #FAF6F0);
+      position:relative;
+    }
+    .reels__header{
+      text-align:center;
+      max-width:640px;
+      margin:0 auto 56px;
+    }
+    .reels__header .section__heading{ margin-top:6px; }
+
+    .reels__card{
+      max-width:1100px;
+      margin:0 auto;
+      background:var(--white, #FFFFFF);
+      border:1px solid var(--border, rgba(107,28,43,0.15));
+      border-radius:4px;
+      overflow:hidden;
+      box-shadow:0 40px 80px -40px rgba(107,28,43,0.35);
+    }
+    .reels__strip{
+      display:flex;
+      justify-content:space-between;
+      padding:0 18px;
+      background:var(--maroon-dark, #4A1020);
+    }
+    .reels__strip span{
+      width:10px; height:7px;
+      margin:6px 0;
+      background:var(--cream, #FAF6F0);
+      border-radius:2px;
+    }
+    .reels__grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:1px;
+      background:var(--border, rgba(107,28,43,0.15));
+    }
+    .reel-frame{
+      background:var(--white, #FFFFFF);
+      display:flex;
+      flex-direction:column;
+    }
+    .reel-frame__tag{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 14px 0;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:11px;
+      letter-spacing:0.05em;
+      color:var(--text-light, #9B7B84);
+    }
+    .reel-frame__mark{
+      width:14px; height:14px;
+      border-radius:4px;
+      background:linear-gradient(135deg,var(--maroon,#6B1C2B),var(--gold,#C9A84C),var(--gold-light,#E2C47A));
+    }
+    .reel-frame__thumb{
+      position:relative;
+      margin:12px 14px 0;
+      aspect-ratio:9/16;
+      border-radius:4px;
+      overflow:hidden;
+      cursor:pointer;
+      background-size:cover;
+      background-position:center;
+      isolation:isolate;
+    }
+    .reel-frame__thumb::before{
+      content:'';
+      position:absolute;
+      inset:0;
+      background:linear-gradient(180deg, rgba(26,10,14,0.05) 0%, rgba(26,10,14,0.78) 100%);
+      z-index:1;
+    }
+    .reel-frame__thumb video{
+      position:absolute; inset:0;
+      width:100%; height:100%;
+      object-fit:cover;
+      z-index:0;
+    }
+    .reel-frame__play{
+      position:absolute;
+      top:50%; left:50%;
+      transform:translate(-50%,-50%);
+      width:42px; height:42px;
+      border-radius:50%;
+      background:rgba(74,16,32,0.55);
+      border:1px solid rgba(250,246,240,0.55);
+      display:flex; align-items:center; justify-content:center;
+      z-index:2;
+      transition:transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .reel-frame__thumb:hover .reel-frame__play{
+      transform:translate(-50%,-50%) scale(1.08);
+      background:rgba(201,168,76,0.92);
+      border-color:var(--gold, #C9A84C);
+    }
+    .reel-frame__play svg{ width:15px; height:15px; fill:var(--cream,#FAF6F0); margin-left:2px; }
+    .reel-frame__meta{
+      position:absolute;
+      bottom:10px; left:10px; right:10px;
+      z-index:2;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10.5px;
+      color:var(--cream,#FAF6F0);
+      display:flex; justify-content:space-between;
+    }
+    .reel-frame__caption{ padding:10px 14px 16px; }
+    .reel-frame__caption p{
+      margin:0;
+      font-family:'Cormorant Garamond', serif;
+      font-size:15px;
+      font-weight:600;
+      color:var(--text-dark,#1A0A0E);
+    }
+    .reel-frame__caption span{
+      display:block;
+      margin-top:2px;
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10px;
+      color:var(--text-light,#9B7B84);
+    }
+    .reels__footer{
+      text-align:center;
+      padding:16px;
+      border-top:1px solid var(--border, rgba(107,28,43,0.15));
+      font-family:'IBM Plex Mono',monospace;
+      font-size:10.5px;
+      letter-spacing:0.03em;
+      color:var(--text-light,#9B7B84);
+    }
+    @media (max-width:680px){
+      .reels__grid{ grid-template-columns:repeat(2,1fr); }
+    }
+  </style>
 </head>
 <body>
 
@@ -18,6 +159,7 @@
       <li><a href="#hero">Home</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#reels">Reels</a></li>
       <li><a href="#video">Films</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -175,6 +317,91 @@
     </div>
   </section>
 
+  <!-- REELS -->
+  <section class="reels" id="reels">
+    <div class="reels__header">
+      <span class="section__label">On Instagram</span>
+      <h2 class="section__heading">Moments<br/><em>In Motion</em></h2>
+    </div>
+
+    <div class="reels__card">
+      <div class="reels__strip">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="reels__grid">
+
+        <!-- Reel 1 -->
+        <div class="reel-frame">
+          <div class="reel-frame__tag">
+            <span>01 / 04</span>
+            <span class="reel-frame__mark"></span>
+          </div>
+          <div class="reel-frame__thumb" data-src="" style="background:linear-gradient(160deg,#8B2E3D,#4A1020);" onclick="reelPlay(this)">
+            <div class="reel-frame__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="reel-frame__meta"><span>Reel</span><span>0:00</span></div>
+          </div>
+          <div class="reel-frame__caption">
+            <p>Haldi Highlights</p>
+            <span>@pixelperfectjourney</span>
+          </div>
+        </div>
+
+        <!-- Reel 2 -->
+        <div class="reel-frame">
+          <div class="reel-frame__tag">
+            <span>02 / 04</span>
+            <span class="reel-frame__mark"></span>
+          </div>
+          <div class="reel-frame__thumb" data-src="" style="background:linear-gradient(160deg,#6B1C2B,#4A1020);" onclick="reelPlay(this)">
+            <div class="reel-frame__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="reel-frame__meta"><span>Reel</span><span>0:00</span></div>
+          </div>
+          <div class="reel-frame__caption">
+            <p>Sacred Pheras</p>
+            <span>@pixelperfectjourney</span>
+          </div>
+        </div>
+
+        <!-- Reel 3 -->
+        <div class="reel-frame">
+          <div class="reel-frame__tag">
+            <span>03 / 04</span>
+            <span class="reel-frame__mark"></span>
+          </div>
+          <div class="reel-frame__thumb" data-src="" style="background:linear-gradient(160deg,#C9A84C,#4A1020);" onclick="reelPlay(this)">
+            <div class="reel-frame__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="reel-frame__meta"><span>Reel</span><span>0:00</span></div>
+          </div>
+          <div class="reel-frame__caption">
+            <p>Bridal Portraits</p>
+            <span>@pixelperfectjourney</span>
+          </div>
+        </div>
+
+        <!-- Reel 4 -->
+        <div class="reel-frame">
+          <div class="reel-frame__tag">
+            <span>04 / 04</span>
+            <span class="reel-frame__mark"></span>
+          </div>
+          <div class="reel-frame__thumb" data-src="" style="background:linear-gradient(160deg,#E2C47A,#4A1020);" onclick="reelPlay(this)">
+            <div class="reel-frame__play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+            <div class="reel-frame__meta"><span>Reel</span><span>0:00</span></div>
+          </div>
+          <div class="reel-frame__caption">
+            <p>Vidaai Emotions</p>
+            <span>@pixelperfectjourney</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="reels__footer">Tap a reel to preview · Add your Instagram Reels video links to each data-src</div>
+    </div>
+  </section>
+
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox__close" id="lightboxClose">&times;</button>
@@ -196,7 +423,7 @@
     <div class="video-section__wrapper">
       <div class="video-section__player">
         <!-- Auto-play, muted YouTube embed. Replace VIDEO_ID with your own -->
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/HADSJUyu3Rc?si=WZZq1Y1m9AYGaO_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HADSJUyu3Rc?si=WZZq1Y1m9AYGaO_0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
       </div>
       <div class="video-section__text">
         <h3>Cinematic Wedding Films</h3>
@@ -276,39 +503,32 @@
       method="POST"
       enctype="text/plain">
 
-  <!-- Contact Section -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <h2>Contact Me</h2>
-      <a href="mailto:pixelperfectjourney4u@gmail.com" class="btn">📧 Email Me</a>
-    </div>
-    <div class="form__group form__group--full">
-    <label>Tell us about your wedding</label>
-    <textarea name="Message" rows="4"
-      placeholder="Venue, guest count, ceremonies..."></textarea>
-  </div>
-<div class="form__group">
-    <label>Wedding Date</label>
-    <input type="date" name="Wedding Date" />
-  </div>
+        <div class="form__group form__group--full">
+          <label>Tell us about your wedding</label>
+          <textarea name="Message" rows="4" placeholder="Venue, guest count, ceremonies..."></textarea>
+        </div>
 
-  <div class="form__group">
-    <label>Package Interest</label>
-    <select name="Package">
-      <option value="">Select a package</option>
-      <option>Photography Only</option>
-      <option>Videography Only</option>
-      <option>Photo + Video Combo</option>
-      <option>Full Wedding Coverage</option>
-    </select>
-  </section>
-  
-  
-  <button type="submit" class="btn btn--solid btn--full">
-    Send Enquiry ✦
-  </button>
+        <div class="form__group">
+          <label>Wedding Date</label>
+          <input type="date" name="Wedding Date" />
+        </div>
 
-</form>
+        <div class="form__group">
+          <label>Package Interest</label>
+          <select name="Package">
+            <option value="">Select a package</option>
+            <option>Photography Only</option>
+            <option>Videography Only</option>
+            <option>Photo + Video Combo</option>
+            <option>Full Wedding Coverage</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn--solid btn--full">
+          Send Enquiry ✦
+        </button>
+
+      </form>
     </div>
   </section>
 
@@ -323,6 +543,7 @@
         <a href="#hero">Home</a>
         <a href="#about">About</a>
         <a href="#gallery">Gallery</a>
+        <a href="#reels">Reels</a>
         <a href="#video">Films</a>
         <a href="#contact">Contact</a>
       </div>
@@ -339,5 +560,28 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+    // Reels section: swap data-src on each .reel-frame__thumb with a direct
+    // .mp4 URL to enable inline playback. For real Instagram Reels, use
+    // Instagram's official blockquote embed code instead (Instagram doesn't
+    // allow direct linking to raw video files).
+    function reelPlay(el){
+      const src = el.getAttribute('data-src');
+      if(!src){
+        const btn = el.querySelector('.reel-frame__play');
+        btn.style.background = 'rgba(139,28,43,0.9)';
+        setTimeout(()=>{ btn.style.background=''; }, 500);
+        return;
+      }
+      const video = document.createElement('video');
+      video.src = src;
+      video.autoplay = true;
+      video.controls = true;
+      video.loop = true;
+      video.playsInline = true;
+      el.innerHTML = '';
+      el.appendChild(video);
+    }
+  </script>
 </body>
 </html>
