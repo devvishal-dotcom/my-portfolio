@@ -116,21 +116,23 @@ if (contactBtn) {
 
 function reelPlay(el) {
   const src = el.getAttribute("data-src");
-
+ 
   if (!src) {
     const btn = el.querySelector(".reel-frame__play");
     btn.style.background = "rgba(139,28,43,0.9)";
     setTimeout(() => { btn.style.background = ""; }, 500);
     return;
   }
-
-  const video = document.createElement("video");
-  video.src = src;
-  video.autoplay = true;
-  video.controls = true;
-  video.loop = true;
-  video.playsInline = true;
-
-  el.innerHTML = "";
-  el.appendChild(video);
+ 
+  el.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="margin:0;width:100%;background:#4A1020;"></blockquote>`;
+ 
+  if (window.instgrm) {
+    window.instgrm.Embeds.process();
+  } else {
+    // embed.js hasn't loaded yet — load it now, it auto-processes on load
+    const s = document.createElement("script");
+    s.src = "https://www.instagram.com/embed.js";
+    s.async = true;
+    document.body.appendChild(s);
+  }
 }
