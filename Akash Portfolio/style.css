@@ -550,6 +550,14 @@ ul { list-style: none; }
   z-index: 1;
 }
 
+.reel-frame__thumb.is-embedded {
+  aspect-ratio: auto;
+  overflow: visible;
+}
+.reel-frame__thumb.is-embedded::before {
+  display: none;
+}
+
 .reel-frame__thumb video {
   position: absolute;
   inset: 0;
@@ -773,7 +781,7 @@ ul { list-style: none; }
    ========================================= */
 .testimonials {
   padding: 8rem 5%;
-  background: rgba(250,246,240,0.75);
+  background: var(--white);
   text-align: center;
   overflow: hidden;
 }
