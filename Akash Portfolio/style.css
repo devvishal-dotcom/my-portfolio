@@ -773,7 +773,7 @@ ul { list-style: none; }
    ========================================= */
 .testimonials {
   padding: 8rem 5%;
-  background: var(--white);
+  background: rgba(250,246,240,0.75);
   text-align: center;
   overflow: hidden;
 }
