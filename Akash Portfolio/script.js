@@ -139,7 +139,7 @@ if (contactBtn) {
    Instagram's own official embed (blockquote + embed.js),
    since Instagram doesn't allow direct linking to raw video files.
    ========================================= */
-function reelPlay(el) {
+  function reelPlay(el) {
   const src = el.getAttribute("data-src");
 
   if (!src) {
@@ -149,16 +149,5 @@ function reelPlay(el) {
     return;
   }
 
-  el.classList.add("is-embedded");
-  el.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${src}" data-instgrm-version="14" style="margin:0;width:100%;background:#4A1020;"></blockquote>`;
-
-  if (window.instgrm) {
-    window.instgrm.Embeds.process();
-  } else {
-    // embed.js hasn't loaded yet — load it now, it auto-processes on load
-    const s = document.createElement("script");
-    s.src = "https://www.instagram.com/embed.js";
-    s.async = true;
-    document.body.appendChild(s);
-  }
+  window.open(src, "_blank", "noopener,noreferrer");
 }
