@@ -151,3 +151,40 @@ if (contactBtn) {
 
   window.open(src, "_blank", "noopener,noreferrer");
 }
+const cards = document.querySelectorAll(".testimonial__card");
+const dotsContainer = document.getElementById("testimonialsDots");
+
+if (cards.length && dotsContainer) {
+  let current = 0;
+
+  cards.forEach((_, index) => {
+    const dot = document.createElement("span");
+    dot.className = "dot";
+    if (index === 0) dot.classList.add("active");
+
+    dot.addEventListener("click", () => {
+      show(index);
+    });
+
+    dotsContainer.appendChild(dot);
+  });
+
+  const dots = dotsContainer.querySelectorAll(".dot");
+
+  function show(index) {
+    cards.forEach(card => card.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    cards[index].classList.add("active");
+    dots[index].classList.add("active");
+
+    current = index;
+  }
+
+  show(0);
+
+  setInterval(() => {
+    current = (current + 1) % cards.length;
+    show(current);
+  }, 5000);
+}
